@@ -26,6 +26,8 @@ const Header = () => {
           <Link to='/store'> { IconWithStyles(ShoppingBag) } </Link>
           <Link to='/cart'> { IconWithStyles(ShoppingCart) } </Link>
         </Section>
+
+        <Button to='/'>Login</Button>
       </Section>
     </Wrapper>
   )
@@ -35,7 +37,7 @@ export default Header;
 
 const Wrapper  = styled.header`
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px;
   height: 70px;
   background-color: white;
   display:flex;

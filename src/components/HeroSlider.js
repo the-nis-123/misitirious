@@ -30,7 +30,7 @@ export default HeroSlider;
 
 
 const Slider = styled.div`
- grid-area: header;
+ grid-area: hero;
  background-color: inherit;
  display:flex;
  padding: 0 30px;

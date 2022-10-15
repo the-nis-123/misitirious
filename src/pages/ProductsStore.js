@@ -36,17 +36,17 @@ function Store() {
         </BlockOne>
         
         <QuickAccess>
-          <ProductCard image={image1} productName='Product Name' price='$237.23'/>
-          <ProductCard image={image3} productName='Product Name' price='$237.23'/>
-          <ProductCard image={image4 } productName='Product Name' price='$237.23'/>
-          <ProductCard image={image2} productName='Product Name' price='$237.23'/>
-          <ProductCard image={image3} productName='Product Name' price='$237.23'/>
+          <ProductCard image={image1} name='Product Name' price='$237.23'/>
+          <ProductCard image={image3} name='Product Name' price='$237.23'/>
+          <ProductCard image={image4 } name='Product Name' price='$237.23'/>
+          <ProductCard image={image2} name='Product Name' price='$237.23'/>
+          <ProductCard image={image3} name='Product Name' price='$237.23'/>
         </QuickAccess>
 
         <BlockThree>
           <If condition={ products }>
             <For each='product' of={products}>
-              <ProductCard image={product.image} productName={product.name} price='$237.23'/>
+              <ProductCard image={product.image} name={product.name} price='$237.23'/>
             </For>
           </If>
         </BlockThree>
@@ -57,11 +57,11 @@ function Store() {
         </BlockTwo>
 
         <BlockFive>
-          <ProductCard image={image1} productName='Product Name' price='$237.23' />
-          <ProductCard image={image1} productName='Product Name' price='$237.23'/>
-          <ProductCard image={image3} productName='Product Name' price='$237.23'/>
-          <ProductCard image={image4} productName='Product Name' price='$237.23'/>
-          <ProductCard image={image1} productName='Product Name' price='$237.23'/>
+          <ProductCard image={image1} name='Product Name' price='$237.23' />
+          <ProductCard image={image1} name='Product Name' price='$237.23'/>
+          <ProductCard image={image3} name='Product Name' price='$237.23'/>
+          <ProductCard image={image4} name='Product Name' price='$237.23'/>
+          <ProductCard image={image1} name='Product Name' price='$237.23'/>
         </BlockFive>
       </Wrapper>
       <FooterBlock />
@@ -157,22 +157,18 @@ const BlockTwo = styled.div`
 const BlockThree = styled.div`
   grid-area: main;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background-color: white;
   gap: 10px;
   padding: 20px;
 
    
  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  @media screen and (max-width: 820px) {
     grid-template-columns: repeat(3, 1fr);
   }
-  
- @media screen and (max-width: 680px) {
-    grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: repeat(7, 1fr);
   }
 `
 

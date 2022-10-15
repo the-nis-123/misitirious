@@ -9,9 +9,7 @@ export const misitiriousApi = createApi({
     getAllProducts: builder.query({ query: () => "store" }),
     getAllProductById: builder.query({ query: ( id ) => `store/${id}` }),
     getAllProductByCategory: builder.query({ query: ( category ) => `store/${category}` }),
-    getAllEvents: builder.query({ query: () => "events" }),
-    getAllEventById: builder.query({ query: ( id ) => `events/${id}` }),
-    getAllPosts: builder.query({ query: () => "posts" }),
+    getAllCategories: builder.query({ query: () => "categories" }),
     getGallery: builder.query({ query: () => "gallery" }),
     getAllPosters: builder.query({ query: () => "posters" }),
   }),
@@ -22,9 +20,7 @@ export const {
   useGetAllProductsQuery,
   useGetAllProductByIdQuery,
   useGetAllProductByCategoryQuery,
-  useGetAllEventsQuery,
-  useGetAllEventByIdQuery,
-  useGetAllPostsQuery,
   useGetGalleryQuery,
-  useGetAllPostersQuery
+  useGetAllPostersQuery,
+  useGetAllCategoriesQuery
 } = misitiriousApi;
