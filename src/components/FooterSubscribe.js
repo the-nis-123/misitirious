@@ -25,25 +25,25 @@ const FooterSubscribe = () => {
       </form>
 
       <FooterIcons>
-        <Link to='/'>
+        <a href='https://github.com/the-nis-123'  target="_blank" rel="noopener noreferrer">
           <InstagramWithCircle />
-        </Link>
+        </a>
         
-        <Link to='/'>
+        <a href='https://github.com/the-nis-123'  target="_blank" rel="noopener noreferrer">
           <FacebookWithCircle />
-        </Link>
+        </a>
 
-        <Link to='/'>
+        <a href='https://twitter.com/niscloud_kintu'  target="_blank" rel="noopener noreferrer">
           <TwitterWithCircle />
-        </Link>
+        </a>
 
-        <Link to='/'>
+        <a href='https://github.com/the-nis-123'  target="_blank" rel="noopener noreferrer">
           <GithubWithCircle />
-        </Link>
+        </a>
 
-        <Link to='/'>
+        <a href='https://www.linkedin.com/in/kintu-denis/'  target="_blank" rel="noopener noreferrer">
           <LinkedinWithCircle />
-        </Link>
+        </a>
       </FooterIcons>
     </Wrapper>
   )
