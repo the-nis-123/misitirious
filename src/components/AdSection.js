@@ -7,7 +7,7 @@ import image22 from '../images/27.png';
 const AdSection = () => {
   return (
     <Wrapper>
-      <h2> Top salers from MISITIRIOUS partners</h2>
+      <h2> From our partners</h2>
       <Section>
         <section style={{ backgroundImage: `url(${image10})` }} />
         <section  style={{ backgroundImage: `url(${image22})` }}/>
