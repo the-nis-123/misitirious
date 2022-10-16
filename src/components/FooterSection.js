@@ -1,10 +1,19 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 
-const FooterAbout = ({children}) => {
+const FooterAbout = () => {
   return (
-    <Wrapper>{ children }</Wrapper>
+  <Wrapper>
+    <h3>PRODUCTS AND SERVICES</h3>
+    <p>About us</p>
+    <p>Contact us</p>
+    <p>Our Partners</p>
+    <p>Career Opportunities</p>
+    <p>Frequently asked quetions</p>
+    <p>About us</p>
+    <p>Contact us</p>
+    <p>Our Partners</p>
+  </Wrapper>
   )
 }
 

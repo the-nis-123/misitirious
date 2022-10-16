@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FooterBlock from "../components/FooterBlock";
+import FooterBlock from "../components/Footer";
 import CartProduct from "../components/CartProduct";
 
 import image1 from '../images/445.png';

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import FooterBlock from "../components/FooterBlock";
+import FooterBlock from "../components/Footer";
 import HeroSlider from "../components/HeroSlider";
 import ProductCard from "../components/ProductCard";
 import QuickBuyBlock from "../components/QuickBuyBlock";

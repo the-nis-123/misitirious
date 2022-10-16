@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FooterAbout from "./FooterAbout";
+import FooterAbout from "./FooterSection";
 import FooterSubscribe from "./FooterSubscribe";
 
 const FooterBlock = () => {
@@ -8,45 +8,14 @@ const FooterBlock = () => {
       <Section>
         <FooterSubscribe />
 
-        <FooterAbout>
-          <h3>PRODUCTS AND SERVICES</h3>
-          <p>About us</p>
-          <p>Contact us</p>
-          <p>Our Partners</p>
-          <p>Career Opportunities</p>
-          <p>Frequently asked quetions</p>
-          <p>About us</p>
-          <p>Contact us</p>
-          <p>Our Partners</p>
-        </FooterAbout>
-
-        <FooterAbout>
-          <h3>EVENTS</h3>
-          <p>About us</p>
-          <p>Contact us</p>
-          <p>Our Partners</p>
-          <p>Career Opportunities</p>
-          <p>Frequently asked quetions</p>
-        </FooterAbout>
-
-        <FooterAbout>
-          <h3>COMPANY</h3>
-          <p>About us</p>
-          <p>Contact us</p>
-          <p>Our Partners</p>
-          <p>Career Opportunities</p>
-          <p>Frequently asked quetions</p>
-          <p>About us</p>
-          <p>Contact us</p>
-          <p>Our Partners</p>
-          <p>Career Opportunities</p>
-          <p>Frequently asked quetions</p>
-        </FooterAbout>
+        <FooterAbout />
+        <FooterAbout />
+        <FooterAbout />
       </Section>
-      
+          
       <LowerSection>
         <section>
-          <span>@2022 Misitirious Inc.   </span>
+          <span>&copy;{new Date().getFullYear()} Misitirious Inc.   </span>
           <span>All rights reserved.</span>
         </section>
 
