@@ -10,27 +10,35 @@ import image4 from '../images/667.png';
 function Cart() {
   return (
     <>
-      <Wrapper>
-        <BlockThree >
-          <Table>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Amount</th>
-              <th>Actions</th>
-            </tr>
-            <CartProduct image={image1} />
-            <CartProduct image={image3}/>
-            <CartProduct image={image4}/>
-            <CartProduct image={image2}/>
-          </Table>
-        </BlockThree>
+      <PageWrapper>
+        <SideBar>
 
-        <BlockFive>
-          <h4>Checkout form</h4>
-        </BlockFive>
-      </Wrapper>
+        </SideBar>
+
+        <div>
+          <h2>Shopping Cart</h2>
+          <BlockThree >
+            <Table>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+                <th>Actions</th>
+              </tr>
+              <CartProduct image={image1} />
+              <CartProduct image={image3}/>
+              <CartProduct image={image4}/>
+              <CartProduct image={image2}/>
+            </Table>
+          </BlockThree>
+
+          <BlockFive>
+            <h4>Proceed to checkout</h4>
+          </BlockFive>
+        </div>
+      </PageWrapper>
+    
       <FooterBlock />
     </>
   )
@@ -38,11 +46,19 @@ function Cart() {
 
 export default Cart;
 
-const Wrapper = styled.div`
+
+const PageWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: white;
-  padding: 20px 30px;
+  grid-template-columns: 1fr 3fr;
+  background-color: inherit;
+`
+
+const Wrapper = styled.div`
+  background-color: inherit;
+
+  h2{
+    padding: 10px 0;
+  }
 `
 
 const BlockThree = styled.div`
@@ -68,4 +84,10 @@ const Table = styled.table`
 const BlockFive = styled.div`
 padding: 30px;
  background-color: white;
+`
+
+
+const SideBar = styled.div`
+  padding: 30px;
+  background-color: white;
 `

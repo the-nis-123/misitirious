@@ -19,9 +19,7 @@ const Header = () => {
         <h2>MISITIRIOUS</h2>
       </Section>
 
-      <section>
-        <input type='text' placeholder='search' />
-      </section>
+      <SearchForm type='text' placeholder='search' />
       
       <Section>
         <Section>
@@ -47,7 +45,7 @@ const Wrapper  = styled.header`
   display:flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #d9d8dd;
+  border-bottom: 1px solid #d9d8dd; 
 `
 
 const Section  = styled.section`
@@ -72,4 +70,12 @@ const Logo  = styled.img`
   width:60px;
   height: auto;
   margin-right: 10px;
+`
+
+const SearchForm = styled.input`
+  border: 1px solid #E8E8E8;
+  outline: none;
+  padding: 10px 35px;
+  background-color: white;
+  width: 40%;
 `

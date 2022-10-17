@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import FooterBlock from "../components/Footer";
 import ProductCard from "../components/ProductCard";
+import QuickFilters from "../components/QuickFilters";
 
 
 import {
@@ -23,47 +24,45 @@ function Store() {
   
   return (
     <>
-      <Wrapper>
-        <BlockOne>
-          <p>Trending</p>
-          <p>Misitirious Essentials</p>
-          <p>Fragrance</p>
-          <p>Misitirious Kids</p>
-          <p>Vintage</p>
-          <p>Misitirious Kings</p>
-          <p>Misitirious Queens</p>
-          <p>Featured</p>
-        </BlockOne>
-        
-        <QuickAccess>
-          <ProductCard image={image1} name='Product Name' price='$237.23'/>
-          <ProductCard image={image3} name='Product Name' price='$237.23'/>
-          <ProductCard image={image4 } name='Product Name' price='$237.23'/>
-          <ProductCard image={image2} name='Product Name' price='$237.23'/>
-          <ProductCard image={image3} name='Product Name' price='$237.23'/>
-        </QuickAccess>
+      <PageWrapper>
+        <SideBar>
 
-        <BlockThree>
-          <If condition={ products }>
-            <For each='product' of={products}>
-              <ProductCard image={product.image} name={product.name} price='$237.23'/>
-            </For>
-          </If>
-        </BlockThree>
+        </SideBar>
 
-        <BlockTwo>
-          <ProductCard image={image5} />
-          <ProductCard image={image6} />
-        </BlockTwo>
+        <Wrapper>
+          <QuickFilters />
+          
+          <QuickAccess>
+            <ProductCard image={image1} name='Product Name' price='$237.23'/>
+            <ProductCard image={image3} name='Product Name' price='$237.23'/>
+            <ProductCard image={image4 } name='Product Name' price='$237.23'/>
+            <ProductCard image={image2} name='Product Name' price='$237.23'/>
+            <ProductCard image={image3} name='Product Name' price='$237.23'/>
+          </QuickAccess>
 
-        <BlockFive>
-          <ProductCard image={image1} name='Product Name' price='$237.23' />
-          <ProductCard image={image1} name='Product Name' price='$237.23'/>
-          <ProductCard image={image3} name='Product Name' price='$237.23'/>
-          <ProductCard image={image4} name='Product Name' price='$237.23'/>
-          <ProductCard image={image1} name='Product Name' price='$237.23'/>
-        </BlockFive>
-      </Wrapper>
+          <BlockThree>
+            <If condition={ products }>
+              <For each='product' of={products}>
+                <ProductCard image={product.image} name={product.name} price='$237.23'/>
+              </For>
+            </If>
+          </BlockThree>
+
+          <BlockTwo>
+            <ProductCard image={image5} />
+            <ProductCard image={image6} />
+          </BlockTwo>
+
+          <BlockFive>
+            <ProductCard image={image1} name='Product Name' price='$237.23' />
+            <ProductCard image={image1} name='Product Name' price='$237.23'/>
+            <ProductCard image={image3} name='Product Name' price='$237.23'/>
+            <ProductCard image={image4} name='Product Name' price='$237.23'/>
+            <ProductCard image={image1} name='Product Name' price='$237.23'/>
+          </BlockFive>
+        </Wrapper>
+      </PageWrapper>
+
       <FooterBlock />
     </>
   )
@@ -74,7 +73,7 @@ export default Store;
 const Wrapper = styled.div`
   display: grid;
   grid-template-areas:
-  'header header header header header header'
+  'filters filters filters filters filters filters'
   'quick quick quick quick quick quick'
   'menu menu menu menu menu menu'
   'main main main main main main'
@@ -85,42 +84,13 @@ const Wrapper = styled.div`
 `
 
 
-const BlockOne = styled.div`
-  grid-area: header;
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  p{
-    border: 1px solid #c2c2c2;
-    padding: 7px 20px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-    
-  @media screen and (max-width: 1024px) {
-      display:grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media screen and (max-width: 820px) {
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    
-  @media screen and (max-width: 680px) {
-      display:grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
 
 
 
 const QuickAccess = styled.div`
   grid-area: quick;
   display:grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 20px;
 
@@ -157,7 +127,7 @@ const BlockTwo = styled.div`
 const BlockThree = styled.div`
   grid-area: main;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   background-color: white;
   gap: 10px;
   padding: 20px;
@@ -175,7 +145,7 @@ const BlockThree = styled.div`
 const BlockFive = styled.div`
   grid-area: footer;
   display:grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 20px;
   background-color: white;
@@ -188,4 +158,15 @@ const BlockFive = styled.div`
  @media screen and (max-width: 680px) {
     grid-template-columns: repeat(2, 1fr);
   }
+`
+
+const SideBar = styled.div`
+  padding: 30px;
+  background-color: white;
+`
+
+const PageWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: inherit;
 `

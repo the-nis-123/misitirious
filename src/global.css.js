@@ -14,6 +14,7 @@ export default createGlobalStyle`
     width: 100%;
     overflow-y: auto;
     background-color: #f2f2f2;
+    position:relative;
   }
 
   ::-webkit-scrollbar{
