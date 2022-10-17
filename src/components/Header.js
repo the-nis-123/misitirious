@@ -18,11 +18,15 @@ const Header = () => {
         <Logo src={logo} alt='' />
         <h2>MISITIRIOUS</h2>
       </Section>
+
+      <section>
+        <input type='text' placeholder='search' />
+      </section>
       
       <Section>
         <Section>
           <Link to='/'> {IconWithStyles(Home)} </Link>
-          <Link to='/'> { IconWithStyles(Search) } </Link>
+          <Link to='/store'> { IconWithStyles(Search) } </Link>
           <Link to='/store'> { IconWithStyles(ShoppingBag) } </Link>
           <Link to='/cart'> { IconWithStyles(ShoppingCart) } </Link>
         </Section>

@@ -7,11 +7,12 @@ export const misitiriousApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
   endpoints: ( builder ) => ({
     getAllProducts: builder.query({ query: () => "store" }),
-    getAllProductById: builder.query({ query: ( id ) => `store/${id}` }),
-    getAllProductByCategory: builder.query({ query: ( category ) => `store/${category}` }),
+    getAllProductById: builder.query({ query: ( id ) => `store?id=${id}` }),
+    getAllProductByCategory: builder.query({ query: ( category ) => `store/category=${category}` }),
     getAllCategories: builder.query({ query: () => "categories" }),
     getGallery: builder.query({ query: () => "gallery" }),
     getAllPosters: builder.query({ query: () => "posters" }),
+    getAllPosters: builder.query({ query: (searchQuery) => `store?q=${searchQuery}` }),
   }),
 })
 

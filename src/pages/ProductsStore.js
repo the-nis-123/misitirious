@@ -172,25 +172,6 @@ const BlockThree = styled.div`
   }
 `
 
-const BlockFour = styled.div`
- grid-area: right;
-  height: 220px;  
-  background-position: center;
-  background-size: contain;
-  background-repeat:no-repeat;
-  background-color: white;
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  section{
-    height:100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat:no-repeat;
-  }
-
-`
-
 const BlockFive = styled.div`
   grid-area: footer;
   display:grid;
