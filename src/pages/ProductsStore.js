@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-import FooterBlock from "../components/Footer";
 import ProductCard from "../components/ProductCard";
-import QuickFilters from "../components/QuickFilters";
-
+import StoreSideBar from "../components/StoreSideBar";
+import SearchForm from "../components/SearchForm";
 
 import {
   useGetAllProductsQuery,
@@ -23,48 +22,42 @@ function Store() {
   const { data: products, error: productsError, isLoading: loadingProducts } = useGetAllProductsQuery();
   
   return (
-    <>
-      <PageWrapper>
-        <SideBar>
+    <PageWrapper>
+      <StoreSideBar />
+        
+      <Wrapper>
+        <SearchForm />
+        
+        <QuickAccess>
+          <ProductCard image={image1} name='Product Name' price='$237.23'/>
+          <ProductCard image={image3} name='Product Name' price='$237.23'/>
+          <ProductCard image={image4 } name='Product Name' price='$237.23'/>
+          <ProductCard image={image2} name='Product Name' price='$237.23'/>
+          <ProductCard image={image3} name='Product Name' price='$237.23'/>
+        </QuickAccess>
 
-        </SideBar>
+        <MainBody>
+          <If condition={ products }>
+            <For each='product' of={products}>
+              <ProductCard image={product.image} name={product.name} price='$237.23'/>
+            </For>
+          </If>
+        </MainBody>
 
-        <Wrapper>
-          <QuickFilters />
-          
-          <QuickAccess>
-            <ProductCard image={image1} name='Product Name' price='$237.23'/>
-            <ProductCard image={image3} name='Product Name' price='$237.23'/>
-            <ProductCard image={image4 } name='Product Name' price='$237.23'/>
-            <ProductCard image={image2} name='Product Name' price='$237.23'/>
-            <ProductCard image={image3} name='Product Name' price='$237.23'/>
-          </QuickAccess>
+        <Poster>
+          <ProductCard image={image5} />
+          <ProductCard image={image6} />
+        </Poster>
 
-          <BlockThree>
-            <If condition={ products }>
-              <For each='product' of={products}>
-                <ProductCard image={product.image} name={product.name} price='$237.23'/>
-              </For>
-            </If>
-          </BlockThree>
-
-          <BlockTwo>
-            <ProductCard image={image5} />
-            <ProductCard image={image6} />
-          </BlockTwo>
-
-          <BlockFive>
-            <ProductCard image={image1} name='Product Name' price='$237.23' />
-            <ProductCard image={image1} name='Product Name' price='$237.23'/>
-            <ProductCard image={image3} name='Product Name' price='$237.23'/>
-            <ProductCard image={image4} name='Product Name' price='$237.23'/>
-            <ProductCard image={image1} name='Product Name' price='$237.23'/>
-          </BlockFive>
-        </Wrapper>
-      </PageWrapper>
-
-      <FooterBlock />
-    </>
+        <BottomRow>
+          <ProductCard image={image1} name='Product Name' price='$237.23' />
+          <ProductCard image={image1} name='Product Name' price='$237.23'/>
+          <ProductCard image={image3} name='Product Name' price='$237.23'/>
+          <ProductCard image={image4} name='Product Name' price='$237.23'/>
+          <ProductCard image={image1} name='Product Name' price='$237.23'/>
+        </BottomRow>
+      </Wrapper>
+    </PageWrapper>
   )
 }
 
@@ -73,7 +66,7 @@ export default Store;
 const Wrapper = styled.div`
   display: grid;
   grid-template-areas:
-  'filters filters filters filters filters filters'
+  'search search search search search search'
   'quick quick quick quick quick quick'
   'menu menu menu menu menu menu'
   'main main main main main main'
@@ -81,11 +74,9 @@ const Wrapper = styled.div`
   'footer footer footer footer footer footer';
 
   padding: 20px 10px;
+  overflow-y:auto;
+  overflow-x:hidden;
 `
-
-
-
-
 
 const QuickAccess = styled.div`
   grid-area: quick;
@@ -93,7 +84,6 @@ const QuickAccess = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 20px;
-
   
   @media screen and (max-width: 820px) {
     grid-template-columns: repeat(3, 1fr);
@@ -104,11 +94,10 @@ const QuickAccess = styled.div`
   }
 `
 
-const BlockTwo = styled.div`
+const Poster = styled.div`
   grid-area: menu;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: white;
 
   section{
     height:100%;
@@ -124,14 +113,12 @@ const BlockTwo = styled.div`
 
 `
 
-const BlockThree = styled.div`
+const MainBody = styled.div`
   grid-area: main;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: white;
   gap: 10px;
   padding: 20px;
-
    
  @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
@@ -142,14 +129,12 @@ const BlockThree = styled.div`
   }
 `
 
-const BlockFive = styled.div`
+const BottomRow = styled.div`
   grid-area: footer;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   padding: 20px;
-  background-color: white;
-
   
   @media screen and (max-width: 820px) {
     grid-template-columns: repeat(3, 1fr);
@@ -160,13 +145,11 @@ const BlockFive = styled.div`
   }
 `
 
-const SideBar = styled.div`
-  padding: 30px;
-  background-color: white;
-`
-
 const PageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   background-color: inherit;
+  height: calc(100vh - 70px);
+  width: 100%;
+  overflow: hidden;
 `

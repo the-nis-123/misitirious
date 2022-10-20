@@ -1,62 +1,118 @@
 import styled from "styled-components";
-import { AddCircle } from '@styled-icons/remix-line/AddCircle';
-import { MinusCircle } from '@styled-icons/heroicons-outline/MinusCircle';
-import { DeleteForever } from '@styled-icons/material-rounded/DeleteForever';
+import { Trash } from '@styled-icons/feather/Trash';
 
 const CartProduct = ({name, image, qty, price}) => {
   return (
-    <Wrapper>
-      <Product>
-        <Image src={image} />
-        <p>mist jacket</p>
-      </Product>
+    <Product>
+      <Image> 
+        <div style={{backgroundImage:`url(${image})`}}/> 
+      </Image>
 
-      <Price>$870</Price>
+      <div>
+        <Name>mist jacket</Name>
+        <p>$870</p>
+      </div>
 
-      <Quantity>1</Quantity>
+      <TrashIcon>
+        <Trash />
+      </TrashIcon>
 
-      <Price>$870</Price>
-      
-      <Actions>
-        <MinusCircle size='20px' color="orange"/>
-        <AddCircle size='20px' color="green" style={{margin:'0 15px'}} />
-        <DeleteForever size='20px' color="red"/>
-      </Actions>
-    </Wrapper>
+      <Buttons>
+        <Icon>
+          <span>-</span>
+        </Icon>
+
+        <span>0</span>
+
+        <Icon>
+          <span>+</span>
+        </Icon>
+      </Buttons>
+    </Product>
   )
 }
 
 export default CartProduct;
 
-
-const Wrapper = styled.tr`
-  width: 100%;
-`;
-
-const Product = styled.td`
+const Product = styled.div`
   display:flex;
-  align-items: center
+  align-items:center;
+  min-width: 100%;
+  border-radius: 5px;
+  margin: 3px 0;
+  background-color: white;
+  color: gray;
+  position:relative;
 `;
 
 
-const Image = styled.img`
-  height: 50px;
-  width: auto;
+const Image = styled.section`
+  height: 80px;
+  width: 100px;
   margin-right:15px;
+  padding: 10px;
+
+
+  div{
+    width:100%;
+    height:100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
 `;
 
-const Quantity = styled.td`
+const Name = styled.p`
+  width:200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 5; 
+`
 
-`;
+const TrashIcon = styled.section`
+  position: absolute;
+  top:10px;
+  right:10px;
 
-const Price = styled.td`
-
-`;
-
-const Actions = styled.td`
   svg{
-    :hover{
+    width: 15px;
+    color:red;
+  }
+
+  :hover{
+    svg{
       cursor:pointer;
     }
   }
 `;
+
+const Buttons = styled.section`
+  display:flex;
+  align-items:center;
+  gap:10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 3px 5px;
+
+  svg{
+    width: 20px;
+  }
+`;
+
+const Icon = styled.p`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  :hover{
+    background-color:#f2f2f2;
+    cursor:pointer;
+  }
+`

@@ -1,93 +1,84 @@
 import styled from "styled-components";
-import FooterBlock from "../components/Footer";
 import CartProduct from "../components/CartProduct";
+import CartSideBar from "../components/CartSideBar";
+import { DhlAgent } from "../components/ShippingAgentCard";
+import { FedexAgent } from "../components/ShippingAgentCard";
+import CheckOutForm from "../components/CheckOutForm";
 
 import image1 from '../images/445.png';
 import image2 from '../images/443.png';
 import image3 from '../images/675.png';
 import image4 from '../images/667.png';
 
-function Cart() {
+function CartWrapper() {
   return (
-    <>
-      <PageWrapper>
-        <SideBar>
+    <PageWrapper>
+      <CartSideBar />
 
-        </SideBar>
+      <Wrapper>
+        <h2>Shopping Cart</h2>
 
-        <div>
-          <h2>Shopping Cart</h2>
-          <BlockThree >
-            <Table>
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Amount</th>
-                <th>Actions</th>
-              </tr>
-              <CartProduct image={image1} />
-              <CartProduct image={image3}/>
-              <CartProduct image={image4}/>
-              <CartProduct image={image2}/>
-            </Table>
-          </BlockThree>
+        <CheckOut>
+          <Column>
+            <h3>Order summary</h3>
+            
+            <CartProduct image={image1} />
+            <CartProduct image={image3}/>
+            <CartProduct image={image4}/>
+            <CartProduct image={image2}/>
 
-          <BlockFive>
-            <h4>Proceed to checkout</h4>
-          </BlockFive>
-        </div>
-      </PageWrapper>
-    
-      <FooterBlock />
-    </>
+            <h4>Our shipping partners</h4>
+            <FedexAgent />
+            <p>International shipping</p>
+            <DhlAgent />
+          </Column>
+
+          <CheckOutForm />
+        </CheckOut>
+      </Wrapper>
+    </PageWrapper>
   )
 }
 
-export default Cart;
+export default CartWrapper;
 
 
 const PageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   background-color: inherit;
+  height: calc(100vh - 70px);
+  width: 100%;
+  overflow: hidden;
 `
 
 const Wrapper = styled.div`
   background-color: inherit;
+  padding: 20px 10px;
+  overflow-y:auto;
+  overflow-x:hidden;
 
   h2{
-    padding: 10px 0;
+    padding: 0 20px;
+    color:grey;
+    text-transform:uppercase;
   }
 `
-
-const BlockThree = styled.div`
+const CheckOut = styled.div`
   background-color: inherit;
+  display: flex;
+  justify-content:space-between
+  width:100%;
+  gap: 15px;
 `
-const Table = styled.table`
-  width: 100%;
-  overflow-x: auto;
-  
-  th{
-     color: #de9c9d;
-     background-color: grey;
+
+const Column = styled.div`
+  background-color:inherit;
+  width: 50%;
+  padding: 20px;
+  h5{
+    margin-top: 10px;
+    padding: 5px 0;
   }
-
-  th, td {
-    padding: 7px 15px;
-    text-align: left;
-  }
-
-  tr:nth-child(odd) {background-color: #f8f8f8;}
 `
 
-const BlockFive = styled.div`
-padding: 30px;
- background-color: white;
-`
-
-
-const SideBar = styled.div`
-  padding: 30px;
-  background-color: white;
-`

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import FooterBlock from "../components/Footer";
 import HeroSlider from "../components/HeroSlider";
 import ProductCard from "../components/ProductCard";
 import QuickBuyBlock from "../components/QuickBuyBlock";
@@ -22,28 +21,25 @@ function Cart() {
 
 
   return (
-    <>
-      <Wrapper>
-        <HeroSlider />
-        <QuickBuyBlock />
-        <ProductCategoriesBlock />
+    <Wrapper>
+      <HeroSlider />
+      <QuickBuyBlock />
+      <ProductCategoriesBlock />
 
-        <PostersBlock />
+      <PostersBlock />
 
-        <MainBody>
-           <If condition={ products }>
-            <For each='product' of={products.slice(5, 20)}>
-              <ProductCard image={product.image} name={product.name} price='$237.23'/>
-            </For>
-          </If>
-        </MainBody>
+      <MainBody>
+          <If condition={ products }>
+          <For each='product' of={products.slice(5, 20)}>
+            <ProductCard image={product.image} name={product.name} price='$237.23'/>
+          </For>
+        </If>
+      </MainBody>
 
-        <AdSection />
+      <AdSection />
 
-        <BottomRow />
-      </Wrapper>
-      <FooterBlock />
-    </>
+      <BottomRow />
+    </Wrapper>
   )
 }
 
@@ -61,6 +57,10 @@ const Wrapper = styled.div`
   'bottomRow bottomRow bottomRow bottomRow bottomRow bottomRow';
 
   padding: 20px 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow-y:auto;
+  overflow-x:hidden;
 `
 
 const MainBody = styled.div`

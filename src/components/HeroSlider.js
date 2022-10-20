@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import image from '../images/127.png';
-import SideBarIcons from "./SideBarIcons";
+import SideBarIcons from "./HeroSocialIcons";
 import IconWithStyles from "./IconWithStyles";
 
 import { TwitterWithCircle } from '@styled-icons/entypo-social/TwitterWithCircle';
