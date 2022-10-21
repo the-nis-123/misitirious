@@ -5,8 +5,6 @@ import Button from './Button';
 
 import IconWithStyles from './IconWithStyles';
 
-import { Home } from '@styled-icons/feather/Home';
-import { ShoppingBag } from '@styled-icons/feather/ShoppingBag';
 import { ShoppingCart } from '@styled-icons/feather/ShoppingCart';
 import { Search } from '@styled-icons/feather/Search';
 
@@ -18,12 +16,20 @@ const Header = () => {
         <Logo src={logo} alt='' />
         <h2>MISITIRIOUS</h2>
       </Section>
+
+      <MenuLinks >
+        <Link to='/'> Home </Link>
+        <Link to='/store'> Our Store</Link>
+        <Link to='/store'> Kids </Link>
+        <Link to='/store'> Accessories </Link>
+        <Link to='/store'>Men</Link>
+        <Link to='/store'> Women </Link>
+        <Link to='/store'> Footware </Link>
+      </MenuLinks>
  
       <Section>
         <Section>
-          <Link to='/'> {IconWithStyles(Home)} </Link>
           <Link to='/store'> { IconWithStyles(Search) } </Link>
-          <Link to='/store'> { IconWithStyles(ShoppingBag) } </Link>
           <Link to='/cart'> { IconWithStyles(ShoppingCart) } </Link>
         </Section>
 
@@ -44,6 +50,24 @@ const Wrapper  = styled.header`
   justify-content: space-between;
   align-items: center;
 `
+const MenuLinks = styled.section`
+  display: flex;
+  align-items:center;
+
+  a{
+    display:inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    white-space:nowrap;
+    color: black;
+    padding: 5px;
+    border-bottom: 2px solid #f8f8f8;
+
+    :hover{
+      border-bottom: 2px solid red;
+    }
+  }
+`;
 
 const Section  = styled.section`
   display: flex;

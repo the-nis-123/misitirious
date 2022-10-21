@@ -5,7 +5,7 @@ import RoutesProtector from './RoutesProtector';
 import Home from './pages/Home';
 import Store from './pages/ProductsStore';
 import Cart from './pages/Cart';
-import ProductDetails from './pages/ProductDetails';
+import ProductDetails from './pages/ProductDetailsPage';
 
 const AppRoutes = () => {
 

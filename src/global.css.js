@@ -15,12 +15,5 @@ export default createGlobalStyle`
     overflow-y: auto;
     background-color: #f2f2f2;
     position:relative;
-  }
-
-  ::-webkit-scrollbar{
-    display: none;
-    background: #0a000a;
-  }
+  } 
 `;
-
-

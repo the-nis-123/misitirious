@@ -4,10 +4,7 @@ import ProductCard from "../components/ProductCard";
 import StoreSideBar from "../components/StoreSideBar";
 import SearchForm from "../components/SearchForm";
 import { useGetAllProductsQuery } from '../redux/misitiriousApi';
-
-import image5 from '../images/983.jpg';
-import image6 from '../images/645.jpg';
-
+import ProductDetaials from "../components/ProductDetaials";
 
 function Store() {
   const { data: products, error: productsError, isLoading: loadingProducts } = useGetAllProductsQuery();
@@ -19,10 +16,7 @@ function Store() {
       <Wrapper>
         <SearchForm />
 
-        <ProductInfo>
-          <ProductCard image={image5} />
-          <ProductCard image={image6} />
-        </ProductInfo>
+        <ProductDetaials />
         
         <MainBody>
           <h2>Similar Products</h2>
@@ -57,24 +51,6 @@ const Wrapper = styled.div`
   padding: 10px 0;
   overflow-y:auto;
   overflow-x:hidden;
-`
-
-const ProductInfo = styled.div`
-  grid-area: product;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  section{
-    height:100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat:no-repeat;
-  }
-  
-  padding: 20px;
-  @media screen and (max-width: 680px) {
-    grid-template-columns: 1fr;
-  }
 `
 
 const MainBody = styled.div`

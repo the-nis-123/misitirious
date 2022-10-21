@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   border: 1px solid #c2c2c2;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display:flex;
   align-items:center;

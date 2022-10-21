@@ -2,20 +2,27 @@ import styled from "styled-components";
 import { CartAdd } from '@styled-icons/boxicons-solid/CartAdd';
 import { Heart } from '@styled-icons/feather/Heart';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { addToWishlist, addToCart } from '../redux/features/productSlice';
 
 const ProductCard = ({image, name, price, id}) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const {isInCart, isInWishList} = useSelector((state) => state.cart);
 
   const navigateToProductDetails = () => {
     navigate(`/store/${id}`);
   };
 
-  const addToCart = (e) => {
+  const handleAddToCart = (e) => {
     e.stopPropagation();
+    dispatch(addToCart({id}));
   };
 
-  const addToWishlist = (e) => {
+  const handleAddToWishlist = (e) => {
     e.stopPropagation();
+    dispatch(addToWishlist({id}));
   };
 
   return (
@@ -24,7 +31,7 @@ const ProductCard = ({image, name, price, id}) => {
         <Wrapper onClick={navigateToProductDetails}>
           <FlexContainer>
             <p>{ name }</p> 
-            <Heart size='20px' onClick={addToWishlist} />
+            <Heart size='20px' onClick={handleAddToWishlist} />
           </FlexContainer>
 
           <Image style={{ backgroundImage: `url(${image})` }} />
@@ -35,7 +42,7 @@ const ProductCard = ({image, name, price, id}) => {
           </Description>
 
           <FlexContainer>
-            <BuyIcon onClick={addToCart} >
+            <BuyIcon onClick={handleAddToCart} >
               <CartAdd size='30px'/>
             </BuyIcon>
 

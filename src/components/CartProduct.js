@@ -1,7 +1,18 @@
 import styled from "styled-components";
 import { Trash } from '@styled-icons/feather/Trash';
 
+import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement, removeFromcart } from '../redux/features/cartSlice';
+
+
+
 const CartProduct = ({name, image, qty, price}) => {
+  const dispatch = useDispatch();
+  const handleDecrement = () => dispatch(decrement());
+  const handleIncrement = () => dispatch(increment());
+  const handleRemoveFromCart = () => dispatch(removeFromcart());
+
+  
   return (
     <Product>
       <Image> 
@@ -14,18 +25,18 @@ const CartProduct = ({name, image, qty, price}) => {
       </div>
 
       <TrashIcon>
-        <Trash />
+        <Trash onClick={handleRemoveFromCart}/>
       </TrashIcon>
 
       <Buttons>
-        <Icon>
+        <Icon onClick={handleDecrement}>
           <span>-</span>
         </Icon>
 
         <span>0</span>
 
         <Icon>
-          <span>+</span>
+          <span onClick={handleIncrement}>+</span>
         </Icon>
       </Buttons>
     </Product>
