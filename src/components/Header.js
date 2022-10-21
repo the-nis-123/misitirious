@@ -39,7 +39,7 @@ const Wrapper  = styled.header`
   width: 100%;
   padding: 10px;
   height: 70px;
-  background-color: white;
+  background-color: #f8f8f8;
   display:flex;
   justify-content: space-between;
   align-items: center;

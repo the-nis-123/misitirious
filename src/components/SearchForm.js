@@ -2,19 +2,29 @@ import styled from 'styled-components';
 
 const SearchForm = () => {
   return (
-    <Wrapper>
-      <p>search</p>
-      < Search />
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <p>search</p>
+        < Search />
+      </Wrapper>
+    </Container>
+    
   )
 }
 
 export default SearchForm;
 
 
-const Wrapper = styled.div`
+
+const Container = styled.div`
   grid-area:search;
+  margin-top: 10px;
+`
+
+const Wrapper = styled.div`
   border: 1px solid #c2c2c2;
+  width: 80%;
+  margin: 0 auto;
   display:flex;
   align-items:center;
   color:grey;
@@ -23,7 +33,7 @@ const Wrapper = styled.div`
   }
 `
 const Search = styled.input`
-  border-right: 1px solid #c2c2c2;
+  border-right: none;
   border-left: 1px solid #c2c2c2;
   border-bottom:none;
   border-top:none;

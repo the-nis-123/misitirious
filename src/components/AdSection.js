@@ -22,7 +22,7 @@ export default AdSection;
 const Wrapper = styled.div`
   grid-area: adSection;
   padding: 20px;
-  background-color: white;
+  background-color: inherit;
 `
 
 const Section = styled.div`

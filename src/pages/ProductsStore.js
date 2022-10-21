@@ -39,7 +39,13 @@ function Store() {
         <MainBody>
           <If condition={ products }>
             <For each='product' of={products}>
-              <ProductCard image={product.image} name={product.name} price='$237.23'/>
+              <ProductCard 
+                image={product.image} 
+                name={product.name} 
+                price='$237.23'
+                id={product.id}
+                key={product.id}
+              />
             </For>
           </If>
         </MainBody>
@@ -70,10 +76,9 @@ const Wrapper = styled.div`
   'quick quick quick quick quick quick'
   'menu menu menu menu menu menu'
   'main main main main main main'
-  'right right right right right right'
-  'footer footer footer footer footer footer';
+  'bottom bottom bottom bottom bottom bottom';
 
-  padding: 20px 10px;
+  padding: 10px 0;
   overflow-y:auto;
   overflow-x:hidden;
 `
@@ -130,7 +135,7 @@ const MainBody = styled.div`
 `
 
 const BottomRow = styled.div`
-  grid-area: footer;
+  grid-area: bottom;
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;

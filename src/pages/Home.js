@@ -31,7 +31,13 @@ function Cart() {
       <MainBody>
           <If condition={ products }>
           <For each='product' of={products.slice(5, 20)}>
-            <ProductCard image={product.image} name={product.name} price='$237.23'/>
+            <ProductCard 
+            image={product.image} 
+            name={product.name} 
+            price='$237.23'
+            id={product.id}
+            key={product.id}
+          />
           </For>
         </If>
       </MainBody>

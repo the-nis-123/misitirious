@@ -1,23 +1,16 @@
 import styled from 'styled-components';
+import SideBarSectionWrapper from './SideBarSectionWrapper';
 
 const StoreSideBar = () => {
   return (
     <SideBar>
-      <h3>price</h3>
-      <p>Price</p>
+      <SideBarSectionWrapper title='Products'/>
 
-      <h3>category</h3>
-      <p>Kids</p>
-      <p>Women</p>
-      <p>men</p>
+      <SideBarSectionWrapper title='Price'/>
 
-      <h3>Accessories</h3>
-      <p>Shoes</p>
-      <p>Watches</p>
-      <p>Belts</p>
-      <p>Jewellery</p>
+      <SideBarSectionWrapper title='Accessories'/>
 
-      <h3>Brands</h3>
+      <SideBarSectionWrapper title='Brands'/>
     </SideBar>
   )
 }
@@ -26,7 +19,8 @@ export default StoreSideBar;
 
 
 const SideBar = styled.div`
-  padding: 30px;
-  background-color: white;
+  background-color: #F8F8F8;
   min-width: 300px;
+  overflow-y:auto;
+  overflow-x: hidden;
 `

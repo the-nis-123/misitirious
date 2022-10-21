@@ -1,20 +1,41 @@
 import styled from "styled-components";
 import { CartAdd } from '@styled-icons/boxicons-solid/CartAdd';
 import { Heart } from '@styled-icons/feather/Heart';
+import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({image, name, price}) => {
+const ProductCard = ({image, name, price, id}) => {
+  const navigate = useNavigate();
+
+  const navigateToProductDetails = () => {
+    navigate(`/store/${id}`);
+  };
+
+  const addToCart = (e) => {
+    e.stopPropagation();
+  };
+
+  const addToWishlist = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <>
       <If condition={price !== undefined && name !== undefined}>
-        <Wrapper>
+        <Wrapper onClick={navigateToProductDetails}>
           <FlexContainer>
             <p>{ name }</p> 
-            <Heart size='20px'/>
+            <Heart size='20px' onClick={addToWishlist} />
           </FlexContainer>
 
           <Image style={{ backgroundImage: `url(${image})` }} />
+
+          <Description>
+              Some kind of description about this particular product 
+              and all that other relevant information that customers might be interested in.
+          </Description>
+
           <FlexContainer>
-            <BuyIcon>
+            <BuyIcon onClick={addToCart} >
               <CartAdd size='30px'/>
             </BuyIcon>
 
@@ -39,10 +60,14 @@ const Wrapper = styled.div`
   vertical-align: middle;
   position: relative;
   width: auto;
-  min-height: 350px;
+  height: 320px;
   border-radius: 5px;
-  background-color: white;
+  background-color:  #F8F8F8;
   padding: 0 20px;
+
+  :hover{
+    cursor:pointer;
+  }
  
 `
 const PosterWrapper = styled(Wrapper)`
@@ -50,7 +75,7 @@ const PosterWrapper = styled(Wrapper)`
 `
 
 const Image = styled.div`
-  height: 60%;
+  height: 40%;
   width: 100%;
   background-repeat: no-repeat;
   background-origin: content-box;
@@ -73,6 +98,16 @@ const Price = styled.p`
   font-size: 1.3em;
 `
 
+
+const Description = styled.p`
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+line-clamp: 3; 
+color:grey;
+`
 const FlexContainer = styled.div`
  display:flex;
  justify-content: space-between;
@@ -81,6 +116,11 @@ const FlexContainer = styled.div`
 
  p{
   text-transform: capitalize;
+  verflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
  }
 
  svg{
@@ -92,7 +132,7 @@ const FlexContainer = styled.div`
 `
 
 const BuyIcon = styled.div`
-  background-color: #f2f2f2;
+  background-color: #f0f0f0;
   width:50px;
   height: 50px;
   display: flex;

@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import SideBarSectionWrapper from './SideBarSectionWrapper';
 
 const CartSideBar = () => {
   return (
     <SideBar>
-      <h3>Wishlist</h3>
-      <h3></h3>
-      <h3></h3>
+      <SideBarSectionWrapper title='Wishlist'/>
+
+      <SideBarSectionWrapper title='Saved'/>
+
+      <SideBarSectionWrapper title='Liked'/>
     </SideBar>
   )
 }
@@ -14,7 +17,8 @@ export default CartSideBar;
 
 
 const SideBar = styled.div`
-  padding: 30px;
-  background-color: white;
+  background-color: #F8F8F8;
   min-width: 300px;
+  overflow-y:auto;
+  overflow-x: hidden;
 `

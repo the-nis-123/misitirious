@@ -23,7 +23,7 @@ export default PostersBlock;
 const Wrapper = styled.div`
   grid-area: poster;
   padding: 20px;
-  background-color: white;
+  background-color: inherit;
 `
 
 const Poster = styled.div`
