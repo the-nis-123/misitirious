@@ -71,6 +71,7 @@ const Wrapper = styled.div`
   border-radius: 5px;
   background-color:  #F8F8F8;
   padding: 0 20px;
+  font-family: 'Noto Sans Vai', sans-serif;
 
   :hover{
     cursor:pointer;
@@ -107,14 +108,14 @@ const Price = styled.p`
 
 
 const Description = styled.p`
-overflow: hidden;
-text-overflow: ellipsis;
-display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 2;
-line-clamp: 3; 
-color:grey;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 3; 
 `
+
 const FlexContainer = styled.div`
  display:flex;
  justify-content: space-between;

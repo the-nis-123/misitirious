@@ -79,7 +79,12 @@ const Column = styled.div`
 
 const InputWrapper = styled.section`
   display:flex;
+  justify-content: space-between;
   width: 100%;
+
+  h4,p{
+    padding: 10px 0;
+  }
 `
 const Input = styled.input`
   border: 1px solid #c2c2c2;

@@ -53,6 +53,7 @@ const Wrapper  = styled.header`
 const MenuLinks = styled.section`
   display: flex;
   align-items:center;
+  font-family: 'Noto Sans Vai', sans-serif;
 
   a{
     display:inline-block;

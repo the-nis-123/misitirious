@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import {CaretDownSquare} from '@styled-icons/boxicons-solid/CaretDownSquare';
-import {CaretUpSquare} from '@styled-icons/boxicons-solid/CaretUpSquare';
 import { useState } from 'react';
-
+import {CaretDown} from '@styled-icons/boxicons-regular/CaretDown';
+import {CaretRight} from '@styled-icons/boxicons-regular/CaretRight';
 
 const SideBarSectionWrapper = ({children, title}) => {
   const [show, setShow] = useState(true);
@@ -13,11 +12,11 @@ const SideBarSectionWrapper = ({children, title}) => {
         <h3> { title } </h3>
         <section>
           <If condition={show}>
-            <CaretUpSquare size='20px' onClick={()=>setShow(false)} />
+            <CaretDown size='20px' onClick={()=>setShow(false)} />
           </If>
 
           <If condition={!show}>
-            <CaretDownSquare size='20px' onClick={()=>setShow(true)} />
+            <CaretRight size='20px' onClick={()=>setShow(true)} />
           </If>
         </section>
       </Head>
@@ -25,10 +24,6 @@ const SideBarSectionWrapper = ({children, title}) => {
       <If condition={show}>
         <Content>
           {children}
-          <h3> { title } </h3> 
-          <h3> { title } </h3>
-          <h3> { title } </h3>
-          <h3> { title } </h3>
         </Content>
       </If>
     </Wrapper>
