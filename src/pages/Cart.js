@@ -4,13 +4,24 @@ import CartSideBar from "../components/CartSideBar";
 import { DhlAgent } from "../components/ShippingAgentCard";
 import { FedexAgent } from "../components/ShippingAgentCard";
 import CheckOutForm from "../components/CheckOutForm";
-
-import image1 from '../images/445.png';
-import image2 from '../images/443.png';
-import image3 from '../images/675.png';
-import image4 from '../images/667.png';
+import { useSelector } from "react-redux";
+import {useGetAllFilteredProductsQuery} from '../redux/misitiriousApi';
 
 function CartWrapper() {
+  let cartUrl='';
+  const {cart} = useSelector(state => state.cart);
+
+  if(cart.length>0){
+    let url = '/store?id='+cart[0];
+    for(let i =1; i< cart.length; i++){
+      url += `&id=${cart[i]}`;
+    }
+
+    cartUrl = url;
+  }
+
+  const data = useGetAllFilteredProductsQuery(cartUrl);
+  
   return (
     <PageWrapper>
       <CartSideBar />
@@ -21,12 +32,18 @@ function CartWrapper() {
         <CheckOut>
           <Column>
             <h3>Order summary</h3>
+            <If condition={data?.data}>
+              <For each='item' of={data.data}>
+                <CartProduct 
+                  key={item.id} 
+                  id={item.id} 
+                  image={item.image} 
+                  price={item.price} 
+                  name={item.name} 
+                />
+              </For>
+            </If>
             
-            <CartProduct image={image1} />
-            <CartProduct image={image3}/>
-            <CartProduct image={image4}/>
-            <CartProduct image={image2}/>
-
             <h4>Our shipping partners</h4>
             <FedexAgent />
             <p>International shipping</p>

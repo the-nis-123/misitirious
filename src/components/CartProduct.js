@@ -2,15 +2,15 @@ import styled from "styled-components";
 import { Trash } from '@styled-icons/feather/Trash';
 
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, removeFromcart } from '../redux/features/cartSlice';
+import { increment, decrement, removeFromCart } from '../redux/features/cartSlice';
 
 
 
-const CartProduct = ({name, image, qty, price}) => {
+const CartProduct = ({name, image, price, id}) => {
   const dispatch = useDispatch();
   const handleDecrement = () => dispatch(decrement());
   const handleIncrement = () => dispatch(increment());
-  const handleRemoveFromCart = () => dispatch(removeFromcart());
+  const handleRemoveFromCart = () => dispatch(removeFromCart({id}));
 
   
   return (
@@ -20,8 +20,8 @@ const CartProduct = ({name, image, qty, price}) => {
       </Image>
 
       <div>
-        <Name>mist jacket</Name>
-        <p>$870</p>
+        <Name>{name}</Name>
+        <p>${price}</p>
       </div>
 
       <TrashIcon>

@@ -13,12 +13,11 @@ export const cartSlice = createSlice({
   reducers: {
     addToSavedProducts: (state, action) => {  },
     addToLikedProducts: (state, action) => {  },
-    addToWishlist: (state, action) => {  },
-    addToCart: (state, action) => {  }
+    addToWishlist: (state, action) => {  }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { addToSavedProducts, addToLikedProducts, addToWishlist, addToCart } = cartSlice.actions
+export const { addToSavedProducts, addToLikedProducts, addToWishlist } = cartSlice.actions
 
 export default cartSlice.reducer;

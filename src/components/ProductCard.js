@@ -3,7 +3,9 @@ import { CartAdd } from '@styled-icons/boxicons-solid/CartAdd';
 import { Heart } from '@styled-icons/feather/Heart';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { addToWishlist, addToCart } from '../redux/features/productSlice';
+import { addToCart } from '../redux/features/cartSlice';
+import { addToWishlist } from '../redux/features/productSlice';
+
 
 const ProductCard = ({image, name, price, id}) => {
   const navigate = useNavigate();
@@ -46,7 +48,7 @@ const ProductCard = ({image, name, price, id}) => {
               <CartAdd size='30px'/>
             </BuyIcon>
 
-            <Price>$293.99</Price>
+            <Price>${price}</Price>
           </FlexContainer>
         </Wrapper>
       </If>

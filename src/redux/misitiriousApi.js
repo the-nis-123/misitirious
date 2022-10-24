@@ -7,6 +7,7 @@ export const misitiriousApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
   endpoints: ( builder ) => ({
     getAllProducts: builder.query({ query: () => "store" }),
+    getAllFilteredProducts: builder.query({ query: (urlStr) => urlStr }),
     getProductById: builder.query({ query: ( id ) => `store?id=${id}` }),
     getAllProductByCategory: builder.query({ query: ( category ) => `store/category=${category}` }),
     getAllCategories: builder.query({ query: () => "categories" }),
@@ -19,6 +20,7 @@ export const misitiriousApi = createApi({
 //exporting auto-generated hooks
 export const {
   useGetAllProductsQuery,
+  useGetAllFilteredProductsQuery,
   useGetProductByIdQuery,
   useGetAllProductByCategoryQuery,
   useGetGalleryQuery,
