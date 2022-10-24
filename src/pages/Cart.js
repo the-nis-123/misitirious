@@ -6,6 +6,7 @@ import { FedexAgent } from "../components/ShippingAgentCard";
 import CheckOutForm from "../components/CheckOutForm";
 import { useSelector } from "react-redux";
 import {useGetAllFilteredProductsQuery} from '../redux/misitiriousApi';
+import {Link} from 'react-router-dom';
 
 function CartWrapper() {
   let cartUrl='';
@@ -32,6 +33,7 @@ function CartWrapper() {
         <CheckOut>
           <Column>
             <h3>Order summary</h3>
+
             <If condition={data?.data}>
               <For each='item' of={data.data}>
                 <CartProduct 
@@ -42,6 +44,14 @@ function CartWrapper() {
                   name={item.name} 
                 />
               </For>
+            </If>
+
+            <If condition={!data?.data}>
+              <p style={{
+                padding:"4rem 10px",
+                color:'grey',
+                textAlign:'center'
+              }}>Nothing added to cart, <Link to='/store'>continue shopping</Link></p>
             </If>
             
             <h4>Our shipping partners</h4>

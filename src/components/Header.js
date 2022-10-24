@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import Button from './Button';
+import { useSelector } from 'react-redux';
 
 import IconWithStyles from './IconWithStyles';
 
@@ -9,7 +10,10 @@ import { ShoppingCart } from '@styled-icons/feather/ShoppingCart';
 import { Search } from '@styled-icons/feather/Search';
 
 
+
 const Header = () => {
+const {cart} = useSelector(state => state.cart);
+
   return (
     <Wrapper>
       <Section>
@@ -30,7 +34,15 @@ const Header = () => {
       <Section>
         <Section>
           <Link to='/store'> { IconWithStyles(Search) } </Link>
-          <Link to='/cart'> { IconWithStyles(ShoppingCart) } </Link>
+          <Link to='/cart' style={{position:'relative'}}> 
+            { IconWithStyles(ShoppingCart) } 
+            <span style={{
+              color:'red', 
+              position:'absolute',
+              right:'-10px',
+              top:'-6px'
+            }}>{cart.length}</span>
+          </Link>
         </Section>
 
         <Button to='/'>Login</Button>

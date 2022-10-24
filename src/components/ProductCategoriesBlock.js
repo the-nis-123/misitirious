@@ -32,11 +32,6 @@ const ProductCategories = styled.div`
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-top: 20px;
-
-    
-    @media screen and (max-width: 720px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
   padding: 20px;
 

@@ -13,7 +13,7 @@ export const misitiriousApi = createApi({
     getAllCategories: builder.query({ query: () => "categories" }),
     getGallery: builder.query({ query: () => "gallery" }),
     getAllPosters: builder.query({ query: () => "posters" }),
-    getAllPosters: builder.query({ query: (searchQuery) => `store?q=${searchQuery}` }),
+    getAllSearchResults: builder.query({ query: (searchQuery) => `store?q=${searchQuery}` }),
   }),
 })
 
@@ -25,5 +25,6 @@ export const {
   useGetAllProductByCategoryQuery,
   useGetGalleryQuery,
   useGetAllPostersQuery,
-  useGetAllCategoriesQuery
+  useGetAllCategoriesQuery,
+  useGetAllSearchResultsQuery
 } = misitiriousApi;

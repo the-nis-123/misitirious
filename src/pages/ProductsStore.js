@@ -1,154 +1,54 @@
 import styled from "styled-components";
+import {useState} from 'react';
 
-import ProductCard from "../components/ProductCard";
 import StoreSideBar from "../components/StoreSideBar";
 import SearchForm from "../components/SearchForm";
+import Store from "../components/Store";
+import SearchResults from "../components/SearchResults";
 
-import {
-  useGetAllProductsQuery,
-  useGetAllPostersQuery,
-  useGetGalleryQuery
-} from '../redux/misitiriousApi';
+import {useGetAllProductsQuery, useGetAllSearchResultsQuery } from '../redux/misitiriousApi';
 
-import image1 from '../images/433.png';
-import image2 from '../images/675.png';
-import image3 from '../images/445.png';
-import image4 from '../images/19.png';
-import image5 from '../images/983.jpg';
-import image6 from '../images/645.jpg';
+function StorePage() {
+  const { data: products } = useGetAllProductsQuery();
+  const [query, setQuery] = useState('');
+  const data = useGetAllSearchResultsQuery(query);
 
-
-function Store() {
-  const { data: products, error: productsError, isLoading: loadingProducts } = useGetAllProductsQuery();
-  
   return (
     <PageWrapper>
       <StoreSideBar />
         
       <Wrapper>
-        <SearchForm />
-        
-        <QuickAccess>
-          <ProductCard image={image1} name='Product Name' price='$237.23'/>
-          <ProductCard image={image3} name='Product Name' price='$237.23'/>
-          <ProductCard image={image4 } name='Product Name' price='$237.23'/>
-          <ProductCard image={image2} name='Product Name' price='$237.23'/>
-          <ProductCard image={image3} name='Product Name' price='$237.23'/>
-        </QuickAccess>
+        <SearchForm setQuery={setQuery}/>
 
-        <MainBody>
-          <If condition={ products }>
-            <For each='product' of={products}>
-              <ProductCard 
-                image={product.image} 
-                name={product.name} 
-                price={product.price}
-                id={product.id}
-                key={product.id}
-              />
-            </For>
-          </If>
-        </MainBody>
+        <If condition={query}>
+          <SearchResultsWrapper>
+            <SearchResults data={data}/>
+          </SearchResultsWrapper>
+        </If>
 
-        <Poster>
-          <ProductCard image={image5} />
-          <ProductCard image={image6} />
-        </Poster>
-
-        <BottomRow>
-          <ProductCard image={image1} name='Product Name' price='$237.23' />
-          <ProductCard image={image1} name='Product Name' price='$237.23'/>
-          <ProductCard image={image3} name='Product Name' price='$237.23'/>
-          <ProductCard image={image4} name='Product Name' price='$237.23'/>
-          <ProductCard image={image1} name='Product Name' price='$237.23'/>
-        </BottomRow>
+        <If condition={!query}>
+          <WholeStore>
+            <Store data={products}/>
+          </WholeStore>
+        </If>
       </Wrapper>
     </PageWrapper>
   )
 }
 
-export default Store;
+export default StorePage;
 
 const Wrapper = styled.div`
   display: grid;
   grid-template-areas:
   'search search search search search search'
-  'quick quick quick quick quick quick'
-  'menu menu menu menu menu menu'
-  'main main main main main main'
-  'bottom bottom bottom bottom bottom bottom';
+  'main main main main main main';
 
   padding: 10px 0;
   overflow-y:auto;
   overflow-x:hidden;
 `
 
-const QuickAccess = styled.div`
-  grid-area: quick;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-  
-  @media screen and (max-width: 820px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (max-width: 680px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
-
-const Poster = styled.div`
-  grid-area: menu;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  section{
-    height:100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat:no-repeat;
-  }
-  
-  padding: 20px;
-  @media screen and (max-width: 680px) {
-    grid-template-columns: 1fr;
-  }
-
-`
-
-const MainBody = styled.div`
-  grid-area: main;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-   
- @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (max-width: 720px) {
-    grid-template-columns: repeat(7, 1fr);
-  }
-`
-
-const BottomRow = styled.div`
-  grid-area: bottom;
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
-  
-  @media screen and (max-width: 820px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
- @media screen and (max-width: 680px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-`
 
 const PageWrapper = styled.div`
   display: grid;
@@ -157,4 +57,29 @@ const PageWrapper = styled.div`
   height: calc(100vh - 70px);
   width: 100%;
   overflow: hidden;
+`
+
+const SearchResultsWrapper = styled.div`
+  display: grid;
+  grid-area:main;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: inherit;
+  width: 100%;
+  gap:15px;
+  padding: 0 20px;
+`
+
+const WholeStore = styled.div`
+  grid-template-areas:
+  'quick quick quick quick quick quick'
+  'poster poster poster poster poster poster'
+  'main main main main main main'
+  'pagination pagination pagination pagination pagination pagination';
+  display: grid;
+  grid-area:main;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: inherit;
+  width: 100%;
+  gap:15px;
+  padding: 0 20px;
 `

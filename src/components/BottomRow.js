@@ -42,14 +42,6 @@ const Wrapper = styled.div`
     display:grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    
-    @media screen and (max-width: 820px) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media screen and (max-width: 680px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
  
 `

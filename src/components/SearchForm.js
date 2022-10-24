@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-const SearchForm = () => {
+const SearchForm = ({setQuery}) => {
   return (
     <Container>
       <Wrapper>
         <p>search</p>
-        < Search />
+        < Search onChange={(e)=>setQuery(e.target.value)}/>
       </Wrapper>
     </Container>
     

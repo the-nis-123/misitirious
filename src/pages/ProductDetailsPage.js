@@ -62,14 +62,6 @@ const SimilarProducts = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (max-width: 720px) {
-    grid-template-columns: repeat(7, 1fr);
-  }
 `
 
 const PageWrapper = styled.div`

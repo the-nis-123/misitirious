@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 const CheckOutForm = () => {
+  let vat = 0, subtotal = 0, total = vat + subtotal;
+
   return (
     <Column>
       <h3>Payment details</h3>
@@ -41,17 +43,17 @@ const CheckOutForm = () => {
 
       <InputWrapper>
         <h4>Sub total</h4>
-        <p>$</p>
+        <p>${subtotal}</p>
       </InputWrapper>
 
       <InputWrapper>
         <h4>VAT</h4>
-        <p>$</p>
+        <p>${vat}</p>
       </InputWrapper>
 
       <InputWrapper>
         <h4>Total</h4>
-        <p>$</p>
+        <p>${total}</p>
       </InputWrapper>
 
       <Input type='submit' value='Complete Order' style={{

@@ -75,13 +75,5 @@ const MainBody = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
   padding: 20px;
-   
- @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (max-width: 720px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 `
 
