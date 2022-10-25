@@ -1,71 +1,37 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import CartProduct from "../components/CartProduct";
 import CartSideBar from "../components/CartSideBar";
-import { DhlAgent } from "../components/ShippingAgentCard";
-import { FedexAgent } from "../components/ShippingAgentCard";
 import CheckOutForm from "../components/CheckOutForm";
+import OrderSummary from "../components/OrderSummary";
 import { useSelector } from "react-redux";
-import {Link} from 'react-router-dom';
 
 function CartWrapper() {
   const { cart } = useSelector(state => state.cart);
-  const [subtotal, setSubtotal] = useState(0);
-  const [vat, setVat] = useState(0);
-
+  const [subtotal, setSubtotal] = useState(0.00);
+  const [totalVat, setTotalVat] = useState(0.00);
     
   useEffect(()=>{
     if(cart.length>1){ 
       const sub = cart.reduce((a,b)=> (a.price * a.count) + (b.price * b.count));
+      const vat = cart.reduce((a,b)=> (a.price * (1.25 / 100)) + (b.price * (1.25 / 100)));
       setSubtotal(sub); 
+      setTotalVat(vat);
     }
 
     if(cart.length == 1){ 
       setSubtotal(cart[0].price * cart[0].count); 
+      setTotalVat(cart[0].price * (1.25 / 100));
     }
   }, [cart])
 
-
-  
   return (
     <PageWrapper>
       <CartSideBar />
-
       <Wrapper>
         <h2>Shopping Cart</h2>
-
         <CheckOut>
-          <Column>
-            <h3>Order summary</h3>
-
-            <If condition={cart.length > 0 }>
-              <For each='item' of={cart}>
-                <CartProduct 
-                  key={item.id} 
-                  id={item.id} 
-                  image={item.image} 
-                  price={item.price} 
-                  name={item.name} 
-                  quantity={item.count}
-                />
-              </For>
-            </If>
-
-            <If condition={cart.length < 1}>
-              <p style={{
-                padding:"4rem 10px",
-                color:'grey',
-                textAlign:'center'
-              }}>Nothing added to cart, <Link to='/store'>continue shopping</Link></p>
-            </If>
-            
-            <h4>Our shipping partners</h4>
-            <FedexAgent />
-            <p>International shipping</p>
-            <DhlAgent />
-          </Column>
-
-          <CheckOutForm vat={0} subtotal={subtotal} />
+          <OrderSummary cart={cart} />          
+          <CheckOutForm vat={totalVat.toFixed(2)} subtotal={subtotal.toFixed(2)} />
         </CheckOut>
       </Wrapper>
     </PageWrapper>
@@ -104,13 +70,3 @@ const CheckOut = styled.div`
   width:100%;
   gap: 15px;
 `
-
-const Column = styled.div`
-  width: 50%;
-  padding: 20px;
-  h5{
-    margin-top: 10px;
-    padding: 5px 0;
-  }
-`
-

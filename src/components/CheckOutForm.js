@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const CheckOutForm = ({subtotal, vat }) => {
-  let total = vat + subtotal;
+  let total = Number(vat) + Number(subtotal);
 
   return (
     <Column>
@@ -48,7 +48,7 @@ const CheckOutForm = ({subtotal, vat }) => {
 
       <InputWrapper>
         <h4>Total</h4>
-        <p>${total}</p>
+        <p>${total.toFixed(2)}</p>
       </InputWrapper>
 
       <Input type='submit' value='Complete Order' style={{

@@ -44,12 +44,16 @@ const Wrapper = styled.div`
   height: 80px;
   width: 100%;
   border: solid 1px #c2c2c2;
+  background-color:white;
   padding: 10px;
   border-radius: 5px;
   margin: 10px 0;
   display:flex;
   align-items:center;
   gap: 5em;
+  :hover{
+    cursor:pointer;
+  }
 `
 
 
