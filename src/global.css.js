@@ -11,8 +11,7 @@ export default createGlobalStyle`
   #root{
     font-family: 'Signika';
     min-height: 100vh;
-    width: 100%;
-    overflow-y: auto;
+    overflow: auto;
     background-color: #f2f2f2;
     position:relative;
   } 

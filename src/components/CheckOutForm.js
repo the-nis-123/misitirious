@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const CheckOutForm = () => {
-  let vat = 0, subtotal = 0, total = vat + subtotal;
+const CheckOutForm = ({subtotal, vat }) => {
+  let total = vat + subtotal;
 
   return (
     <Column>
@@ -35,11 +35,6 @@ const CheckOutForm = () => {
           <Input type='text' placeholder='street'/>
         </InputWrapper>
       </div>
-
-      <InputWrapper>
-        <Input type='text' placeholder='City'/>
-        <Input type='text' placeholder='street'/>
-      </InputWrapper>
 
       <InputWrapper>
         <h4>Sub total</h4>

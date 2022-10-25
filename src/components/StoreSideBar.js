@@ -56,7 +56,7 @@ const Input = ({name,label}) => {
   return(
     <section>
       <input type="checkbox" name={name} value={name} />
-      <label for={name}>{label}</label>
+      <label htmlFor={name}>{label}</label>
     </section>
   )
 }

@@ -6,12 +6,12 @@ import { increment, decrement, removeFromCart } from '../redux/features/cartSlic
 
 
 
-const CartProduct = ({name, image, price, id}) => {
+const CartProduct = ({name, image, price, id, quantity}) => {
   const dispatch = useDispatch();
-  const handleDecrement = () => dispatch(decrement());
-  const handleIncrement = () => dispatch(increment());
-  const handleRemoveFromCart = () => dispatch(removeFromCart({id}));
-
+  const handleDecrement = () => dispatch(decrement(id));
+  const handleIncrement = () => dispatch(increment(id));
+  const handleRemoveFromCart = () => dispatch(removeFromCart(id));
+  if(quantity === 0){ dispatch(removeFromCart(id)) }
   
   return (
     <Product>
@@ -24,19 +24,19 @@ const CartProduct = ({name, image, price, id}) => {
         <p>${price}</p>
       </div>
 
-      <TrashIcon>
-        <Trash onClick={handleRemoveFromCart}/>
+      <TrashIcon onClick={handleRemoveFromCart}>
+        <Trash />
       </TrashIcon>
 
       <Buttons>
         <Icon onClick={handleDecrement}>
-          <span>-</span>
+          <span style={{color:'orange'}}>-</span>
         </Icon>
 
-        <span>0</span>
+        <span>{quantity}</span>
 
-        <Icon>
-          <span onClick={handleIncrement}>+</span>
+        <Icon onClick={handleIncrement}>
+          <span style={{color:'green'}}>+</span>
         </Icon>
       </Buttons>
     </Product>

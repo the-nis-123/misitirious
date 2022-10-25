@@ -13,7 +13,7 @@ const ProductCategoriesBlock = () => {
       <section>
         <If condition={ data }>
           <For each='category' of={data}>
-            <CategoryCard image={category.image} name={category.name} />
+            <CategoryCard key={category.id} image={category.image} name={category.name} />
           </For>
         </If>
       </section>

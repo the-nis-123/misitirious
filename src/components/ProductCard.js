@@ -19,7 +19,7 @@ const ProductCard = ({image, name, price, id}) => {
 
   const handleAddToCart = (e) => {
     e.stopPropagation();
-    dispatch(addToCart({id}));
+    dispatch(addToCart({id,image, name, price, count:1}));
   };
 
   const handleAddToWishlist = (e) => {
@@ -114,8 +114,9 @@ const Description = styled.p`
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   line-clamp: 3; 
+  font-size: 0.8rem;
 `
 
 const FlexContainer = styled.div`

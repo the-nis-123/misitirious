@@ -14,7 +14,6 @@ const BottomRow = () => {
 
   return (
     <Wrapper>
-      <h2>More of what you like</h2>
       <section>
         <If condition={ products }>
           <For each='product' of={products.slice(20, 25)}>

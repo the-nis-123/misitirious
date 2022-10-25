@@ -65,8 +65,6 @@ const Wrapper = styled.div`
   padding: 20px 0;
   width: 100%;
   height: calc(100vh - 70px);
-  overflow-y:auto;
-  overflow-x:hidden;
 `
 
 const MainBody = styled.div`

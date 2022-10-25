@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import CartProduct from "../components/CartProduct";
 import CartSideBar from "../components/CartSideBar";
@@ -5,23 +6,26 @@ import { DhlAgent } from "../components/ShippingAgentCard";
 import { FedexAgent } from "../components/ShippingAgentCard";
 import CheckOutForm from "../components/CheckOutForm";
 import { useSelector } from "react-redux";
-import {useGetAllFilteredProductsQuery} from '../redux/misitiriousApi';
 import {Link} from 'react-router-dom';
 
 function CartWrapper() {
-  let cartUrl='';
-  const {cart} = useSelector(state => state.cart);
+  const { cart } = useSelector(state => state.cart);
+  const [subtotal, setSubtotal] = useState(0);
+  const [vat, setVat] = useState(0);
 
-  if(cart.length>0){
-    let url = '/store?id='+cart[0];
-    for(let i =1; i< cart.length; i++){
-      url += `&id=${cart[i]}`;
+    
+  useEffect(()=>{
+    if(cart.length>1){ 
+      const sub = cart.reduce((a,b)=> (a.price * a.count) + (b.price * b.count));
+      setSubtotal(sub); 
     }
 
-    cartUrl = url;
-  }
+    if(cart.length == 1){ 
+      setSubtotal(cart[0].price * cart[0].count); 
+    }
+  }, [cart])
 
-  const data = useGetAllFilteredProductsQuery(cartUrl);
+
   
   return (
     <PageWrapper>
@@ -34,19 +38,20 @@ function CartWrapper() {
           <Column>
             <h3>Order summary</h3>
 
-            <If condition={data?.data}>
-              <For each='item' of={data.data}>
+            <If condition={cart.length > 0 }>
+              <For each='item' of={cart}>
                 <CartProduct 
                   key={item.id} 
                   id={item.id} 
                   image={item.image} 
                   price={item.price} 
                   name={item.name} 
+                  quantity={item.count}
                 />
               </For>
             </If>
 
-            <If condition={!data?.data}>
+            <If condition={cart.length < 1}>
               <p style={{
                 padding:"4rem 10px",
                 color:'grey',
@@ -60,7 +65,7 @@ function CartWrapper() {
             <DhlAgent />
           </Column>
 
-          <CheckOutForm />
+          <CheckOutForm vat={0} subtotal={subtotal} />
         </CheckOut>
       </Wrapper>
     </PageWrapper>
@@ -73,26 +78,27 @@ export default CartWrapper;
 const PageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
-  background-color: inherit;
   height: calc(100vh - 70px);
   width: 100%;
   overflow: hidden;
 `
 
 const Wrapper = styled.div`
-  background-color: inherit;
   padding: 20px 10px;
   overflow-y:auto;
   overflow-x:hidden;
 
   h2{
-    padding: 0 20px;
+    padding:0 20px;
     color:grey;
     text-transform:uppercase;
   }
+
+  h3, h4{
+    padding:10px 0;
+  }
 `
 const CheckOut = styled.div`
-  background-color: inherit;
   display: flex;
   justify-content:space-between
   width:100%;
@@ -100,7 +106,6 @@ const CheckOut = styled.div`
 `
 
 const Column = styled.div`
-  background-color:inherit;
   width: 50%;
   padding: 20px;
   h5{

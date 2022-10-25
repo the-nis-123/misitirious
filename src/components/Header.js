@@ -54,7 +54,6 @@ const {cart} = useSelector(state => state.cart);
 export default Header;
 
 const Wrapper  = styled.header`
-  width: 100%;
   padding: 10px;
   height: 70px;
   background-color: #f8f8f8;
