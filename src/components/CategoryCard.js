@@ -24,6 +24,7 @@ const Wrapper = styled.div`
     text-decoration:none;
     color:blue;
   }
+
   h3,a{
     padding: 10px 0;
   }

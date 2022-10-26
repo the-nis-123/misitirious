@@ -26,7 +26,8 @@ const OrderSummary = ({cart}) => {
         <p style={{
           padding:"4rem 10px",
           color:'grey',
-          textAlign:'center'
+          textAlign:'center',
+          backgroundColor:'white',
         }}>Nothing added to cart, <Link to='/store'>continue shopping</Link></p>
       </If>
       

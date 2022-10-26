@@ -1,16 +1,21 @@
 import styled from 'styled-components';
 import ProductCard from './ProductCard';
+import Carousel from './Carousel';
 
 import image5 from '../images/983.jpg';
 import image6 from '../images/645.jpg';
 
-const Store = ({data}) => {
+const WholeStore = ({data}) => {
   
   return (
     <>
+      <PosterOne>
+        <Carousel />
+      </PosterOne>
+      
       <QuickAccess>
         <If condition={ data }>
-          <For each='product' of={data.slice(0, 5)}>
+          <For each='product' of={data.slice(0, 9)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -24,7 +29,7 @@ const Store = ({data}) => {
 
       <MainBody>
         <If condition={ data }>
-          <For each='product' of={data.slice(5)}>
+          <For each='product' of={data.slice(9)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -36,10 +41,9 @@ const Store = ({data}) => {
         </If> 
       </MainBody>
 
-      <Poster>
-        <ProductCard image={image5} />
-        <ProductCard image={image6} />
-      </Poster>
+      <PosterTwo>
+        <Carousel />
+      </PosterTwo>
 
       <Pagination>
        <p>Pagination</p>
@@ -48,7 +52,7 @@ const Store = ({data}) => {
   )
 }
 
-export default Store;
+export default WholeStore;
 
 const QuickAccess = styled.div`
   grid-area: quick;
@@ -58,19 +62,18 @@ const QuickAccess = styled.div`
   padding: 10px 20px;
 `
 
-const Poster = styled.div`
-  grid-area: poster;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+const PosterOne = styled.div`
+  grid-area: poster1;
+  padding: 20px 0;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  background-color: var(--primary-color, #f2f2f2);
+`
 
-  section{
-    height:100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat:no-repeat;
-  }
-  
-  padding: 10px 20px;
+
+const PosterTwo = styled(PosterOne)`
+  grid-area: poster2;
 `
 
 const MainBody = styled.div`

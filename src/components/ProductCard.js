@@ -73,7 +73,7 @@ const Wrapper = styled.div`
   border-radius: 5px;
   background-color:  #F8F8F8;
   padding: 0 20px;
-  font-family: 'Noto Sans Vai', sans-serif;
+  font-family: 'Sora', 'Noto Sans Vai', sans-serif;
 
   :hover{
     cursor:pointer;
@@ -115,7 +115,7 @@ const Description = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3; 
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 `
 
 const FlexContainer = styled.div`

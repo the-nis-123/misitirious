@@ -8,7 +8,7 @@ const QuickBuyBlock = () => {
 
   return (
     <QuickBuy>
-      <h2>Top Salers</h2>
+      <h3>Top Salers</h3>
 
       <section>
         <If condition={ data }>

@@ -15,11 +15,14 @@ export default createGlobalStyle`
   body{
     min-width: 1200px;
     overflow-y:hidden;
+    font-family: 'Sora', sans-serif;
   }
 
+  h3,h4,h5,a{
+    font-family: 'Noto Sans Vai', 'Sora', sans-serif;
+  }
 
   #root{
-    font-family: 'Signika';
     min-height: 100vh;
     overflow: hidden;
     background-color: #f2f2f2;

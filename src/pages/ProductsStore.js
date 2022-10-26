@@ -3,7 +3,7 @@ import {useState} from 'react';
 
 import StoreSideBar from "../components/StoreSideBar";
 import SearchForm from "../components/SearchForm";
-import Store from "../components/Store";
+import Store from "../components/WholeStore";
 import SearchResults from "../components/SearchResults";
 
 import {useGetAllProductsQuery, useGetAllSearchResultsQuery } from '../redux/misitiriousApi';
@@ -68,8 +68,9 @@ const SearchResultsWrapper = styled.div`
 
 const WholeStore = styled.div`
   grid-template-areas:
+  'poster1 poster1 poster1 poster1 poster1 poster1'
   'quick quick quick quick quick quick'
-  'poster poster poster poster poster poster'
+  'poster2 poster2 poster2 poster2 poster2 poster2'
   'main main main main main main'
   'pagination pagination pagination pagination pagination pagination';
 

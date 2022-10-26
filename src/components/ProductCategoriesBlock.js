@@ -9,7 +9,7 @@ const ProductCategoriesBlock = () => {
 
   return (
     <ProductCategories>
-      <h2>All our product categories</h2>
+      <h3>All our product categories</h3>
       <section>
         <If condition={ data }>
           <For each='category' of={data}>

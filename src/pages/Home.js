@@ -4,7 +4,7 @@ import HeroSlider from "../components/HeroSlider";
 import ProductCard from "../components/ProductCard";
 import QuickBuyBlock from "../components/QuickBuyBlock";
 import ProductCategoriesBlock from "../components/ProductCategoriesBlock";
-import AdSection from "../components/AdSection";
+import SliderBlock from "../components/SliderBlock";
 import PostersBlock from "../components/PostersBlock";
 import BottomRow from "../components/BottomRow";
 
@@ -42,7 +42,7 @@ function Cart() {
         </If>
       </MainBody>
 
-      <AdSection />
+      <SliderBlock />
 
       <BottomRow />
     </Wrapper>
