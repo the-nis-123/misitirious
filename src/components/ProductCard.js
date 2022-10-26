@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { CartAdd } from '@styled-icons/boxicons-solid/CartAdd';
-import { Heart } from '@styled-icons/feather/Heart';
+import { Favorite } from '@styled-icons/material-rounded/Favorite';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from '../redux/features/cartSlice';
@@ -33,7 +33,7 @@ const ProductCard = ({image, name, price, id}) => {
         <Wrapper onClick={navigateToProductDetails}>
           <FlexContainer>
             <p>{ name }</p> 
-            <Heart size='20px' onClick={handleAddToWishlist} />
+            <Favorite size='20px' onClick={handleAddToWishlist} />
           </FlexContainer>
 
           <Image style={{ backgroundImage: `url(${image})` }} />
@@ -105,7 +105,6 @@ const PostImage = styled(Image)`
 
 const Price = styled.p`
   font-weight: bold;
-  font-size: 1.3em;
 `
 
 

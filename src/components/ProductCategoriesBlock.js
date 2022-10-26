@@ -26,6 +26,7 @@ export default ProductCategoriesBlock;
 
 const ProductCategories = styled.div`
   grid-area: category;
+  background-color: var(--primary-color, #f2f2f2);
   
   section{
     display: grid;

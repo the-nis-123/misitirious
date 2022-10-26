@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Store from './pages/ProductsStore';
 import Cart from './pages/Cart';
 import ProductDetails from './pages/ProductDetailsPage';
+import NotFound from './pages/404';
 
 const AppRoutes = () => {
 
@@ -19,6 +20,7 @@ const AppRoutes = () => {
             <Route path='/store' element={<Store />} />
             <Route path='/store/:id' element={<ProductDetails />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<NotFound />} />
           </Route>
         </Route>
       </Routes>

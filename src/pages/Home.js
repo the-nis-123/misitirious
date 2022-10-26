@@ -62,9 +62,10 @@ const Wrapper = styled.div`
   'adSection adSection adSection adSection adSection adSection'
   'bottomRow bottomRow bottomRow bottomRow bottomRow bottomRow';
 
-  padding: 20px 0;
   width: 100%;
   height: calc(100vh - 70px);
+  overflow:auto;
+  background-color: white;
 `
 
 const MainBody = styled.div`

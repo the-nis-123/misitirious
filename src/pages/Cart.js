@@ -45,7 +45,6 @@ const PageWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   height: calc(100vh - 70px);
-  width: 100%;
   overflow: hidden;
 `
 
@@ -67,6 +66,5 @@ const Wrapper = styled.div`
 const CheckOut = styled.div`
   display: flex;
   justify-content:space-between
-  width:100%;
   gap: 15px;
 `

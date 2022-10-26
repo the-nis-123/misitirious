@@ -84,7 +84,7 @@ const InputWrapper = styled.section`
   }
 `
 const Input = styled.input`
-  border: 1px solid #c2c2c2;
+  border: 1px solid #D8D8D8;
   outline:none;
   width: 100%;
   padding: 10px 20px;

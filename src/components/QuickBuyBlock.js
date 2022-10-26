@@ -33,6 +33,7 @@ export default QuickBuyBlock;
 const QuickBuy = styled.div`
   grid-area: quickBuy;
   padding: 20px;
+  background-color: white;
 
   section{
     display:grid;

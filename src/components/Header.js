@@ -29,6 +29,7 @@ const {cart} = useSelector(state => state.cart);
         <Link to='/store'>Men</Link>
         <Link to='/store'> Women </Link>
         <Link to='/store'> Footware </Link>
+        <Link to='/store'> Our Blog </Link>
       </MenuLinks>
  
       <Section>
@@ -56,7 +57,7 @@ export default Header;
 const Wrapper  = styled.header`
   padding: 10px;
   height: 70px;
-  background-color: #f8f8f8;
+  background-color: #fff;
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +74,7 @@ const MenuLinks = styled.section`
     white-space:nowrap;
     color: black;
     padding: 5px;
-    border-bottom: 2px solid #f8f8f8;
+    border-bottom: 2px solid #fff;
 
     :hover{
       border-bottom: 2px solid red;

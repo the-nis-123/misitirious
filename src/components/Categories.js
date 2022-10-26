@@ -20,7 +20,6 @@ export default Categories;
 const Wrapper = styled.section`
   width: 100%;
   height: 100px;
-  background-color: inherit;
   display:flex;
   gap: 20px;
 `;

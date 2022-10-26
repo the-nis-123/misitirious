@@ -62,7 +62,7 @@ const Input = ({name,label}) => {
 }
 
 const SideBar = styled.div`
-  background-color: #F8F8F8;
+  background-color: white;
   min-width: 300px;
   overflow-y:auto;
   overflow-x: hidden;

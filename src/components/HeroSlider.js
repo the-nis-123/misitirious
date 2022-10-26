@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../images/127.png';
+import image from '../images/1.jpg';
 import SideBarIcons from "./HeroSocialIcons";
 import IconWithStyles from "./IconWithStyles";
 
@@ -11,15 +11,16 @@ import { FacebookWithCircle } from '@styled-icons/entypo-social/FacebookWithCirc
 const HeroSlider = () => {
   return (
   <Slider>
-    <SideBarIcons>
+    {/* <SideBarIcons>
       <a href='https://github.com/the-nis-123' target="_blank" rel="noopener noreferrer">{ IconWithStyles(FacebookWithCircle) }</a>
       <a href='https://twitter.com/niscloud_kintu' target="_blank" rel="noopener noreferrer">{ IconWithStyles(TwitterWithCircle) }</a>
       <a href='https://github.com/the-nis-123' target="_blank" rel="noopener noreferrer">{ IconWithStyles(InstagramWithCircle) }</a>
       <a href='https://www.linkedin.com/in/kintu-denis/' target="_blank" rel="noopener noreferrer">{ IconWithStyles(LinkedinWithCircle) }</a>
-    </SideBarIcons>
+    </SideBarIcons> */}
 
     <Hero>
-      <Image src={image} alt='' />
+      {/* <Caption></Caption> */}
+      <Image style={{backgroundImage:`url(${image})`}} />
     </Hero>
   </Slider>
   )
@@ -30,35 +31,27 @@ export default HeroSlider;
 
 const Slider = styled.div`
  grid-area: hero;
- background-color: inherit;
+ background-color: #f2f2f2;
  display:flex;
- padding: 0 30px;
- 
-  @media screen and (max-width: 960px) {
-    width: 100vw;
-  }
+ width: 100%;
 `
 
-
-const Image = styled.img`
+const Image = styled.div`
   height: 100%;
-  width: auto;
-
-  
-  @media screen and (max-width: 960px) {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
 `
 
 const Hero = styled.div`
-  height: 60vh;
-  background-color: inherit;
+  height: 80vh;
+  width: 100%;
+`
 
-  @media screen and (max-width: 960px) {
-    height: 100%;
-    width: 100%;
-  }
+
+
+const Caption = styled.div`
+  height: 100%;
+  width: 30%;
 `

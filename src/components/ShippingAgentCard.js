@@ -42,8 +42,7 @@ export const DhlAgent = ({icon, name, price}) => {
 
 const Wrapper = styled.div`
   height: 80px;
-  width: 100%;
-  border: solid 1px #c2c2c2;
+  border: solid 1px #D8D8D8;
   background-color:white;
   padding: 10px;
   border-radius: 5px;
