@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../images/1.jpg';
+import image from '../images/3.png';
 import SideBarIcons from "./HeroSocialIcons";
 import IconWithStyles from "./IconWithStyles";
 
@@ -20,7 +20,7 @@ const HeroSlider = () => {
 
     <Hero>
       {/* <Caption></Caption> */}
-      <Image style={{backgroundImage:`url(${image})`}} />
+      <Image style={{backgroundImage:`url('${image}')`}} />
     </Hero>
   </Slider>
   )
@@ -31,7 +31,7 @@ export default HeroSlider;
 
 const Slider = styled.div`
  grid-area: hero;
- background-color: #f2f2f2;
+ background-color: #FDFDFD;
  display:flex;
  width: 100%;
 `
@@ -39,9 +39,9 @@ const Slider = styled.div`
 const Image = styled.div`
   height: 100%;
   width: 100%;
+  background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
 `
 
 const Hero = styled.div`

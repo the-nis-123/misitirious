@@ -41,7 +41,7 @@ export const DhlAgent = ({icon, name, price}) => {
 
 
 const Wrapper = styled.div`
-  height: 80px;
+  height: 90px;
   border: solid 1px #D8D8D8;
   background-color:white;
   padding: 10px;
@@ -52,6 +52,10 @@ const Wrapper = styled.div`
   gap: 5em;
   :hover{
     cursor:pointer;
+  }
+  
+  p{
+    font-size: 0.9rem;
   }
 `
 

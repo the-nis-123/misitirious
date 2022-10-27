@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import ProductCard from './ProductCard';
 import Carousel from './Carousel';
 
-import image5 from '../images/983.jpg';
-import image6 from '../images/645.jpg';
-
 const WholeStore = ({data}) => {
   
   return (
@@ -68,7 +65,6 @@ const PosterOne = styled.div`
   width: 100%;
   height: 450px;
   overflow: hidden;
-  background-color: var(--primary-color, #f2f2f2);
 `
 
 

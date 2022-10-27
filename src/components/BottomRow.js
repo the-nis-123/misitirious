@@ -36,7 +36,6 @@ export default BottomRow;
 const Wrapper = styled.div`
   grid-area: bottomRow;
   padding: 20px;
-  background-color: white;
 
   section{
     display:grid;

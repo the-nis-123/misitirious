@@ -65,7 +65,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: calc(100vh - 70px);
   overflow:auto;
-  background-color: white;
+  background-color: #FAFAFA;
 `
 
 const MainBody = styled.div`

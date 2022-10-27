@@ -76,6 +76,6 @@ const SideBar = styled.div`
   label{
     color: 	#606060;
     text-transform: capitalize;
-    font-family: 'Noto Sans Vai', sans-serif;
+    font-size: 0.8rem;
   }
 `

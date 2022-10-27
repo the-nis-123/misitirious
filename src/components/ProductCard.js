@@ -71,7 +71,7 @@ const Wrapper = styled.div`
   width: auto;
   height: 320px;
   border-radius: 5px;
-  background-color:  #F8F8F8;
+  background-color:  white;
   padding: 0 20px;
   font-family: 'Sora', 'Noto Sans Vai', sans-serif;
 

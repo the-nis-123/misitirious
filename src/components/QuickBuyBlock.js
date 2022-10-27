@@ -32,12 +32,17 @@ export default QuickBuyBlock;
 
 const QuickBuy = styled.div`
   grid-area: quickBuy;
-  padding: 20px;
   background-color: white;
+
+  h3{
+    padding: 20px;
+  }
 
   section{
     display:grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
+    background-color: #FAFAFA;
+    padding: 0 20px;
   }
 `

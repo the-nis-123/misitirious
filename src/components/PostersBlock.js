@@ -19,7 +19,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: 450px;
   overflow: hidden;
-  background-color: var(--primary-color, #f2f2f2);
 
   h3{
     padding: 0 20px;

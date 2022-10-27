@@ -38,15 +38,14 @@ const Product = () =>{
 
 
 const Wrapper = styled.div`
-  background-color: white;
   height: 70px;
   margin-bottom: 5px;
   border-radius: 4px;
 `
 
 const SideBar = styled.div`
-  background-color: #F8F8F8;
   min-width: 300px;
   overflow-y:auto;
   overflow-x: hidden;
+  background-color: white;
 `

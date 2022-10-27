@@ -9,7 +9,7 @@ const SideBarSectionWrapper = ({children, title}) => {
   return (
     <Wrapper>
       <Head>
-        <h3> { title } </h3>
+        <strong> { title } </strong>
         <section>
           <If condition={show}>
             <CaretDown size='20px' onClick={()=>setShow(false)} />
@@ -49,7 +49,7 @@ const Head = styled.div`
   color:#c2c2c2;
   padding: 6px 10px;
 
-  h3{
+  strong{
     color: black;
   }
 

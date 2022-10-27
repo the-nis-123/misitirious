@@ -25,7 +25,7 @@ export default createGlobalStyle`
   #root{
     min-height: 100vh;
     overflow: hidden;
-    background-color: #f2f2f2;
+    background-color: #FAFAFA;
     position:relative;
     -webkit-user-select: none;
     -ms-user-select: none;
