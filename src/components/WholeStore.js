@@ -7,7 +7,7 @@ const WholeStore = ({data}) => {
   return (
     <>
       <PosterOne>
-        <Carousel />
+        <Carousel slideWidth='350px' />
       </PosterOne>
       
       <QuickAccess>
@@ -39,7 +39,7 @@ const WholeStore = ({data}) => {
       </MainBody>
 
       <PosterTwo>
-        <Carousel />
+        <Carousel slideWidth='450px' />
       </PosterTwo>
 
       <Pagination>

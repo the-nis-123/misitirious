@@ -22,7 +22,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  border: 1px solid #c2c2c2;
+  border: 1px solid #cccccc;
   width: 90%;
   margin: 0 auto;
   display:flex;
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 `
 const Search = styled.input`
   border-right: none;
-  border-left: 1px solid #c2c2c2;
+  border-left: 1px solid #cccccc;
   border-bottom:none;
   border-top:none;
   outline: none;

@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import StoreSideBar from "../components/StoreSideBar";
 import SearchForm from "../components/SearchForm";
 import { useGetAllProductsQuery } from '../redux/misitiriousApi';
-import ProductDetaials from "../components/ProductDetaials";
+import ProductDetails from "../components/ProductDetails";
 
 function Store() {
   const { data: products, error: productsError, isLoading: loadingProducts } = useGetAllProductsQuery();
@@ -16,7 +16,7 @@ function Store() {
       <Wrapper>
         <SearchForm />
 
-        <ProductDetaials />
+        <ProductDetails />
         
         <MainBody>
           <h2>Similar Products</h2>

@@ -71,6 +71,10 @@ const SideBar = styled.div`
     margin-right: 10px;
     border:none;
     outline:none;
+
+    :checked{
+      background-color: black;
+    }
   }
 
   label{

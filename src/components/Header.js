@@ -41,7 +41,8 @@ const {cart} = useSelector(state => state.cart);
               color:'red', 
               position:'absolute',
               right:'-10px',
-              top:'-6px'
+              top:'-6px',
+              fontSize:'12px'
             }}>{cart.length}</span>
           </Link>
         </Section>

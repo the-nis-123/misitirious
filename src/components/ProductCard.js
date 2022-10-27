@@ -33,7 +33,13 @@ const ProductCard = ({image, name, price, id}) => {
         <Wrapper onClick={navigateToProductDetails}>
           <FlexContainer>
             <p>{ name }</p> 
-            <Favorite size='20px' onClick={handleAddToWishlist} />
+
+            <Icon size='30px'>
+              <Favorite 
+                size='15px' 
+                onClick={handleAddToWishlist} 
+              />
+            </Icon>
           </FlexContainer>
 
           <Image style={{ backgroundImage: `url(${image})` }} />
@@ -44,9 +50,9 @@ const ProductCard = ({image, name, price, id}) => {
           </Description>
 
           <FlexContainer>
-            <BuyIcon onClick={handleAddToCart} >
+            <Icon onClick={handleAddToCart} >
               <CartAdd size='30px'/>
-            </BuyIcon>
+            </Icon>
 
             <Price>${price}</Price>
           </FlexContainer>
@@ -69,7 +75,7 @@ const Wrapper = styled.div`
   vertical-align: middle;
   position: relative;
   width: auto;
-  height: 320px;
+  height: 350px;
   border-radius: 5px;
   background-color:  white;
   padding: 0 20px;
@@ -141,10 +147,10 @@ const FlexContainer = styled.div`
  }
 `
 
-const BuyIcon = styled.div`
+const Icon = styled.span`
   background-color: #f0f0f0;
-  width:50px;
-  height: 50px;
+  width:${props => props.size ? props.size : '50px'};;
+  height: ${props => props.size ? props.size : '50px'};;
   display: flex;
   align-items: center;
   justify-content: center;

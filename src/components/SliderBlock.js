@@ -6,7 +6,7 @@ import Carousel from './Carousel';
 const SliderBlock = () => {
   return (
     <Wrapper>
-      <h3> From our partners</h3>
+      <h3> Trends right now</h3>
       <Carousel />
     </Wrapper>
   )

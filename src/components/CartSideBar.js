@@ -14,9 +14,6 @@ const CartSideBar = () => {
       <SideBarSectionWrapper title='Saved'>
         <Product/>
         <Product/>
-      </SideBarSectionWrapper>
-
-      <SideBarSectionWrapper title='Liked'>
         <Product/>
         <Product/>
         <Product/>

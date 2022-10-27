@@ -4,8 +4,8 @@ import Carousel from './Carousel';
 const PostersBlock = () => {
   return (
     <Wrapper >
-      <h3>Spend less while getting all your favorites with convinience</h3>
-      <Carousel />
+      <h3>Popular brands</h3>
+      <Carousel slideWidth='600px' />
     </Wrapper>
   )
 }

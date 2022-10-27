@@ -1,27 +1,20 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import {CaretLeft} from '@styled-icons/open-iconic/CaretLeft';
-import {CaretRight} from '@styled-icons/open-iconic/CaretRight';
+import {useGetGalleryQuery} from '../redux/misitiriousApi';
 
-const Carousel = () => {
-  const [showButtons, setShowButtons] = useState(false);
+const Carousel = ({slideWidth}) => {
+  const data = useGetGalleryQuery();
+
   return (
-    <Wrapper 
-      onMouseEnter={()=>setShowButtons(true)}
-      onMouseLeave={()=>setShowButtons(false)}
-    >
-      <Left style={{visibility: showButtons? 'visible' : 'hidden'}}>
-        <CaretLeft size='30px' />
-      </Left>
-
-      <Right style={{visibility: showButtons? 'visible' : 'hidden'}}>
-        <CaretRight size='30px'/>
-      </Right>
-
+    <Wrapper >
       <Slides>
-        <For each='slide' of={[1,2,3,4,5,6]}>
-          <Slide>{slide}</Slide>
-        </For>
+        <If condition={data?.data}>
+          <For each='slide' of={data.data}>
+            <Slide slideWidth={slideWidth}>
+              <img src={slide}  alt=''/>
+            </Slide>
+          </For>
+        </If>
       </Slides>
     </Wrapper>
   )
@@ -47,37 +40,11 @@ const Slides = styled.div`
 
 const Slide = styled.div`
   height: 90%;
-  width: 300px;
+  width:  ${props => props.slideWidth ? props.slideWidth : '300px'};
   background-color: white;
-`
-
-const Left = styled.div`
-  height: 90%;
-  width: 70px;
-  background-color: rgba(0,0,0, 0.2);
-  position: absolute;
-  left:0;
-  z-index:1;
-  display: grid;
-  place-items:center;
-  color: 	#505050;
-  
-  :hover{
-    cursor:pointer;
-  }
-`
-const Right = styled.div`
-  height: 90%;
-  width: 70px;
-  background-color: rgba(0,0,0, 0.2);
-  position: absolute;
-  right:0;
-  z-index:1;
-  display:grid;
-  place-items:center;
-  color: 	#505050;
-
-  :hover{
-    cursor:pointer;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `

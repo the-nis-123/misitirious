@@ -20,7 +20,7 @@ const BottomRow = () => {
             <ProductCard 
               image={product.image} 
               name={product.name} 
-              price='$237.23'
+              price={product.price}
               id={product.id}
               key={product.id}
             />

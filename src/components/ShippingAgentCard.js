@@ -7,7 +7,7 @@ export const FedexAgent = ({icon, name, price}) => {
   return (
     <Wrapper>
       <Icon style={{color:'purple'}}>
-        <Fedex size='40px'/>
+        <Fedex size='60px'/>
       </Icon>
 
       <div>
@@ -26,7 +26,7 @@ export const DhlAgent = ({icon, name, price}) => {
   return (
     <Wrapper>
       <Icon style={{color:'red'}}>
-        <Dhl size='50px'/>
+        <Dhl size='60px'/>
       </Icon>
 
       <div>

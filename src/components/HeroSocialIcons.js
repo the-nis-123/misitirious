@@ -29,8 +29,4 @@ const Wrapper = styled.section`
       cursor:pointer;
     }
   }
-
-  @media screen and (max-width: 960px) {
-   display: none;
-  }
 `
