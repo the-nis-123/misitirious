@@ -14,7 +14,8 @@ const CategoryCard = ({image, name}) => {
 export default CategoryCard;
 
 const Wrapper = styled.div`
-  height: 400px;
+  flex: 25%;
+  aspect-ratio: 9/11;
   display:flex;
   flex-flow:column;
   background-color: white;
@@ -32,9 +33,9 @@ const Wrapper = styled.div`
 
 const Image = styled.div`
   width: 100%;
-  height: 300px;
- background-color:pink;
- background-size: cover;
- background-repeat: no-repeat;
- background-position:center;
+  height: 80%;
+  background-color:pink;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
 `

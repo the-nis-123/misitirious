@@ -5,7 +5,7 @@ import { servicesList } from "../other resources/site-identity";
 
 const HeroSlider = () => {
   return (
-  <Slider style={{backgroundImage:`url('${image}')`}} >
+  <Slider style={{backgroundImage:`url('${image}')`}}>
     <CaptionWrapper>
       <SideBarIcons />
 

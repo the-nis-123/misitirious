@@ -43,8 +43,9 @@ export default OrderSummary;
 
 
 const Column = styled.div`
-  width: 50%;
   padding: 20px;
+  flex: 50%;
+
   h5{
     margin-top: 10px;
     padding: 5px 0;

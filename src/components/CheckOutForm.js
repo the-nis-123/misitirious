@@ -66,8 +66,9 @@ export default CheckOutForm;
 
 const Column = styled.div`
   background-color:inherit;
-  width: 50%;
   padding: 20px;
+  flex: 50%;
+
   h5{
     margin-top: 10px;
     padding: 5px 0;

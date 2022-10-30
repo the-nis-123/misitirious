@@ -1,27 +1,22 @@
 import styled from 'styled-components';
-
 import Carousel from './Carousel';
 
-
-const SliderBlock = () => {
+const AdvertsCarousel = () => {
   return (
-    <Wrapper>
-      <h3> Trends right now</h3>
-      <Carousel />
+    <Wrapper >
+      <h3>Popular brands</h3>
+      <Carousel slideWidth='600px' />
     </Wrapper>
   )
 }
 
-export default SliderBlock;
+export default AdvertsCarousel;
 
 
 const Wrapper = styled.div`
-  grid-area: adSection;
   padding: 20px 0;
-  width: 100%;
-  height: 450px;
   overflow: hidden;
-  
+
   h3{
     padding: 0 20px;
   }

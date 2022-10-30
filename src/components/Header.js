@@ -6,7 +6,7 @@ import { ShoppingCart } from '@styled-icons/feather/ShoppingCart';
 import { Search } from '@styled-icons/feather/Search';
 import Button from './Button';
 import IconWithStyles from './IconWithStyles';
-
+import { siteName } from '../other resources/site-identity';
 
 const Header = () => {
 const {cart} = useSelector(state => state.cart);
@@ -15,7 +15,7 @@ const {cart} = useSelector(state => state.cart);
     <Wrapper>
       <Section>
         <Logo src={logo} alt='' />
-        <h2>MISITIRIOUS</h2>
+        <h2>{ siteName } </h2>
       </Section>
 
       <MenuLinks >

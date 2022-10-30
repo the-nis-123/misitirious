@@ -6,7 +6,10 @@ import SearchForm from "../components/SearchForm";
 import Store from "../components/WholeStore";
 import SearchResults from "../components/SearchResults";
 
-import {useGetAllProductsQuery, useGetAllSearchResultsQuery } from '../redux/misitiriousApi';
+import {
+  useGetAllProductsQuery, 
+  useGetAllSearchResultsQuery 
+} from '../redux/misitiriousApi';
 
 function StorePage() {
   const { data: products } = useGetAllProductsQuery();

@@ -1,25 +1,27 @@
 import styled from 'styled-components';
+
 import Carousel from './Carousel';
 
-const PostersBlock = () => {
+
+const GallerySlide = () => {
   return (
-    <Wrapper >
-      <h3>Popular brands</h3>
-      <Carousel slideWidth='600px' />
+    <Wrapper>
+      <h3> Trends right now</h3>
+      <Carousel />
     </Wrapper>
   )
 }
 
-export default PostersBlock;
+export default GallerySlide;
 
 
 const Wrapper = styled.div`
-  grid-area: poster;
+  grid-area: adSection;
   padding: 20px 0;
   width: 100%;
   height: 450px;
   overflow: hidden;
-
+  
   h3{
     padding: 0 20px;
   }

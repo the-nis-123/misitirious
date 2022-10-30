@@ -28,43 +28,35 @@ const ProductCard = ({image, name, price, id}) => {
   };
 
   return (
-    <>
-      <If condition={price !== undefined && name !== undefined}>
-        <Wrapper onClick={navigateToProductDetails}>
-          <FlexContainer>
-            <p>{ name }</p> 
+    <If condition={price !== undefined && name !== undefined}>
+      <Wrapper onClick={navigateToProductDetails}>
+        <FlexContainer>
+          <p>{ name }</p> 
 
-            <Icon size='30px'>
-              <Favorite 
-                size='15px' 
-                onClick={handleAddToWishlist} 
-              />
-            </Icon>
-          </FlexContainer>
+          <Icon size='30px'>
+            <Favorite 
+              size='15px' 
+              onClick={handleAddToWishlist} 
+            />
+          </Icon>
+        </FlexContainer>
 
-          <Image style={{ backgroundImage: `url(${image})` }} />
+        <Image style={{ backgroundImage: `url(${image})` }} />
 
-          <Description>
-              Some kind of description about this particular product 
-              and all that other relevant information that customers might be interested in.
-          </Description>
+        <Description>
+            Some kind of description about this particular product 
+            and all that other relevant information that customers might be interested in.
+        </Description>
 
-          <FlexContainer>
-            <Icon onClick={handleAddToCart} >
-              <CartAdd size='30px'/>
-            </Icon>
+        <FlexContainer>
+          <Icon onClick={handleAddToCart} >
+            <CartAdd size='30px'/>
+          </Icon>
 
-            <Price>${price}</Price>
-          </FlexContainer>
-        </Wrapper>
-      </If>
-        
-      <If condition={price === undefined || name === undefined}>
-        <PosterWrapper>
-          <PostImage  style={{ backgroundImage: `url(${image})` }} />
-        </PosterWrapper>
-      </If>
-    </>
+          <Price>${price}</Price>
+        </FlexContainer>
+      </Wrapper>
+    </If>
   )
 }
 
@@ -84,10 +76,6 @@ const Wrapper = styled.div`
   :hover{
     cursor:pointer;
   }
- 
-`
-const PosterWrapper = styled(Wrapper)`
-  height: 320px;
 `
 
 const Image = styled.div`
@@ -99,20 +87,9 @@ const Image = styled.div`
   background-position: center;
 `
 
-const PostImage = styled(Image)`
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position:  center;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-`
-
 const Price = styled.p`
   font-weight: bold;
 `
-
 
 const Description = styled.p`
   overflow: hidden;
@@ -142,7 +119,7 @@ const FlexContainer = styled.div`
  svg{
     :hover{
       cursor:pointer;
-      color: red;
+      color: var(--primary-color);
     }
  }
 `
@@ -151,9 +128,8 @@ const Icon = styled.span`
   background-color: #f0f0f0;
   width:${props => props.size ? props.size : '50px'};;
   height: ${props => props.size ? props.size : '50px'};;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
   svg{
     color: #9d6262;
@@ -162,7 +138,7 @@ const Icon = styled.span`
   :hover{
     cursor:pointer;
     svg{
-      color: red;
+      color: var(--primary-color);
     }
   }
 `
