@@ -3,9 +3,7 @@ import ProductCard from './ProductCard';
 
 
 import {
-  useGetAllProductsQuery,
-  useGetAllPostersQuery,
-  useGetAllCategoriesQuery
+  useGetAllProductsQuery
 } from '../redux/misitiriousApi';
 
 const BottomRow = () => {

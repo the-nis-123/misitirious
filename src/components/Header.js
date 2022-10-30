@@ -1,14 +1,11 @@
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../logo.png';
-import Button from './Button';
-import { useSelector } from 'react-redux';
-
-import IconWithStyles from './IconWithStyles';
-
 import { ShoppingCart } from '@styled-icons/feather/ShoppingCart';
 import { Search } from '@styled-icons/feather/Search';
-
+import Button from './Button';
+import IconWithStyles from './IconWithStyles';
 
 
 const Header = () => {
@@ -58,7 +55,7 @@ export default Header;
 const Wrapper  = styled.header`
   padding: 10px;
   height: 70px;
-  background-color: #fff;
+  background-color: var(--secondary-color, #ffffff);
   display:flex;
   justify-content: space-between;
   align-items: center;
@@ -66,19 +63,17 @@ const Wrapper  = styled.header`
 const MenuLinks = styled.section`
   display: flex;
   align-items:center;
+  gap: 15px;
   font-family: 'Noto Sans Vai', sans-serif;
 
   a{
-    display:inline-block;
-    margin-right: 10px;
     text-decoration: none;
     white-space:nowrap;
     color: black;
-    padding: 5px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 3px solid var(--secondary-color, #ffffff);
 
     :hover{
-      border-bottom: 2px solid red;
+      border-bottom: 3px solid var(--primary-color, #ff0000);
     }
   }
 `;
@@ -92,12 +87,6 @@ const Section  = styled.section`
     margin-right: 20px;
     text-decoration: none;
     color: white;
-  }
-
-  h2{
-     @media screen and (max-width: 720px) {
-      display:none;
-    }
   }
 `
 
