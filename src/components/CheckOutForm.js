@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PaymentMethods from './PaymentMethods';
 
 const CheckOutForm = ({subtotal, vat }) => {
   let total = Number(vat) + Number(subtotal);
@@ -15,14 +16,14 @@ const CheckOutForm = ({subtotal, vat }) => {
 
       <h5>card number</h5>
       <InputWrapper>
-        <Input type='text' placeholder='VIZA'/>
-        <Input type='text' placeholder='' style={{width:'150px'}}/>
-        <Input type='text' placeholder='mm/yy'/>
+        <PaymentMethods />
+        <Input type='text' placeholder='****************'/>
+        <Input type='text' placeholder='mm/yy' style={{width:'150px'}}/>
       </InputWrapper>
 
       <h5>card holder</h5>
       <InputWrapper>
-        <Input type='text' placeholder='example@gmail.com'/>
+        <Input type='text' placeholder='Jane Doe'/>
       </InputWrapper>
 
       <h5>billing address</h5>
@@ -65,7 +66,6 @@ const CheckOutForm = ({subtotal, vat }) => {
 export default CheckOutForm;
 
 const Column = styled.div`
-  background-color:inherit;
   padding: 20px;
   flex: 50%;
 

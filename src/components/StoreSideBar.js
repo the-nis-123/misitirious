@@ -18,7 +18,6 @@ const StoreSideBar = () => {
     {name:'e', price:'1000+'}
   ];
   
-  const brands = ['gucci', 'louis vuitton', 'polo', 'dior', 'givenchy', 'fend', 'tom ford'];
   const categories = ['kids', 'boys', 'girls', 'men', 'women'];
 
   return (
@@ -37,12 +36,6 @@ const StoreSideBar = () => {
 
       <SideBarSectionWrapper title='Categories'>
         <For each='item' of={categories}>
-          <Input label={item} key={item} name={item}/>
-        </For>
-      </SideBarSectionWrapper>
-
-      <SideBarSectionWrapper title='Partner Brands'>
-        <For each='item' of={brands}>
           <Input label={item} key={item} name={item}/>
         </For>
       </SideBarSectionWrapper>

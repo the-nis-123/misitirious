@@ -5,6 +5,7 @@ import { FedexAgent } from "../components/ShippingAgentCard";
 import {Link} from 'react-router-dom';
 
 const OrderSummary = ({cart}) => {
+
   return (
     <Column>
       <h3>Order summary</h3>

@@ -39,7 +39,7 @@ const Slides = styled.div`
   padding: 0 20px;
 `
 const Slide = styled.div`
-  height: 90%;
+  height: 100%;
   width:  ${props => props.slideWidth ? props.slideWidth : '300px'};
   background-color: white;
   img{

@@ -24,22 +24,25 @@ function CartWrapper() {
   }, [cart])
 
   return (
-    <Wrapper>
+    <PageWrapper>
       <h2>Shopping Cart</h2>
+
       <CheckOut>
         <OrderSummary cart={cart} />          
         <CheckOutForm vat={totalVat.toFixed(2)} subtotal={subtotal.toFixed(2)} />
       </CheckOut>
-    </Wrapper>
+    </PageWrapper>
   )
 }
 
 export default CartWrapper;
 
-const Wrapper = styled.div`
+
+const PageWrapper = styled.div`
+  height: calc(100vh - 70px);
+  overflow-y:auto;
+  overflow-x:hidden;
   padding: 20px 10px;
-  height: 100%;
-  overflow: scroll;
 
   h2{
     padding:0 20px;
@@ -51,6 +54,7 @@ const Wrapper = styled.div`
     padding:10px 0;
   }
 `
+
 const CheckOut = styled.div`
   display: flex;
   justify-content:space-between
