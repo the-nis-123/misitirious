@@ -42,10 +42,6 @@ const WholeStore = ({data}) => {
       <PosterTwo>
         <Carousel slideWidth='450px' />
       </PosterTwo>
-
-      <Pagination>
-       <p>Pagination</p>
-      </Pagination>
     </>
   )
 }
@@ -68,7 +64,6 @@ const PosterOne = styled.div`
   overflow: hidden;
 `
 
-
 const PosterTwo = styled(PosterOne)`
   grid-area: poster2;
 `
@@ -78,10 +73,5 @@ const MainBody = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 10px 20px;
-`
-
-const Pagination = styled.div`
-  grid-area: pagination;
   padding: 10px 20px;
 `
