@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 import logo from '../logo.png';
 import { ShoppingCart } from '@styled-icons/feather/ShoppingCart';
 import { Search } from '@styled-icons/feather/Search';
-import Button from './Button';
 import IconWithStyles from './IconWithStyles';
 import { siteName } from '../other resources/site-identity';
+import {AccountCircle} from '@styled-icons/remix-fill/AccountCircle';
 
 const Header = () => {
 const {cart} = useSelector(state => state.cart);
@@ -49,7 +49,7 @@ const {cart} = useSelector(state => state.cart);
           </Link>
         </Section>
 
-        <Button to='/'>Login</Button>
+        <Link to='/'> { IconWithStyles(AccountCircle) }  </Link>
       </Section>
     </Wrapper>
   )
