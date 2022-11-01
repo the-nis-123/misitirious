@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 // defining our service using a base URL and expected endpoints
 export const misitiriousApi = createApi({
   reducerPath: 'misitiriousApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://the-nis-123.github.io/api/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://the-nis-123.github.io/fake-api/" }),
   endpoints: ( builder ) => ({
     getAllProducts: builder.query({ query: () => "store.json" }),
     getAllFilteredProducts: builder.query({ query: (urlStr) => urlStr }),
