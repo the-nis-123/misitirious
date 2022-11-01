@@ -1,17 +1,23 @@
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
-import { useGetProductByIdQuery } from '../redux/misitiriousApi';
 import FiveStarRating from './FiveStarRating';
+import { addToCart } from '../redux/features/cartSlice';
+import { useDispatch } from 'react-redux';
 
-const ProductDetails = () => {
-  const {id} = useParams();
-  const data = useGetProductByIdQuery(id);
+const ProductDetails = ({data}) => {
+  const dispatch = useDispatch();
+  
+  const handleAddToCart = (e) => {
+    console.log(data);
+    e.stopPropagation();
+    dispatch(addToCart({...data, count:1}));
+  };
 
   return (
     <ProductInfo>
-      <Image style={{backgroundImage:`url(${data?.data? data.data[0].image : ''})`}}/>
+      <Image style={{backgroundImage:`url(${data?.image? data.image : ''})`}}/>
       <Info>
-        <h2>{data?.data? data.data[0].name : ''}</h2>
+        <h2>{data?.name? data.name : ''}</h2>
+        <p>${data?.price? data.price : ''}</p>
         <FiveStarRating />
         <p>
           W3Schools is optimized for learning, testing, and training.
@@ -26,11 +32,7 @@ const ProductDetails = () => {
           read and accepted our terms of use, cookie and privacy policy.
         </p>
 
-        <Buttons>
-          <span>Add to Cart</span>
-          <span>Wishlist</span>
-          <span>Save</span>
-        </Buttons>
+        <span className='button' onClick={handleAddToCart}>Add to Cart</span>
       </Info>
     </ProductInfo>
   )
@@ -69,17 +71,17 @@ const Info = styled.div`
   h2{
     text-transform: capitalize;
   }
-`
 
-const Buttons = styled.section`
-  white-space: nowrap;
-  padding: 10px 0;
-  span{
+  .button{
     display: inline-block;
-    margin-right: 15px;
+    margin-top: 15px;
     background-color: black;
     color: white;
     border-radius: 20px;
     padding: 5px 15px;
+    
+    :hover{
+      cursor:pointer
+    }
   }
 `

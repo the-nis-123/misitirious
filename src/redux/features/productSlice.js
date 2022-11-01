@@ -1,23 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  isSaved: false,
-  isInWishList: false,
-  isInCart: false,
-  isLiked: false
+  activeProduct:{}
 }
 
 export const cartSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    addToSavedProducts: (state, action) => {  },
-    addToLikedProducts: (state, action) => {  },
-    addToWishlist: (state, action) => {  }
+    showProductDetails: (state, action) => { 
+      return { ...state, activeProduct: action.payload }
+    }
   },
 })
 
-// Action creators are generated for each case reducer function
-export const { addToSavedProducts, addToLikedProducts, addToWishlist } = cartSlice.actions
+export const { showProductDetails } = cartSlice.actions
 
 export default cartSlice.reducer;

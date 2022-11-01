@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import ProductCard from './ProductCard';
 import Carousel from './Carousel';
+import { useGetGalleryQuery } from '../redux/misitiriousApi';
 
 const WholeStore = ({data}) => {
+  const { data: gallery } = useGetGalleryQuery();
+
   const store = data?.store;
+  const carouselData = gallery?.gallery;
   
   return (
     <>
       <PosterOne>
-        <Carousel slideWidth='350px' />
+        <Carousel slideWidth='350px' data={carouselData} />
       </PosterOne>
       
       <QuickAccess>
@@ -34,13 +38,14 @@ const WholeStore = ({data}) => {
               price={product.price}
               id={product.id}
               key={product.id}
+              category={product.category}
             />
           </For>
         </If> 
       </MainBody>
 
       <PosterTwo>
-        <Carousel slideWidth='450px' />
+        <Carousel slideWidth='450px' data={carouselData} />
       </PosterTwo>
     </>
   )

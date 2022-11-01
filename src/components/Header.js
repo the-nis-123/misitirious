@@ -26,7 +26,12 @@ const {cart} = useSelector(state => state.cart);
         <Link to='/store'>Men</Link>
         <Link to='/store'> Women </Link>
         <Link to='/store'> Footware </Link>
-        <Link to='/store'> Our Blog </Link>
+
+        <a 
+          href='https://the-nis-123.github.io/misitirious-blog/'
+          target="_blank" 
+          rel="noopener noreferrer"
+        >Our Blog</a>
       </MenuLinks>
  
       <Section>

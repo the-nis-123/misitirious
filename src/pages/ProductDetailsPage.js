@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useSelector } from "react-redux";
 import ProductCard from "../components/ProductCard";
 import StoreSideBar from "../components/StoreSideBar";
 import SearchForm from "../components/SearchForm";
@@ -7,7 +7,9 @@ import { useGetAllProductsQuery } from '../redux/misitiriousApi';
 import ProductDetails from "../components/ProductDetails";
 
 function Store() {
-  const { data: products, error: productsError, isLoading: loadingProducts } = useGetAllProductsQuery();
+  const { activeProduct } = useSelector((state) => state.product);
+  const { data } = useGetAllProductsQuery();
+  const store = data?.store;
   
   return (
     <PageWrapper>
@@ -16,20 +18,23 @@ function Store() {
       <Wrapper>
         <SearchForm />
 
-        <ProductDetails />
+        <ProductDetails data={activeProduct}/>
         
         <MainBody>
           <h2>Similar Products</h2>
           <SimilarProducts>
-            <If condition={ products }>
-              <For each='product' of={products}>
-                <ProductCard 
-                  image={product.image} 
-                  name={product.name} 
-                  price={product.price}
-                  id={product.id}
-                  key={product.id}
-                />
+            <If condition={ store && activeProduct?.category}>
+              <For each='product' of={store}>
+                <If condition={product.category === activeProduct.category}>
+                  <ProductCard 
+                    image={product.image} 
+                    name={product.name} 
+                    price={product.price}
+                    id={product.id}
+                    key={product.id}
+                    category={product.category}
+                  />
+                </If>
               </For>
             </If>
           </SimilarProducts>

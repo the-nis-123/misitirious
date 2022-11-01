@@ -19,6 +19,7 @@ const QuickBuyBlock = () => {
               price={product.price}
               id={product.id}
               key={product.id}
+              category={product.category}
             />
           </For>
         </If>

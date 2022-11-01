@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import CartSideBar from "../components/CartSideBar";
 import CheckOutForm from "../components/CheckOutForm";
 import OrderSummary from "../components/OrderSummary";
 import { useSelector } from "react-redux";
@@ -25,33 +24,22 @@ function CartWrapper() {
   }, [cart])
 
   return (
-    <PageWrapper>
-      <CartSideBar />
-      <Wrapper>
-        <h2>Shopping Cart</h2>
-        <CheckOut>
-          <OrderSummary cart={cart} />          
-          <CheckOutForm vat={totalVat.toFixed(2)} subtotal={subtotal.toFixed(2)} />
-        </CheckOut>
-      </Wrapper>
-    </PageWrapper>
+    <Wrapper>
+      <h2>Shopping Cart</h2>
+      <CheckOut>
+        <OrderSummary cart={cart} />          
+        <CheckOutForm vat={totalVat.toFixed(2)} subtotal={subtotal.toFixed(2)} />
+      </CheckOut>
+    </Wrapper>
   )
 }
 
 export default CartWrapper;
 
-
-const PageWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: calc(100vh - 70px);
-  overflow: hidden;
-`
-
 const Wrapper = styled.div`
   padding: 20px 10px;
-  overflow-y:auto;
-  overflow-x:hidden;
+  height: 100%;
+  overflow: scroll;
 
   h2{
     padding:0 20px;

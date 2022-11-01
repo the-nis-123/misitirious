@@ -4,17 +4,19 @@ import { Favorite } from '@styled-icons/material-rounded/Favorite';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from '../redux/features/cartSlice';
-import { addToWishlist } from '../redux/features/productSlice';
+import { showProductDetails } from '../redux/features/productSlice';
 
 
-const ProductCard = ({image, name, price, id}) => {
+const ProductCard = ({image, name, price, id, category}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const {isInCart, isInWishList} = useSelector((state) => state.cart);
 
-  const navigateToProductDetails = () => {
-    navigate(`/store/${id}`);
+  const navigateToProductDetails = (e) => {
+    e.stopPropagation();
+    dispatch(showProductDetails({image, name, price, id, category}));
+    navigate('/product-details');
   };
 
   const handleAddToCart = (e) => {
@@ -22,10 +24,6 @@ const ProductCard = ({image, name, price, id}) => {
     dispatch(addToCart({id,image, name, price, count:1}));
   };
 
-  const handleAddToWishlist = (e) => {
-    e.stopPropagation();
-    dispatch(addToWishlist({id}));
-  };
 
   return (
     <If condition={price !== undefined && name !== undefined}>
@@ -36,7 +34,6 @@ const ProductCard = ({image, name, price, id}) => {
           <Icon size='30px'>
             <Favorite 
               size='15px' 
-              onClick={handleAddToWishlist} 
             />
           </Icon>
         </FlexContainer>
