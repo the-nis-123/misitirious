@@ -2,7 +2,7 @@
   "name": "misitirious-store",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://shop.misitirious.com",
+  "homepage": "http://the-nis-123.github.io/misitirious",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/jest-dom": "^5.16.4",
