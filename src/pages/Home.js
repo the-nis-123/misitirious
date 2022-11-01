@@ -6,20 +6,24 @@ import ProductCategoriesBlock from "../components/ProductCategoriesBlock";
 import GallerySlide from "../components/GallerySlide";
 import AdvertsCarousel from "../components/AdvertsCarousel";
 import BottomRow from "../components/BottomRow";
-import { useGetAllProductsQuery } from '../redux/misitiriousApi';
+import { useGetAllProductsQuery, useGetGalleryQuery } from '../redux/misitiriousApi';
 
 function Cart() {
   const { data } = useGetAllProductsQuery();
+  const { data: gallery } = useGetGalleryQuery();
+
+  const store = data?.store;
+  const carouselData = gallery?.gallery;
 
   return (
     <Wrapper>
       <HeroSlider />
       <QuickBuyBlock />
       <ProductCategoriesBlock />
-      <AdvertsCarousel />
+      <AdvertsCarousel data={carouselData} />
       <MainBody>
-        <If condition={ data }>
-          <For each='product' of={data.slice(5, 20)}>
+        <If condition={ store }>
+          <For each='product' of={store.slice(5, 20)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -30,7 +34,7 @@ function Cart() {
           </For>
         </If>
       </MainBody>
-      <GallerySlide />
+      <GallerySlide data={carouselData} />
       <BottomRow />
     </Wrapper>
   )

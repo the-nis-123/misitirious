@@ -12,7 +12,7 @@ const QuickBuyBlock = () => {
 
       <section>
         <If condition={ data }>
-          <For each='product' of={data.slice(0, 5)}>
+          <For each='product' of={data.store.slice(0, 5)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 

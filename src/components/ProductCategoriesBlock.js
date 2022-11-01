@@ -12,7 +12,7 @@ const ProductCategoriesBlock = () => {
       <h3>All our product categories</h3>
       <section>
         <If condition={ data }>
-          <For each='category' of={data}>
+          <For each='category' of={data.categories}>
             <CategoryCard key={category.id} image={category.image} name={category.name} />
           </For>
         </If>

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Carousel from './Carousel';
 
-const AdvertsCarousel = () => {
+const AdvertsCarousel = ({data}) => {
   return (
     <Wrapper >
       <h3>Popular brands</h3>
-      <Carousel slideWidth='600px' />
+      <Carousel slideWidth='600px'  data={data}/>
     </Wrapper>
   )
 }

@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import Carousel from './Carousel';
 
 const WholeStore = ({data}) => {
+  const store = data?.store;
   
   return (
     <>
@@ -11,8 +12,8 @@ const WholeStore = ({data}) => {
       </PosterOne>
       
       <QuickAccess>
-        <If condition={ data }>
-          <For each='product' of={data.slice(0, 9)}>
+        <If condition={ store }>
+          <For each='product' of={store.slice(0, 9)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -25,8 +26,8 @@ const WholeStore = ({data}) => {
       </QuickAccess>
 
       <MainBody>
-        <If condition={ data }>
-          <For each='product' of={data.slice(9)}>
+        <If condition={ store }>
+          <For each='product' of={store.slice(9)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 

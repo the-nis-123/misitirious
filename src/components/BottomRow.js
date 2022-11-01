@@ -14,7 +14,7 @@ const BottomRow = () => {
     <Wrapper>
       <section>
         <If condition={ products }>
-          <For each='product' of={products.slice(20, 25)}>
+          <For each='product' of={products.store.slice(20, 25)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 

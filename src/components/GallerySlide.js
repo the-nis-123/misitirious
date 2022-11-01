@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import Carousel from './Carousel';
 
 
-const GallerySlide = () => {
+const GallerySlide = ({data}) => {
   return (
     <Wrapper>
       <h3> Trends right now</h3>
-      <Carousel />
+      <Carousel data={data}/>
     </Wrapper>
   )
 }
