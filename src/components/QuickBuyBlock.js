@@ -45,6 +45,6 @@ const QuickBuy = styled.div`
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     background-color: #FAFAFA;
-    padding: 0 20px;
+    padding: 0 10px;
   }
 `

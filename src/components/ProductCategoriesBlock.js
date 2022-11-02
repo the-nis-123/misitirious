@@ -34,6 +34,6 @@ const ProductCategories = styled.div`
     margin-top: 20px;
     max-width: 100vw;
   }
-  padding: 20px;
+  padding: 20px 10px;
 
 `

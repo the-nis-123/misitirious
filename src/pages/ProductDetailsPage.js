@@ -56,7 +56,7 @@ const Wrapper = styled.div`
 `
 
 const MainBody = styled.div`
-  padding: 0 20px;
+  padding: 0 10px;
 `
 
 const SimilarProducts = styled.div`

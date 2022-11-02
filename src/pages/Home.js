@@ -56,6 +56,6 @@ const MainBody = styled.div`
   max-width: 100vw;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  padding: 20px;
+  padding: 20px 10px;
 `
 

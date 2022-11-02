@@ -7,7 +7,7 @@ const HeroSlider = () => {
   return (
   <Slider style={{backgroundImage:`url('${image}')`}}>
     <CaptionWrapper>
-      <SideBarIcons />
+      {/* <SideBarIcons /> */}
 
       <Caption>
         <LeftCaption>
@@ -51,6 +51,7 @@ const Caption = styled.div`
 
 const LeftCaption = styled.div`
   padding: 50px 50px 0 50px;
+  text-align: center;
 
   h1, span{
     font-size: 4rem;
