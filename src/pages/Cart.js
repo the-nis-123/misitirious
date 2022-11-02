@@ -25,7 +25,7 @@ function CartWrapper() {
 
   return (
     <PageWrapper>
-      <h2>Shopping Cart</h2>
+      <h2>Your Cart</h2>
 
       <CheckOut>
         <OrderSummary cart={cart} />          
@@ -39,13 +39,12 @@ export default CartWrapper;
 
 
 const PageWrapper = styled.div`
-  height: calc(100% - 70px);
+  height: calc(100% - 6em);
   overflow-y:auto;
   overflow-x:hidden;
   padding: 20px 10px;
 
   h2{
-    padding:0 20px;
     color:grey;
     text-transform:uppercase;
   }

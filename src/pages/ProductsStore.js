@@ -42,7 +42,7 @@ function StorePage() {
 export default StorePage;
 
 const PageWrapper = styled.div`
-  height: calc(100% - 70px);
+  height: calc(100% - 6em);
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0 10px;

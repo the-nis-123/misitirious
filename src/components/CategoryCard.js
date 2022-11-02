@@ -39,7 +39,7 @@ const Wrapper = styled.div`
 
 const Image = styled.div`
   width: 100%;
-  min-height: 120px;
+  min-height: 7em;
   background-color:pink;
   background-size: cover;
   background-repeat: no-repeat;

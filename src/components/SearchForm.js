@@ -16,12 +16,12 @@ export default SearchForm;
 const Wrapper = styled.div`
   border: 1px solid #cccccc;
   width: 90%;
-  margin: 20px auto 0 auto;
+  margin: 1em auto 0 auto;
   display:flex;
   align-items:center;
   color:grey;
   p{
-    padding: 0 20px;
+    padding: 0 1em;
   }
 `
 const Search = styled.input`
@@ -30,7 +30,7 @@ const Search = styled.input`
   border-bottom:none;
   border-top:none;
   outline: none;
-  padding: 10px 35px;
+  padding: 1em 2em;
   background-color: inherit;
   width: 80%;
 `

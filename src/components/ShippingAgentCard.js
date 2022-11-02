@@ -53,7 +53,7 @@ export const DhlAgent = () => {
 }
 
 const Wrapper = styled.div`
-  height: 100px;
+  height: 7em;
   border: solid 1px #D8D8D8;
   background-color:white;
   padding: 10px;

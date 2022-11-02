@@ -73,7 +73,7 @@ const Info = styled.div`
     background-color: black;
     color: white;
     border-radius: 2rem;
-    padding: 0.8rem 2rem;
+    padding: 1rem 2rem;
     text-align: center;
     width: 90%;
     

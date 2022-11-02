@@ -24,20 +24,23 @@ export default createGlobalStyle`
   body{
     font-family: 'Sora', sans-serif;
     overflow: hidden;
-  }
-
-  h3,h4,h5,a{
-    font-family: 'Noto Sans Vai', 'Sora', sans-serif;
+    height: 100vh;
+    width: 100vw;
   }
 
   #root{
     background-color: var(--main-background-color);
     position:relative;
     user-select: none;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     overflow: auto;
-  } 
+  }
+  
+  
+  h3,h4,h5,a{
+    font-family: 'Noto Sans Vai', 'Sora', sans-serif;
+  }
 
   .hide-on-small-screens{
     display: none;

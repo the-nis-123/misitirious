@@ -58,18 +58,18 @@ const {cart} = useSelector(state => state.cart);
 export default Header;
 
 const Wrapper  = styled.header`
-  padding: 10px;
-  height: 70px;
+  padding: 0.5em;
+  height: 6em;
   background-color: var(--secondary-color, #ffffff);
   display:flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 100vw; 
+  width: 100vw; 
 `
 const MenuLinks = styled.section`
   display: flex;
   align-items:center;
-  gap: 15px;
+  gap: 1em;
   font-family: 'Noto Sans Vai', sans-serif;
 
   a{
@@ -97,7 +97,7 @@ const Section  = styled.section`
 `
 
 const Logo  = styled.img`
-  width:60px;
+  width: 4em;
   height: auto;
-  margin-right: 10px;
+  margin-right: 1em;
 `

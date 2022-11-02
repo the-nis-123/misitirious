@@ -46,7 +46,7 @@ function Store() {
 
 const PageWrapper = styled.div`
   background-color: inherit;
-  height: calc(100% - 70px);
+  height: calc(100% - 6em);
   overflow-y:auto;
 `
 

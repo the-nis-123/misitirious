@@ -50,7 +50,7 @@ const Product = styled.div`
   align-items:center;
   min-width: 100%;
   border-radius: 5px;
-  margin: 3px 0;
+  margin: 5px 0;
   background-color: white;
   color: gray;
   position:relative;
@@ -58,8 +58,8 @@ const Product = styled.div`
 
 
 const Image = styled.section`
-  height: 80px;
-  width: 100px;
+  height:6em;
+  width: 10em;
   margin-right:15px;
   padding: 10px;
 
@@ -89,7 +89,7 @@ const TrashIcon = styled.section`
   right:10px;
 
   svg{
-    width: 15px;
+    width: 1.2rem;
     color:red;
   }
 
@@ -110,17 +110,12 @@ const Buttons = styled.section`
   padding: 3px 5px;
 
   svg{
-    width: 20px;
+    width: 1.2rem;
   }
 `;
 
 const Icon = styled.p`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  padding: 1rem;
 
   :hover{
     background-color:#f2f2f2;

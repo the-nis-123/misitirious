@@ -66,7 +66,6 @@ const CheckOutForm = ({subtotal, vat }) => {
 export default CheckOutForm;
 
 const Column = styled.div`
-  padding: 20px;
   flex: 50%;
 
   h5{
@@ -88,6 +87,14 @@ const Input = styled.input`
   border: 1px solid #D8D8D8;
   outline:none;
   width: 100%;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   background-color: white;
+`
+
+
+const Button = styled(Input)`
+  backgroundColor:'black', 
+  color:'white',
+  marginTop:'20px',
+  cursor:'pointer'
 `
