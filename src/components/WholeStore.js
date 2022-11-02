@@ -56,7 +56,7 @@ export default WholeStore;
 const QuickAccess = styled.div`
   grid-area: quick;
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 10px 20px;
 `
@@ -74,9 +74,10 @@ const PosterTwo = styled(PosterOne)`
 `
 
 const MainBody = styled.div`
+  max-width: 100vw;
   grid-area: main;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 10px 20px;
 `

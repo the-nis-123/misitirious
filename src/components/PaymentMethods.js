@@ -17,4 +17,5 @@ const Wrapper = styled.select`
   outline:none;
   padding: 10px 20px;
   background-color: white;
+  flex: 20%;
 `

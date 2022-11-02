@@ -14,10 +14,9 @@ export const FedexAgent = () => {
 
       <div>
         <h4>FeDex Delivery</h4>
-        <p>Delivery: 5 to 7 working days</p>
+        <p>5 to 7 working days</p>
+        <p>Free</p>
       </div>
-
-      <p>Free</p>
     </Wrapper>
   )
 }
@@ -46,16 +45,15 @@ export const DhlAgent = () => {
 
       <div>
         <h4>DHL Delivery</h4>
-        <p>Delivery: 1 to 2 working days</p>
+        <p>1 to 2 working days</p>
+        <p>${ (0.01 * subtotal).toFixed(2) }</p>
       </div>
-
-      <p>${ (0.01 * subtotal).toFixed(2) }</p>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  height: 90px;
+  height: 100px;
   border: solid 1px #D8D8D8;
   background-color:white;
   padding: 10px;
@@ -64,7 +62,6 @@ const Wrapper = styled.div`
   display:flex;
   align-items:center;
   justify-content: space-between;
-  gap: 5em;
 
   :hover{
     cursor:pointer;

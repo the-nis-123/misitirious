@@ -43,10 +43,7 @@ export default ProductDetails;
 
 const ProductInfo = styled.div`
   grid-area: product;
-  display: flex;
-  align-items: center;
   padding: 20px;
-  margin: 20px;
   background-color:#f8f8f8;
 
   p{
@@ -55,8 +52,8 @@ const ProductInfo = styled.div`
 `
 
 const Image = styled.div`
-  width: 550px;
-  height: 450px;
+  max-width: 100%;
+  min-height: 40vh;
   background-color:inherit;
   background-size:contain;
   background-position: center;
@@ -65,20 +62,20 @@ const Image = styled.div`
 
 
 const Info = styled.div`
-  width: calc(100% - 550px);
-  height: 450px;
 
   h2{
     text-transform: capitalize;
   }
 
   .button{
-    display: inline-block;
-    margin-top: 15px;
+    display: block;
+    margin: 15px auto 0 auto;
     background-color: black;
     color: white;
     border-radius: 20px;
     padding: 5px 15px;
+    text-align: center;
+    width: 90%;
     
     :hover{
       cursor:pointer

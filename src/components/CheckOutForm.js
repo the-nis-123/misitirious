@@ -17,8 +17,8 @@ const CheckOutForm = ({subtotal, vat }) => {
       <h5>card number</h5>
       <InputWrapper>
         <PaymentMethods />
-        <Input type='text' placeholder='****************'/>
-        <Input type='text' placeholder='mm/yy' style={{width:'150px'}}/>
+        <Input type='text' placeholder='****************' style={{flex:'60%'}}/>
+        <Input type='text' placeholder='mm/yy' style={{flex:'20%'}}/>
       </InputWrapper>
 
       <h5>card holder</h5>

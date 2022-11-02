@@ -56,7 +56,4 @@ const PageWrapper = styled.div`
 `
 
 const CheckOut = styled.div`
-  display: flex;
-  justify-content:space-between
-  gap: 15px;
 `

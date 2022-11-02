@@ -40,8 +40,9 @@ const QuickBuy = styled.div`
   }
 
   section{
+    max-width: 100vw;
     display:grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     background-color: #FAFAFA;
     padding: 0 20px;

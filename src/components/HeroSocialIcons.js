@@ -4,7 +4,7 @@ import { links } from "../other resources/social-links";
 
 const SideBarIcons = () => {
   return (
-    <Wrapper>
+    <Wrapper className='hide-on-small-screens'>
       <For each='link' of={links}>
         <a 
           href={link.link}

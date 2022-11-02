@@ -15,10 +15,10 @@ const {cart} = useSelector(state => state.cart);
     <Wrapper>
       <Section>
         <Logo src={logo} alt='' />
-        <h2>{ siteName } </h2>
+        <h2 className='hide-on-small-screens'>{ siteName } </h2>
       </Section>
 
-      <MenuLinks >
+      <MenuLinks className='hide-on-small-screens'>
         <Link to='/'> Home </Link>
         <Link to='/store'> Our Store</Link>
         <Link to='/store'> Kids </Link>
@@ -64,6 +64,7 @@ const Wrapper  = styled.header`
   display:flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100vw; 
 `
 const MenuLinks = styled.section`
   display: flex;

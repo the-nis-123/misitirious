@@ -17,7 +17,7 @@ const HeroSlider = () => {
           <p>upto <span>15%</span> less <br/> than your average stores</p>
         </LeftCaption>
 
-        <RightCaption>
+        <RightCaption className='hide-on-small-screens'>
           <For each='item' of={servicesList}>
             <p key={servicesList.indexOf(item)}> {item} </p>
           </For>
@@ -33,23 +33,19 @@ export default HeroSlider;
 
 const Slider = styled.div`
   background-color: #fdfdfd;
-  display:flex;
-  align-items: center;
-  height: 80vh;
-  background-position: top left;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  max-width: 100vh !important; 
+  text-align: center;
 `
 
 const CaptionWrapper = styled.div`
   height: 100%;
   width: 100%;
-  display: flex;
 `
 
 const Caption = styled.div`
-  width: calc(100% - 60px);
-  display: flex;
   justify-content: space-between;
 `
 

@@ -53,8 +53,9 @@ const Wrapper = styled.div`
 const MainBody = styled.div`
   grid-area: main;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  max-width: 100vw;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   padding: 20px;
 `
 

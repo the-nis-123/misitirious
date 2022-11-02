@@ -29,9 +29,9 @@ const ProductCard = ({image, name, price, id, category}) => {
     <If condition={price !== undefined && name !== undefined}>
       <Wrapper onClick={navigateToProductDetails}>
         <FlexContainer>
-          <p>{ name }</p> 
+          <p className="product-name">{ name }</p> 
 
-          <Icon size='30px'>
+          <Icon size='30px' className="hide-on-small-screens">
             <Favorite 
               size='15px' 
             />
@@ -40,7 +40,7 @@ const ProductCard = ({image, name, price, id, category}) => {
 
         <Image style={{ backgroundImage: `url(${image})` }} />
 
-        <Description>
+        <Description className="hide-on-small-screens">
             Some kind of description about this particular product 
             and all that other relevant information that customers might be interested in.
         </Description>
@@ -61,14 +61,15 @@ export default ProductCard;
 
 const Wrapper = styled.div`
   margin-top: 20px;
+  height: 40vh;
   vertical-align: middle;
   position: relative;
-  width: auto;
-  height: 350px;
   border-radius: 5px;
   background-color:  white;
   padding: 0 20px;
   font-family: 'Sora', 'Noto Sans Vai', sans-serif;
+  display: flex;
+  flex-flow: column;
 
   :hover{
     cursor:pointer;
@@ -76,8 +77,8 @@ const Wrapper = styled.div`
 `
 
 const Image = styled.div`
-  height: 40%;
-  width: 100%;
+  flex: 50%;
+  width:100%;
   background-repeat: no-repeat;
   background-origin: content-box;
   background-size: contain;
@@ -99,10 +100,15 @@ const Description = styled.p`
 `
 
 const FlexContainer = styled.div`
+  flex: 25%;
  display:flex;
  justify-content: space-between;
  align-items:center;
  padding: 20px 0;
+
+ .product-name{
+   text-align: center;
+ }
 
  p{
   text-transform: capitalize;

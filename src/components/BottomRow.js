@@ -34,12 +34,13 @@ export default BottomRow;
 
 const Wrapper = styled.div`
   grid-area: bottomRow;
-  padding: 20px;
 
   section{
+    max-width: 100vw;
     display:grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    padding: 20px;
   }
  
 `

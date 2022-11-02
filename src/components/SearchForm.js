@@ -2,13 +2,10 @@ import styled from 'styled-components';
 
 const SearchForm = ({setQuery}) => {
   return (
-    <Container>
-      <Wrapper>
-        <p>search</p>
-        < Search onChange={(e)=>setQuery(e.target.value)}/>
-      </Wrapper>
-    </Container>
-    
+    <Wrapper>
+      <p>search</p>
+      < Search onChange={(e)=>setQuery(e.target.value)}/>
+    </Wrapper>
   )
 }
 
@@ -16,15 +13,10 @@ export default SearchForm;
 
 
 
-const Container = styled.div`
-  grid-area:search;
-  margin-top: 10px;
-`
-
 const Wrapper = styled.div`
   border: 1px solid #cccccc;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto 0 auto;
   display:flex;
   align-items:center;
   color:grey;

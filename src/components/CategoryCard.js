@@ -15,11 +15,11 @@ export default CategoryCard;
 
 const Wrapper = styled.div`
   flex: 25%;
-  aspect-ratio: 9/11;
   display:flex;
   flex-flow:column;
   background-color: white;
   padding: 10px 30px;
+  height: auto;
 
   a{
     text-decoration:none;
@@ -28,12 +28,18 @@ const Wrapper = styled.div`
 
   h3,a{
     padding: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 2; 
   }
 `
 
 const Image = styled.div`
   width: 100%;
-  height: 80%;
+  min-height: 120px;
   background-color:pink;
   background-size: cover;
   background-repeat: no-repeat;

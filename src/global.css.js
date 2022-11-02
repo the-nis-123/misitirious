@@ -18,10 +18,10 @@ export default createGlobalStyle`
 
   html{
     scroll-behavior: smooth;
+    font-size:100%;
   }
 
   body{
-    min-width: 1200px;
     overflow:hidden;
     font-family: 'Sora', sans-serif;
   }
@@ -33,8 +33,10 @@ export default createGlobalStyle`
   #root{
     background-color: var(--main-background-color);
     position:relative;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
+    user-select: none;
   } 
+
+  .hide-on-small-screens{
+    display: none;
+  }
 `;

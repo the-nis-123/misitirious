@@ -25,7 +25,7 @@ const Carousel = ({slideWidth, data}) => {
 export default Carousel;
 
 const Wrapper = styled.div`
-  width: 100%;
+  max-width: 100vw;
   height: 100%;
   margin-top: 10px;
   overflow: hidden;

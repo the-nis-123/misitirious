@@ -29,9 +29,10 @@ const ProductCategories = styled.div`
   
   section{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     margin-top: 20px;
+    max-width: 100vw;
   }
   padding: 20px;
 

@@ -21,7 +21,7 @@ const StoreSideBar = () => {
   const categories = ['kids', 'boys', 'girls', 'men', 'women'];
 
   return (
-    <SideBar>
+    <SideBar className='hide-on-small-screens'>
       <SideBarSectionWrapper title='Products'>
         <For each='item' of={products}>
           <Input label={item.label} key={item.name} name={item.name}/>
