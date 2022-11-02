@@ -36,7 +36,7 @@ const Slides = styled.div`
   flex-wrap: nowrap;
   gap:20px;
   transform-style: preserve-3d;
-  padding: 0 20px;
+  padding: 0 10px;
 `
 const Slide = styled.div`
   height: 100%;

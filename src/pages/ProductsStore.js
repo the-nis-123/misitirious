@@ -18,7 +18,7 @@ function StorePage() {
 
   return (
     <PageWrapper>
-      <StoreSideBar />
+      {/* <StoreSideBar /> */}
         
       <Wrapper>
         <SearchForm setQuery={setQuery}/>
@@ -41,44 +41,24 @@ function StorePage() {
 
 export default StorePage;
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-areas:
-  'search search search search search search'
-  'main main main main main main';
-
-  padding: 10px 0;
-  overflow-y:auto;
-  overflow-x:hidden;
+const PageWrapper = styled.div`
+  height: calc(100vh - 70px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 10px;
 `
 
-
-const PageWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  height: calc(100vh - 70px);
-  overflow: hidden;
+const Wrapper = styled.div`
+  padding: 10px 0;
+  overflow:hidden;
 `
 
 const SearchResultsWrapper = styled.div`
   display: grid;
-  grid-area:main;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap:15px;
-  padding: 0 20px;
 `
 
 const WholeStore = styled.div`
-  grid-template-areas:
-  'poster1 poster1 poster1 poster1 poster1 poster1'
-  'quick quick quick quick quick quick'
-  'poster2 poster2 poster2 poster2 poster2 poster2'
-  'main main main main main main'
-  'pagination pagination pagination pagination pagination pagination';
-
-  display: grid;
-  grid-area:main;
-  grid-template-columns: repeat(3, 1fr);
   gap:15px;
-  padding: 0 20px;
 `

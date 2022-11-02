@@ -11,10 +11,6 @@ const WholeStore = ({data}) => {
   
   return (
     <>
-      <PosterOne>
-        <Carousel slideWidth='350px' data={carouselData} />
-      </PosterOne>
-      
       <QuickAccess>
         <If condition={ store }>
           <For each='product' of={store.slice(0, 9)}>
@@ -28,6 +24,10 @@ const WholeStore = ({data}) => {
           </For>
         </If>
       </QuickAccess>
+
+      <PosterOne>
+        <Carousel slideWidth='350px' data={carouselData} />
+      </PosterOne>
 
       <MainBody>
         <If condition={ store }>
@@ -54,30 +54,24 @@ const WholeStore = ({data}) => {
 export default WholeStore;
 
 const QuickAccess = styled.div`
-  grid-area: quick;
   display:grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  padding: 10px 20px;
+  padding: 10px 0;
 `
 
 const PosterOne = styled.div`
-  grid-area: poster1;
   padding: 20px 0;
-  width: 100%;
   height: 450px;
   overflow: hidden;
 `
 
-const PosterTwo = styled(PosterOne)`
-  grid-area: poster2;
+const PosterTwo = styled.div`
 `
 
 const MainBody = styled.div`
-  max-width: 100vw;
-  grid-area: main;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  padding: 10px;
+  padding: 10px 0;
 `
