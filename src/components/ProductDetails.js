@@ -72,8 +72,8 @@ const Info = styled.div`
     margin: 15px auto 0 auto;
     background-color: black;
     color: white;
-    border-radius: 20px;
-    padding: 5px 15px;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
     text-align: center;
     width: 90%;
     

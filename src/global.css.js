@@ -22,8 +22,8 @@ export default createGlobalStyle`
   }
 
   body{
-    overflow:hidden;
     font-family: 'Sora', sans-serif;
+    overflow: hidden;
   }
 
   h3,h4,h5,a{
@@ -34,6 +34,9 @@ export default createGlobalStyle`
     background-color: var(--main-background-color);
     position:relative;
     user-select: none;
+    height: 100vh;
+    width: 100%;
+    overflow: auto;
   } 
 
   .hide-on-small-screens{

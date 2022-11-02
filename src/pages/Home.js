@@ -45,7 +45,7 @@ export default Cart;
 
 const Wrapper = styled.div`
   width: 100%;
-  height: calc(100vh - 70px);
+  height: calc(100% - 70px);
   overflow:auto;
   background-color: var(--main-background-color);
 `

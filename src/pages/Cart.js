@@ -39,7 +39,7 @@ export default CartWrapper;
 
 
 const PageWrapper = styled.div`
-  height: calc(100vh - 70px);
+  height: calc(100% - 70px);
   overflow-y:auto;
   overflow-x:hidden;
   padding: 20px 10px;
