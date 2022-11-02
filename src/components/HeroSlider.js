@@ -6,8 +6,8 @@ import { servicesList } from "../other resources/site-identity";
 const HeroSlider = () => {
   return (
   <Slider style={{backgroundImage:`url('${image}')`}}>
-    <CaptionWrapper>
-      {/* <SideBarIcons /> */}
+    {/* <CaptionWrapper>
+      <SideBarIcons />
 
       <Caption>
         <LeftCaption>
@@ -23,7 +23,7 @@ const HeroSlider = () => {
           </For>
         </RightCaption>
       </Caption>
-    </CaptionWrapper>
+    </CaptionWrapper> */}
   </Slider>
   )
 }
@@ -36,8 +36,8 @@ const Slider = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  max-width: 100vh !important; 
   text-align: center;
+  height: 40vh;
 `
 
 const CaptionWrapper = styled.div`

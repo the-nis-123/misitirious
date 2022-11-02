@@ -40,10 +40,10 @@ const ProductCard = ({image, name, price, id, category}) => {
 
         <Image style={{ backgroundImage: `url(${image})` }} />
 
-        <Description className="hide-on-small-screens">
+        {/* <Description className="hide-on-small-screens">
             Some kind of description about this particular product 
             and all that other relevant information that customers might be interested in.
-        </Description>
+        </Description> */}
 
         <FlexContainer>
           <Icon onClick={handleAddToCart} >
