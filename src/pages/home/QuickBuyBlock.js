@@ -8,11 +8,11 @@ const QuickBuyBlock = () => {
 
   return (
     <QuickBuy>
-      <h3>Top Salers</h3>
+      <h2>Top Salers</h2>
 
       <section>
         <If condition={ data }>
-          <For each='product' of={data.store.slice(0, 5)}>
+          <For each='product' of={data.store.slice(0, 8)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -32,27 +32,23 @@ export default QuickBuyBlock;
 
 
 const QuickBuy = styled.div`
-  grid-area: quickBuy;
-  background-color: white;
-
-  h3{
-    padding: 20px;
+  h2{
+    padding: 1em 0.6em;
   }
 
   section{
     max-width: 100vw;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6em;
+    gap: 1em;
     padding: 0 0.6em;
 
     @media only screen and (min-width: 640px)  {
       grid-template-columns: repeat(3, 1fr);
     }
 
-      
     @media only screen and (min-width: 1000px)  {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 `

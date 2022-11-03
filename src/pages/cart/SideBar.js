@@ -1,10 +1,29 @@
 import styled from 'styled-components';
+import { useGetAllProductsQuery } from '../../redux/misitiriousApi';
+import ProductCard from '../../components/ProductCard';
 
 const SideBar = () => {
+  const { data } = useGetAllProductsQuery();
+  const store = data?.store;
   
   return (
     <Wrapper>
-     
+      <h3>Top Salers</h3>
+
+      <section>
+        <If condition={ store }>
+          <For each='product' of={store.slice(12)}>
+            <ProductCard 
+              image={product.image} 
+              name={product.name} 
+              price={product.price}
+              id={product.id}
+              key={product.id}
+              category={product.category}
+            />
+          </For>
+        </If>
+      </section>
     </Wrapper>
   )
 }
@@ -17,25 +36,18 @@ const Wrapper = styled.div`
 
   @media only screen and (min-width: 640px)  {
     display: block;
-    background-color: white;
     min-width: 300px;
-    overflow-y:auto;
-    overflow-x: hidden;
+    overflow:auto;
+    padding: 1em;
 
-    input{
-      margin-right: 10px;
-      border:none;
-      outline:none;
-
-      :checked{
-        background-color: black;
-      }
+    section{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1em;
     }
 
-    label{
-      color: 	#606060;
-      text-transform: capitalize;
-      font-size: 0.8rem;
+    h3{
+      padding: 1em 0;
     }
   }
 `

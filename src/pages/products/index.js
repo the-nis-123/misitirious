@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {useState} from 'react';
-
-import SideBar from "./SideBar";
+import PageContainer from "./PageContainer";
 import SearchForm from "./SearchForm";
 import Store from "./WholeStore";
 import SearchResults from "./SearchResults";
@@ -17,54 +16,25 @@ function StorePage() {
   const data = useGetAllSearchResultsQuery(query);
 
   return (
-    <PageWrapper>
-      <SideBar />
-        
-      <Wrapper>
-        <SearchForm setQuery={setQuery}/>
+    <PageContainer>
+      <SearchForm setQuery={setQuery}/>
 
-        <If condition={query}>
-          <SearchResultsWrapper>
-            <SearchResults data={data}/>
-          </SearchResultsWrapper>
-        </If>
+      <If condition={query}>
+        <SearchResultsWrapper>
+          <SearchResults data={data}/>
+        </SearchResultsWrapper>
+      </If>
 
-        <If condition={!query}>
-          <WholeStore>
-            <Store data={products}/>
-          </WholeStore>
+      <If condition={!query}>
+        <WholeStore>
+          <Store data={products}/>
+        </WholeStore>
         </If>
-      </Wrapper>
-    </PageWrapper>
+    </PageContainer>
   )
 }
 
 export default StorePage;
-
-const PageWrapper = styled.div`
-  height: calc(100% - 5em);
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 0 0.6em;
-
-  @media only screen and (min-width: 640px)  {
-    overflow: hidden;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
-`
-
-const Wrapper = styled.div`
-  padding: 1em 0;
-
-  @media only screen and (min-width: 640px)  {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 0 0.6em;
-  }
-`
 
 const SearchResultsWrapper = styled.div`
   display: grid;

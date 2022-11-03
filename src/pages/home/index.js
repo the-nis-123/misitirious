@@ -46,7 +46,8 @@ export default Cart;
 const Wrapper = styled.div`
   width: 100%;
   height: calc(100% - 5em);
-  overflow:auto;
+  overflow-y:auto;
+  overflow-x:hidden;
   background-color: var(--main-background-color);
 `
 
@@ -55,7 +56,7 @@ const MainBody = styled.div`
   display: grid;
   max-width: 100vw;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.6em;
+  gap: 1em;
   padding: 1em 0.6em;
   
   @media only screen and (min-width: 640px)  {
@@ -63,7 +64,7 @@ const MainBody = styled.div`
   }
 
   @media only screen and (min-width: 1000px)  {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 `
 

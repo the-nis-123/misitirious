@@ -4,7 +4,7 @@ import Carousel from '../../components/Carousel';
 const AdvertsCarousel = ({data}) => {
   return (
     <Wrapper >
-      <h3>Popular brands</h3>
+      <h2>Popular Brands</h2>
       <Carousel slideWidth='600px'  data={data}/>
     </Wrapper>
   )
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   padding: 1em 0;
   overflow: hidden;
 
-  h3{
+  h2{
     padding: 0 0.6em;
   }
 `

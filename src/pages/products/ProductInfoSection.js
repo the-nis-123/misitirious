@@ -23,12 +23,9 @@ const ProductInfo = ({data}) => {
           W3Schools is optimized for learning, testing, and training.
           Examples might be simplified to improve reading and basic understanding.
           Tutorials, references, and examples are constantly reviewed to avoid errors, 
-          but we cannot warrant full correctness of all content. 
           While using this site, you agree to have read and accepted our 
-          terms of use, cookie and Examples might be simplified to improve 
           reading and basic understanding. Tutorials, references, and examples 
           are constantly reviewed to avoid errors, but we cannot warrant full 
-          correctness of all content. While using this site, you agree to have 
           read and accepted our terms of use, cookie and privacy policy.
         </p>
 
@@ -42,9 +39,13 @@ export default ProductInfo;
 
 
 const Wrapper = styled.div`
-  grid-area: product;
-  padding: 20px;
+  padding: 1em;
   background-color:#f8f8f8;
+
+  @media only screen and (min-width: 1000px)  {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   p{
     margin-top: 10px;
@@ -62,6 +63,7 @@ const Image = styled.div`
 
 
 const Info = styled.div`
+  padding: 1em 0;
 
   h2{
     text-transform: capitalize;
@@ -72,8 +74,8 @@ const Info = styled.div`
     margin: 15px auto 0 auto;
     background-color: black;
     color: white;
-    border-radius: 2rem;
-    padding: 1rem 2rem;
+    border-radius: 2em;
+    padding: 0.8em 2em;
     text-align: center;
     width: 90%;
     

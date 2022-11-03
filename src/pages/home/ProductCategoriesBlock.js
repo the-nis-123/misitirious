@@ -10,7 +10,7 @@ const ProductCategoriesBlock = () => {
 
   return (
     <ProductCategories>
-      <h3>All our product categories</h3>
+      <h2>All Our Product Categories</h2>
       <Carousel>
         <If condition={ data }>
           <For each='category' of={data.categories}>
@@ -29,7 +29,7 @@ const ProductCategories = styled.div`
   width: 100%;
   padding: 1em 0;
 
-  h3{
+  h2{
     padding: 0 0.6em;
   }
 `

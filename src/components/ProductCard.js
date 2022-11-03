@@ -30,20 +30,15 @@ const ProductCard = ({image, name, price, id, category}) => {
       <Wrapper onClick={navigateToProductDetails}>
         <FlexContainer>
           <p className="product-name">{ name }</p> 
-
-          <Icon size='30px' className="hide-on-small-screens">
-            <Favorite 
-              size='15px' 
-            />
-          </Icon>
+          <Favorite  size='1rem' />
         </FlexContainer>
 
-        <Image style={{ backgroundImage: `url(${image})` }} />
+        <Image src={image} alt='' />
 
-        {/* <Description className="hide-on-small-screens">
-            Some kind of description about this particular product 
-            and all that other relevant information that customers might be interested in.
-        </Description> */}
+        <Description>
+          Some kind of description about this particular product 
+          and all that other relevant information that customers might be interested in.
+        </Description>
 
         <FlexContainer>
           <Icon onClick={handleAddToCart} >
@@ -60,29 +55,25 @@ const ProductCard = ({image, name, price, id, category}) => {
 export default ProductCard;
 
 const Wrapper = styled.div`
-  margin-top: 20px;
-  height: 40vh;
-  vertical-align: middle;
-  position: relative;
+  min-width: 250px;
   border-radius: 5px;
   background-color:  white;
-  padding: 0 20px;
+  padding: 1em 2em;
   font-family: 'Sora', 'Noto Sans Vai', sans-serif;
   display: flex;
   flex-flow: column;
+  
 
   :hover{
     cursor:pointer;
   }
 `
 
-const Image = styled.div`
-  flex: 50%;
-  width:100%;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  background-size: contain;
-  background-position: center;
+const Image = styled.img`
+  width: 70%;
+  height: 50%;
+  margin: 0 auto;
+  object-fit: contain;
 `
 
 const Price = styled.p`
@@ -100,23 +91,20 @@ const Description = styled.p`
 `
 
 const FlexContainer = styled.div`
-  flex: 25%;
  display:flex;
  justify-content: space-between;
  align-items:center;
- padding: 20px 0;
+ padding: 1em 0;
 
  .product-name{
-   text-align: center;
- }
-
- p{
-  text-transform: capitalize;
-  verflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+    text-align: center;
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
  }
 
  svg{
@@ -129,8 +117,8 @@ const FlexContainer = styled.div`
 
 const Icon = styled.span`
   background-color: #f0f0f0;
-  width:${props => props.size ? props.size : '50px'};;
-  height: ${props => props.size ? props.size : '50px'};;
+  width: 3em;
+  height: 3em;
   display: grid;
   place-items: center;
   border-radius: 50%;

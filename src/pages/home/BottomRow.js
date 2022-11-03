@@ -12,9 +12,11 @@ const BottomRow = () => {
 
   return (
     <Wrapper>
+      <h2>Trending Right Now</h2>
+
       <section>
         <If condition={ products }>
-          <For each='product' of={products.store.slice(20, 25)}>
+          <For each='product' of={products.store.slice(17, 25)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -45,8 +47,11 @@ const Wrapper = styled.div`
     }
      
     @media only screen and (min-width: 1000px)  {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
  
+  h2{
+    padding: 1em 0.6em 0 0.6em;
+  }
 `

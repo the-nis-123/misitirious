@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import image from '../../images/3.png';
+import image from '../../images/6.png';
 import SideBarIcons from "./HeroSocialIcons";
 import { servicesList } from "../../other resources/site-identity";
 
@@ -10,7 +10,7 @@ const HeroSlider = () => {
 
     <Caption>
       <LeftCaption>
-        <h4>UNMATCHED QUALITY</h4>
+        <h3>UNMATCHED QUALITY</h3>
         <h1>Elegant, Slick,<br /> and Trending</h1>
         <p> at prices you can trust</p>
         <p>upto <span>15%</span> less <br/> than your average stores</p>
@@ -39,8 +39,12 @@ const Slider = styled.div`
   @media only screen and (min-width: 640px)  {
     display: flex;
     align-items: center;
-    height: auto;
+    min-height: 60vh;
     padding: 2em;
+  }
+
+  @media only screen and (min-width: 1000px)  {
+    min-height: 80vh;
   }
 `
 
@@ -64,6 +68,11 @@ const LeftCaption = styled.div`
 
   span{
     color: var(--primary-color);
+  }
+
+  h3{
+    color: purple;
+    padding: 1em 0;
   }
 `
 
