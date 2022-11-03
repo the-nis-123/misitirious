@@ -36,9 +36,17 @@ const Wrapper = styled.div`
   section{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    padding: 20px 10px;
+    gap: 1em;
+    padding: 1em 0.6em;
     margin-bottom: 30px;
+
+    @media only screen and (min-width: 640px)  {
+      grid-template-columns: repeat(3, 1fr);
+    }
+     
+    @media only screen and (min-width: 1000px)  {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
  
 `

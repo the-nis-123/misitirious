@@ -2,21 +2,22 @@ import styled from 'styled-components';
 import CategoryCard from "../components/CategoryCard";
 
 import { useGetAllCategoriesQuery } from '../redux/misitiriousApi';
+import Carousel from './Carousel';
 
 
 const ProductCategoriesBlock = () => {
-  const { data, error, isLoading } = useGetAllCategoriesQuery();
+  const { data } = useGetAllCategoriesQuery();
 
   return (
     <ProductCategories>
       <h3>All our product categories</h3>
-      <section>
+      <Carousel>
         <If condition={ data }>
           <For each='category' of={data.categories}>
             <CategoryCard key={category.id} image={category.image} name={category.name} />
           </For>
         </If>
-      </section>
+      </Carousel>
     </ProductCategories>
   )
 }
@@ -25,15 +26,10 @@ export default ProductCategoriesBlock;
 
 
 const ProductCategories = styled.div`
-  grid-area: category;
-  
-  section{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-    max-width: 100vw;
-  }
-  padding: 20px 10px;
+  width: 100%;
+  padding: 1em 0;
 
+  h3{
+    padding: 0 0.6em;
+  }
 `

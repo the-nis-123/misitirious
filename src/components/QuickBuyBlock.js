@@ -43,8 +43,16 @@ const QuickBuy = styled.div`
     max-width: 100vw;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    background-color: #FAFAFA;
-    padding: 0 10px;
+    gap: 0.6em;
+    padding: 0 0.6em;
+
+    @media only screen and (min-width: 640px)  {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+      
+    @media only screen and (min-width: 1000px)  {
+      grid-template-columns: repeat(5, 1fr);
+    }
   }
 `

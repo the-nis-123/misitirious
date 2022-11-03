@@ -1,23 +1,30 @@
 import styled from 'styled-components';
 import { useRef } from 'react';
 
-const Carousel = ({slideWidth, data}) => {
+const Carousel = ({children, slideWidth, data}) => {
   const slidesRef = useRef([]);
 
   return (
     <Wrapper >
-      <Slides>
-        <If condition={data}>
-          <For each='slide' of={data}>
-            <Slide 
-              key={slide} slideWidth={slideWidth} 
-              className='slide'>
-              <img src={slide}  alt=''/>
-            </Slide>
-          </For>
-        </If>
+      <If condition={children}>
+        <Slides>
+          {children}
+        </Slides>
+      </If>
 
-      </Slides>
+      <If condition={!children}>
+        <Slides>
+          <If condition={data}>
+            <For each='slide' of={data}>
+              <Slide 
+                key={slide} slideWidth={slideWidth} 
+                className='slide'>
+                <img src={slide}  alt=''/>
+              </Slide>
+            </For>
+          </If>
+        </Slides>
+      </If>
     </Wrapper>
   )
 }

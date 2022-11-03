@@ -6,24 +6,22 @@ import { servicesList } from "../other resources/site-identity";
 const HeroSlider = () => {
   return (
   <Slider style={{backgroundImage:`url('${image}')`}}>
-    {/* <CaptionWrapper>
-      <SideBarIcons />
+    <SideBarIcons />
 
-      <Caption>
-        <LeftCaption>
-          <h4>UNMATCHED QUALITY</h4>
-          <h1>Elegant, Slick,<br /> and Trending</h1>
-          <p> at prices you can trust</p>
-          <p>upto <span>15%</span> less <br/> than your average stores</p>
-        </LeftCaption>
+    <Caption>
+      <LeftCaption>
+        <h4>UNMATCHED QUALITY</h4>
+        <h1>Elegant, Slick,<br /> and Trending</h1>
+        <p> at prices you can trust</p>
+        <p>upto <span>15%</span> less <br/> than your average stores</p>
+      </LeftCaption>
 
-        <RightCaption className='hide-on-small-screens'>
-          <For each='item' of={servicesList}>
-            <p key={servicesList.indexOf(item)}> {item} </p>
-          </For>
-        </RightCaption>
-      </Caption>
-    </CaptionWrapper> */}
+      <RightCaption>
+        <For each='item' of={servicesList}>
+          <p key={servicesList.indexOf(item)}> {item} </p>
+        </For>
+      </RightCaption>
+    </Caption>
   </Slider>
   )
 }
@@ -36,26 +34,31 @@ const Slider = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  text-align: center;
   height: 40vh;
-`
 
-const CaptionWrapper = styled.div`
-  height: 100%;
-  width: 100%;
+  @media only screen and (min-width: 640px)  {
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 2em;
+  }
 `
 
 const Caption = styled.div`
-  justify-content: space-between;
+  display: none;
+  padding: 2rem;
+
+  @media only screen and (min-width: 1000px)  {
+    width: calc(100% - 4em);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `
 
 const LeftCaption = styled.div`
-  padding: 50px 50px 0 50px;
-  text-align: center;
-
   h1, span{
     font-size: 4rem;
-    margin:10px 0;
     font-family: 'Lobster Two';
   }
 
@@ -65,11 +68,10 @@ const LeftCaption = styled.div`
 `
 
 const RightCaption = styled.div`
-  padding: 70px 20px;
 
   p{
     text-align: right;
-    padding: 2px 10px;
+    padding: 0.2em 0.6em;
     border-right: 4px solid var(--primary-color);
   }
 `

@@ -15,10 +15,10 @@ const {cart} = useSelector(state => state.cart);
     <Wrapper>
       <Section>
         <Logo src={logo} alt='' />
-        <h2 className='hide-on-small-screens'>{ siteName } </h2>
+        <h2>{ siteName } </h2>
       </Section>
 
-      <MenuLinks className='hide-on-small-screens'>
+      <MenuLinks>
         <Link to='/'> Home </Link>
         <Link to='/store'> Our Store</Link>
         <Link to='/store'> Kids </Link>
@@ -59,27 +59,30 @@ export default Header;
 
 const Wrapper  = styled.header`
   padding: 0.5em;
-  height: 6em;
   background-color: var(--secondary-color, #ffffff);
   display:flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw; 
+  width: 100%; 
 `
 const MenuLinks = styled.section`
-  display: flex;
-  align-items:center;
-  gap: 1em;
-  font-family: 'Noto Sans Vai', sans-serif;
+  display: none;
 
-  a{
-    text-decoration: none;
-    white-space:nowrap;
-    color: black;
-    border-bottom: 3px solid var(--secondary-color, #ffffff);
+  @media only screen and (min-width: 1000px)  {
+    display: flex;
+    align-items:center;
+    gap: 1em;
+    font-family: 'Noto Sans Vai', sans-serif;
 
-    :hover{
-      border-bottom: 3px solid var(--primary-color, #ff0000);
+    a{
+      text-decoration: none;
+      white-space:nowrap;
+      color: black;
+      border-bottom: 3px solid var(--secondary-color, #ffffff);
+
+      :hover{
+        border-bottom: 3px solid var(--primary-color, #ff0000);
+      }
     }
   }
 `;
@@ -87,6 +90,14 @@ const MenuLinks = styled.section`
 const Section  = styled.section`
   display: flex;
   align-items:center;
+
+  h2{
+    display: none;
+    
+    @media only screen and (min-width: 1000px)  {
+      display: block;
+    }
+  }
 
   a{
     display:inline-block;

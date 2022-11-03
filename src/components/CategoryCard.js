@@ -5,7 +5,7 @@ const CategoryCard = ({image, name}) => {
   return (
     <Wrapper>
       <h3>{name}</h3>
-      <Image style={{ backgroundImage: `url(${image})` }}/>
+      <Image src={image} alt='' />
       <Link to='/store'>Shop Now</Link>
     </Wrapper>
   )
@@ -14,12 +14,13 @@ const CategoryCard = ({image, name}) => {
 export default CategoryCard;
 
 const Wrapper = styled.div`
-  flex: 25%;
-  display:flex;
+  width: 300px;
+  height: 400px;
+  display: inline-flex;
   flex-flow:column;
+  justify-content: space-between;
   background-color: white;
-  padding: 10px 30px;
-  height: auto;
+  padding: 0.5em 1em;
 
   a{
     text-decoration:none;
@@ -37,11 +38,8 @@ const Wrapper = styled.div`
   }
 `
 
-const Image = styled.div`
+const Image = styled.img`
   width: 100%;
-  min-height: 7em;
-  background-color:pink;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position:center;
+  height: 75%;
+  object-fit: cover;
 `

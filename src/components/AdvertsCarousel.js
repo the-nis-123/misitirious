@@ -14,10 +14,10 @@ export default AdvertsCarousel;
 
 
 const Wrapper = styled.div`
-  padding: 20px 0;
+  padding: 1em 0;
   overflow: hidden;
 
   h3{
-    padding: 0 20px;
+    padding: 0 0.6em;
   }
 `
