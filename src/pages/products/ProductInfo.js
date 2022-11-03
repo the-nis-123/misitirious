@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import FiveStarRating from './FiveStarRating';
-import { addToCart } from '../redux/features/cartSlice';
+import { addToCart } from '../../redux/features/cartSlice';
 import { useDispatch } from 'react-redux';
 
-const ProductDetails = ({data}) => {
+const ProductInfo = ({data}) => {
   const dispatch = useDispatch();
   
   const handleAddToCart = (e) => {
@@ -13,7 +13,7 @@ const ProductDetails = ({data}) => {
   };
 
   return (
-    <ProductInfo>
+    <Wrapper>
       <Image style={{backgroundImage:`url(${data?.image? data.image : ''})`}}/>
       <Info>
         <h2>{data?.name? data.name : ''}</h2>
@@ -34,14 +34,14 @@ const ProductDetails = ({data}) => {
 
         <span className='button' onClick={handleAddToCart}>Add to Cart</span>
       </Info>
-    </ProductInfo>
+    </Wrapper>
   )
 }
 
-export default ProductDetails;
+export default ProductInfo;
 
 
-const ProductInfo = styled.div`
+const Wrapper = styled.div`
   grid-area: product;
   padding: 20px;
   background-color:#f8f8f8;

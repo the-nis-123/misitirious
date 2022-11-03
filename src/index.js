@@ -9,6 +9,13 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+/** 
+ * note we are using HashRouter in order to support relative url navigation on github pages
+ * the commonly used Browserrouter will give you a page no found error
+ * You can change this back to BrowserRouter when deploy to real production environments
+*/
+
 root.render(
   <StrictMode>
     <HashRouter>

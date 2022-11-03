@@ -94,7 +94,7 @@ const Section  = styled.section`
   h2{
     display: none;
     
-    @media only screen and (min-width: 1000px)  {
+    @media only screen and (min-width: 640px)  {
       display: block;
     }
   }

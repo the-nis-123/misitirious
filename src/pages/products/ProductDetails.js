@@ -1,24 +1,24 @@
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import ProductCard from "../components/ProductCard";
-import StoreSideBar from "../components/StoreSideBar";
-import SearchForm from "../components/SearchForm";
-import { useGetAllProductsQuery } from '../redux/misitiriousApi';
-import ProductDetails from "../components/ProductDetails";
+import ProductCard from "../../components/ProductCard";
+import SideBar from "./SideBar";
+import SearchForm from "./SearchForm";
+import { useGetAllProductsQuery } from '../../redux/misitiriousApi';
+import Details from "./ProductInfo";
 
-function Store() {
+const ProductDetails = () => {
   const { activeProduct } = useSelector((state) => state.product);
   const { data } = useGetAllProductsQuery();
   const store = data?.store;
   
   return (
     <PageWrapper>
-      <StoreSideBar />
+      <SideBar />
         
       <Wrapper>
         <SearchForm />
 
-        <ProductDetails data={activeProduct}/>
+        <Details data={activeProduct}/>
         
         <MainBody>
           <h2>Similar Products</h2>
@@ -44,13 +44,14 @@ function Store() {
   )
 }
 
+export default ProductDetails;
+
+
 const PageWrapper = styled.div`
   background-color: inherit;
   height: calc(100% - 6em);
   overflow-y:auto;
 `
-
-export default Store;
 
 const Wrapper = styled.div`
 `

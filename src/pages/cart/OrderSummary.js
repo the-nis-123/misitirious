@@ -1,13 +1,11 @@
-import styled from "styled-components";
-import { DhlAgent } from "../components/ShippingAgentCard";
-import CartProduct from "../components/CartProduct";
-import { FedexAgent } from "../components/ShippingAgentCard";
+import CartProduct from "./CartProduct";
+import { FedexAgent, DhlAgent } from "./ShippingAgentCard";
 import {Link} from 'react-router-dom';
 
 const OrderSummary = ({cart}) => {
 
   return (
-    <Column>
+    <section>
       <h3>Order summary</h3>
 
       <If condition={cart.length > 0 }>
@@ -36,18 +34,9 @@ const OrderSummary = ({cart}) => {
       <FedexAgent />
       <p>International shipping</p>
       <DhlAgent />
-    </Column>
+    </section>
   )
 }
 
 export default OrderSummary;
 
-
-const Column = styled.div`
-  flex: 50%;
-
-  h5{
-    margin-top: 10px;
-    padding: 5px 0;
-  }
-`

@@ -1,18 +1,20 @@
 import styled from 'styled-components';
-import { useGetAllProductsQuery } from '../redux/misitiriousApi';
-import ProductCard from "../components/ProductCard";
+import ProductCard from '../../components/ProductCard';
 
-const QuickBuyBlock = () => {
 
-  const { data, error, isLoading } = useGetAllProductsQuery();
+import {
+  useGetAllProductsQuery
+} from '../../redux/misitiriousApi';
+
+const BottomRow = () => {
+  
+  const { data:products, error: productsError, isLoading: loadingProducts } = useGetAllProductsQuery();
 
   return (
-    <QuickBuy>
-      <h3>Top Salers</h3>
-
+    <Wrapper>
       <section>
-        <If condition={ data }>
-          <For each='product' of={data.store.slice(0, 5)}>
+        <If condition={ products }>
+          <For each='product' of={products.store.slice(20, 25)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
@@ -24,35 +26,27 @@ const QuickBuyBlock = () => {
           </For>
         </If>
       </section>
-    </QuickBuy>
+    </Wrapper>
   )
 }
 
-export default QuickBuyBlock;
+export default BottomRow;
 
-
-const QuickBuy = styled.div`
-  grid-area: quickBuy;
-  background-color: white;
-
-  h3{
-    padding: 20px;
-  }
-
+const Wrapper = styled.div`
   section{
-    max-width: 100vw;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6em;
-    padding: 0 0.6em;
+    gap: 1em;
+    padding: 1em 0.6em;
+    margin-bottom: 30px;
 
     @media only screen and (min-width: 640px)  {
       grid-template-columns: repeat(3, 1fr);
     }
-
-      
+     
     @media only screen and (min-width: 1000px)  {
       grid-template-columns: repeat(5, 1fr);
     }
   }
+ 
 `

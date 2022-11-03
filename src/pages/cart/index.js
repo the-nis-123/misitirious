@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import CheckOutForm from "../components/CheckOutForm";
-import OrderSummary from "../components/OrderSummary";
+import CheckOutForm from "./CheckOutForm";
+import OrderSummary from "./OrderSummary";
 import { useSelector } from "react-redux";
+import SideBar from "./SideBar";
 
 function CartWrapper() {
   const { cart } = useSelector(state => state.cart);
@@ -24,35 +25,50 @@ function CartWrapper() {
   }, [cart])
 
   return (
-    <PageWrapper>
-      <h2>Your Cart</h2>
-
-      <CheckOut>
-        <OrderSummary cart={cart} />          
-        <CheckOutForm vat={totalVat.toFixed(2)} subtotal={subtotal.toFixed(2)} />
-      </CheckOut>
-    </PageWrapper>
+  <PageWrapper>
+    <SideBar />
+      
+    <Wrapper>
+      <h1>YOUR CART</h1>
+      <OrderSummary cart={cart} />          
+      <CheckOutForm vat={totalVat.toFixed(2)} subtotal={subtotal.toFixed(2)} />
+    </Wrapper>
+  </PageWrapper>
   )
 }
 
 export default CartWrapper;
 
-
 const PageWrapper = styled.div`
-  height: calc(100% - 6em);
-  overflow-y:auto;
-  overflow-x:hidden;
-  padding: 20px 10px;
+  height: calc(100% - 5em);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 0.6em;
 
-  h2{
-    color:grey;
-    text-transform:uppercase;
-  }
-
-  h3, h4{
-    padding:10px 0;
+  @media only screen and (min-width: 640px)  {
+    overflow: hidden;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 
-const CheckOut = styled.div`
+const Wrapper = styled.div`
+  padding: 2em;
+
+  h1{
+    color: #c2c2c2;
+  }
+
+  h5, h3{
+    padding: 0.6em 0;
+  }
+
+  @media only screen and (min-width: 640px)  {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 `
+
+

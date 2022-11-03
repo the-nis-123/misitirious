@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Trash } from '@styled-icons/feather/Trash';
 
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, removeFromCart } from '../redux/features/cartSlice';
+import { increment, decrement, removeFromCart } from '../../redux/features/cartSlice';
 
 
 

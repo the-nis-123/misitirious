@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import {useState} from 'react';
 
-import StoreSideBar from "../components/StoreSideBar";
-import SearchForm from "../components/SearchForm";
-import Store from "../components/WholeStore";
-import SearchResults from "../components/SearchResults";
+import SideBar from "./SideBar";
+import SearchForm from "./SearchForm";
+import Store from "./WholeStore";
+import SearchResults from "./SearchResults";
 
 import {
   useGetAllProductsQuery, 
   useGetAllSearchResultsQuery 
-} from '../redux/misitiriousApi';
+} from '../../redux/misitiriousApi';
 
 function StorePage() {
   const { data: products } = useGetAllProductsQuery();
@@ -18,7 +18,7 @@ function StorePage() {
 
   return (
     <PageWrapper>
-      {/* <StoreSideBar /> */}
+      <SideBar />
         
       <Wrapper>
         <SearchForm setQuery={setQuery}/>
@@ -42,15 +42,28 @@ function StorePage() {
 export default StorePage;
 
 const PageWrapper = styled.div`
-  height: calc(100% - 6em);
-  overflow-x: hidden;
+  height: calc(100% - 5em);
   overflow-y: auto;
-  padding: 0 10px;
+  overflow-x: hidden;
+  padding: 0 0.6em;
+
+  @media only screen and (min-width: 640px)  {
+    overflow: hidden;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
 `
 
 const Wrapper = styled.div`
-  padding: 10px 0;
-  overflow:hidden;
+  padding: 1em 0;
+
+  @media only screen and (min-width: 640px)  {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 0.6em;
+  }
 `
 
 const SearchResultsWrapper = styled.div`

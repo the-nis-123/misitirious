@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import HeroSlider from "../components/HeroSlider";
-import ProductCard from "../components/ProductCard";
-import QuickBuyBlock from "../components/QuickBuyBlock";
-import ProductCategoriesBlock from "../components/ProductCategoriesBlock";
-import GallerySlide from "../components/GallerySlide";
-import AdvertsCarousel from "../components/AdvertsCarousel";
-import BottomRow from "../components/BottomRow";
-import { useGetAllProductsQuery, useGetGalleryQuery } from '../redux/misitiriousApi';
+import HeroSlider from "./HeroSlider";
+import ProductCard from "../../components/ProductCard";
+import QuickBuyBlock from "./QuickBuyBlock";
+import ProductCategoriesBlock from "./ProductCategoriesBlock";
+import GallerySlide from "./GallerySlide";
+import AdvertsCarousel from "./AdvertsCarousel";
+import BottomRow from "./BottomRow";
+import { useGetAllProductsQuery, useGetGalleryQuery } from '../../redux/misitiriousApi';
 
 function Cart() {
   const { data } = useGetAllProductsQuery();

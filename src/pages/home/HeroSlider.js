@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import image from '../images/3.png';
+import image from '../../images/3.png';
 import SideBarIcons from "./HeroSocialIcons";
-import { servicesList } from "../other resources/site-identity";
+import { servicesList } from "../../other resources/site-identity";
 
 const HeroSlider = () => {
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import IconWithStyles from "./IconWithStyles";
-import { links } from "../other resources/social-links";
+import IconWithStyles from "../../components/IconWithStyles";
+import { links } from "../../other resources/social-links";
 
 const SideBarIcons = () => {
   return (

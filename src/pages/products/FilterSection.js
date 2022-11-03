@@ -3,7 +3,7 @@ import { useState } from 'react';
 import {CaretDown} from '@styled-icons/boxicons-regular/CaretDown';
 import {CaretRight} from '@styled-icons/boxicons-regular/CaretRight';
 
-const SideBarSectionWrapper = ({children, title}) => {
+const FilterSection = ({children, title}) => {
   const [show, setShow] = useState(true);
 
   return (
@@ -30,7 +30,7 @@ const SideBarSectionWrapper = ({children, title}) => {
   )
 }
 
-export default SideBarSectionWrapper;
+export default FilterSection;
 
 
 const Wrapper = styled.div`

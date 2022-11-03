@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import SideBarSectionWrapper from './SideBarSectionWrapper';
+import FilterSection from './FilterSection';
 
-const StoreSideBar = () => {
+const SideBar = () => {
   const products = [
     {name:"Apparel", label:"Apparel"},
     {label:"Footware", name:'footware'},
@@ -21,29 +21,29 @@ const StoreSideBar = () => {
   const categories = ['kids', 'boys', 'girls', 'men', 'women'];
 
   return (
-    <SideBar className='hide-on-small-screens'>
-      <SideBarSectionWrapper title='Products'>
+    <Wrapper>
+      <FilterSection title='Products'>
         <For each='item' of={products}>
           <Input label={item.label} key={item.name} name={item.name}/>
         </For>
-      </SideBarSectionWrapper>
+      </FilterSection>
 
-      <SideBarSectionWrapper title='Price'>
+      <FilterSection title='Price'>
         <For each='item' of={price}>
           <Input label={item.price} key={item.name} name={item.name}/>
         </For>
-      </SideBarSectionWrapper>
+      </FilterSection>
 
-      <SideBarSectionWrapper title='Categories'>
+      <FilterSection title='Categories'>
         <For each='item' of={categories}>
           <Input label={item} key={item} name={item}/>
         </For>
-      </SideBarSectionWrapper>
-    </SideBar>
+      </FilterSection>
+    </Wrapper>
   )
 }
 
-export default StoreSideBar;
+export default SideBar;
 
 const Input = ({name,label}) => {
   return(
@@ -54,25 +54,30 @@ const Input = ({name,label}) => {
   )
 }
 
-const SideBar = styled.div`
-  background-color: white;
-  min-width: 300px;
-  overflow-y:auto;
-  overflow-x: hidden;
+const Wrapper = styled.div`
+  display: none;
 
-  input{
-    margin-right: 10px;
-    border:none;
-    outline:none;
+  @media only screen and (min-width: 640px)  {
+    display: block;
+    background-color: white;
+    min-width: 300px;
+    overflow-y:auto;
+    overflow-x: hidden;
 
-    :checked{
-      background-color: black;
+    input{
+      margin-right: 10px;
+      border:none;
+      outline:none;
+
+      :checked{
+        background-color: black;
+      }
     }
-  }
 
-  label{
-    color: 	#606060;
-    text-transform: capitalize;
-    font-size: 0.8rem;
+    label{
+      color: 	#606060;
+      text-transform: capitalize;
+      font-size: 0.8rem;
+    }
   }
 `

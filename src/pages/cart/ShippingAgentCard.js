@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { Fedex } from '@styled-icons/fa-brands/Fedex';
 import { Dhl } from '@styled-icons/fa-brands/Dhl';
 
-
 export const FedexAgent = () => {
   return (
     <Wrapper>
@@ -56,9 +55,9 @@ const Wrapper = styled.div`
   height: 7em;
   border: solid 1px #D8D8D8;
   background-color:white;
-  padding: 10px;
+  padding: 0.6em 1em;
   border-radius: 5px;
-  margin: 10px 0;
+  margin: 0.6em 0;
   display:flex;
   align-items:center;
   justify-content: space-between;
@@ -74,5 +73,5 @@ const Wrapper = styled.div`
 
 const Icon = styled.div`
   background-color:white;
-  padding: 10px 20px;
+  padding: 0.6em;
 `

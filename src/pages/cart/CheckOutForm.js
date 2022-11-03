@@ -5,7 +5,7 @@ const CheckOutForm = ({subtotal, vat }) => {
   let total = Number(vat) + Number(subtotal);
 
   return (
-    <Column>
+    <section>
       <h3>Payment details</h3>
       <p> Fill out the form below to complete your order </p>
 
@@ -52,27 +52,12 @@ const CheckOutForm = ({subtotal, vat }) => {
         <p>${total.toFixed(2)}</p>
       </InputWrapper>
 
-      <Input type='submit' value='Complete Order' style={{
-          backgroundColor:'black', 
-          color:'white',
-          marginTop:'20px',
-          cursor:'pointer'
-        }}
-      />
-    </Column>
+      <Button type='submit' value='Complete Order' />
+    </section>
   )
 }
 
 export default CheckOutForm;
-
-const Column = styled.div`
-  flex: 50%;
-
-  h5{
-    margin-top: 10px;
-    padding: 5px 0;
-  }
-`
 
 const InputWrapper = styled.section`
   display:flex;
@@ -80,7 +65,7 @@ const InputWrapper = styled.section`
   width: 100%;
 
   h4,p{
-    padding: 10px 0;
+    padding: 0.6em 0;
   }
 `
 const Input = styled.input`
@@ -93,8 +78,8 @@ const Input = styled.input`
 
 
 const Button = styled(Input)`
-  backgroundColor:'black', 
-  color:'white',
-  marginTop:'20px',
-  cursor:'pointer'
+  background-color: black; 
+  color: white;
+  margin-top: 1em;
+  cursor: pointer;
 `

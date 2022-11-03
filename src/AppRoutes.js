@@ -2,10 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import App from './App';
 import GlobalStyles from './global.css';
 import RoutesProtector from './RoutesProtector';
-import Home from './pages/Home';
-import Store from './pages/ProductsStore';
-import Cart from './pages/Cart';
-import ProductDetails from './pages/ProductDetailsPage';
+import Home from './pages/home';
+import Store from './pages/products';
+import Cart from './pages/cart';
+import ProductDetails from './pages/products/ProductDetails';
 import NotFound from './pages/404';
 
 const AppRoutes = () => {

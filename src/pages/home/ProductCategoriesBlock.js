@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import CategoryCard from "../components/CategoryCard";
+import CategoryCard from "./CategoryCard";
 
-import { useGetAllCategoriesQuery } from '../redux/misitiriousApi';
-import Carousel from './Carousel';
+import { useGetAllCategoriesQuery } from '../../redux/misitiriousApi';
+import Carousel from '../../components/Carousel';
 
 
 const ProductCategoriesBlock = () => {
