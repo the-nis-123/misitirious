@@ -19,7 +19,8 @@ export default PageContainer;
 
 const PageWrapper = styled.div`
   height: calc(100% - 5em);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 0 0.6em;
 
   @media only screen and (min-width: 640px)  {
