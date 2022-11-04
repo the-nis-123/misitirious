@@ -50,16 +50,17 @@ const Product = styled.div`
   align-items:center;
   min-width: 100%;
   border-radius: 5px;
-  margin: 5px 0;
+  margin: 0.7em 0;
   background-color: white;
   color: gray;
   position:relative;
+  padding: 1em 0;
 `;
 
 
 const Image = styled.section`
-  height:6em;
-  width: 10em;
+  height:7em;
+  width: 12em;
   margin-right:15px;
   padding: 10px;
 

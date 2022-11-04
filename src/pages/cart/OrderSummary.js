@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const OrderSummary = ({cart}) => {
 
   return (
-    <section>
+    <section style={{width:'100%'}}>
       <h3>Order summary</h3>
 
       <If condition={cart.length > 0 }>

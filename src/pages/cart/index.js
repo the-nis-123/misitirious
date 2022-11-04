@@ -54,7 +54,7 @@ const PageWrapper = styled.div`
 `
 
 const Wrapper = styled.div`
-  padding: 2em;
+  padding: 2em 0.6em;
 
   h1{
     color: #c2c2c2;
@@ -68,6 +68,7 @@ const Wrapper = styled.div`
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    padding: 2em;
   }
 `
 
