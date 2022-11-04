@@ -14,12 +14,12 @@ const CategoryCard = ({image, name}) => {
 export default CategoryCard;
 
 const Wrapper = styled.div`
-  height: 460px;
+  min-width: 280px;
   display: inline-flex;
   flex-flow:column;
   justify-content: space-between;
   background-color: white;
-  padding: 2em;
+  padding: 1em 2em;
 
   a{
     text-decoration:none;
