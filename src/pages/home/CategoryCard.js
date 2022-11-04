@@ -14,7 +14,6 @@ const CategoryCard = ({image, name}) => {
 export default CategoryCard;
 
 const Wrapper = styled.div`
-  width: 300px;
   height: 460px;
   display: inline-flex;
   flex-flow:column;

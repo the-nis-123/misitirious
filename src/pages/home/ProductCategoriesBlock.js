@@ -2,30 +2,30 @@ import styled from 'styled-components';
 import CategoryCard from "./CategoryCard";
 
 import { useGetAllCategoriesQuery } from '../../redux/misitiriousApi';
-import Carousel from '../../components/carousel';
+import Carousel from '../../components/carousel/Carousel';
 
 
-const ProductCategoriesBlock = () => {
+const ProductCategories = () => {
   const { data } = useGetAllCategoriesQuery();
 
   return (
-    <ProductCategories>
+    <Wrapper>
       <h2>All Our Product Categories</h2>
-      <Carousel>
+      <Carousel show={4} infiniteLoop auto={false}>
         <If condition={ data }>
           <For each='category' of={data.categories}>
             <CategoryCard key={category.id} image={category.image} name={category.name} />
           </For>
         </If>
       </Carousel>
-    </ProductCategories>
+    </Wrapper>
   )
 }
 
-export default ProductCategoriesBlock;
+export default ProductCategories;
 
 
-const ProductCategories = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   padding: 1em 0;
 

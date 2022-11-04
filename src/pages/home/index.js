@@ -3,8 +3,8 @@ import HeroSlider from "./HeroSlider";
 import ProductCard from "../../components/ProductCard";
 import QuickBuyBlock from "./QuickBuyBlock";
 import ProductCategoriesBlock from "./ProductCategoriesBlock";
-import GallerySlide from "./GallerySlide";
-import AdvertsCarousel from "./AdvertsCarousel";
+import TopTrends from "./TopTrends";
+import PopularBrands from "./PopularBrands";
 import BottomRow from "./BottomRow";
 import { useGetAllProductsQuery, useGetGalleryQuery } from '../../redux/misitiriousApi';
 
@@ -20,7 +20,7 @@ function Cart() {
       <HeroSlider />
       <QuickBuyBlock />
       <ProductCategoriesBlock />
-      <AdvertsCarousel data={carouselData} />
+      <PopularBrands />
       <MainBody>
         <If condition={ store }>
           <For each='product' of={store.slice(5, 20)}>
@@ -35,7 +35,7 @@ function Cart() {
           </For>
         </If>
       </MainBody>
-      <GallerySlide data={carouselData} />
+      <TopTrends  />
       <BottomRow />
     </Wrapper>
   )

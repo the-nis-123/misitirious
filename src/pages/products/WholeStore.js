@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import ProductCard from '../../components/ProductCard';
-import Carousel from '../../components/carousel';
+import Carousel from '../../components/carousel/Carousel';
 import { useGetGalleryQuery } from '../../redux/misitiriousApi';
+import Slide from '../../components/Slides';
 
 const WholeStore = ({data}) => {
-  const { data: gallery } = useGetGalleryQuery();
   const store = data?.store;
-  const carouselData = gallery?.gallery;
+
+  const { data: gallery } = useGetGalleryQuery();
+  const banners = gallery?.gallery;
+  const brands = gallery?.brands;
+
   
   return (
     <>
@@ -24,7 +28,15 @@ const WholeStore = ({data}) => {
         </If>
       </Section>
 
-      <Carousel slideWidth='350px' data={carouselData} />
+      <Carousel show={3} infiniteLoop auto={true}>
+        <If condition={brands}>
+          <For each='slide' of={brands}>
+            <Slide key={slide}>
+              <img src={slide}  alt=''/>
+            </Slide>
+          </For>
+        </If>
+      </Carousel>
 
       <Section>
         <If condition={ store }>
@@ -41,7 +53,15 @@ const WholeStore = ({data}) => {
         </If> 
       </Section>
 
-      <Carousel slideWidth='450px' data={carouselData} />
+      <Carousel show={1} infiniteLoop auto={true}>
+        <If condition={banners}>
+          <For each='slide' of={banners}>
+            <Slide key={slide}>
+              <img src={slide}  alt=''/>
+            </Slide>
+          </For>
+        </If>
+      </Carousel>
 
       <Section>
         <If condition={ store }>
