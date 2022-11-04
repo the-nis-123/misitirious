@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 
 const Slide = styled.div`
-  height: 400px;
-  min-width: 300px;
+  height: 25em;
+  min-width: 18.75em;
 
   img{
     width: 100%;

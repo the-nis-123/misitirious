@@ -36,11 +36,13 @@ export default BottomRow;
 
 const Wrapper = styled.div`
   section{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1em;
     padding: 1em 0.6em;
-    margin-bottom: 30px;
+
+    @media only screen and (min-width: 480px)  {
+      display:grid;
+      gap: 1em;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media only screen and (min-width: 640px)  {
       grid-template-columns: repeat(3, 1fr);

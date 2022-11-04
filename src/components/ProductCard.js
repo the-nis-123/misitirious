@@ -39,13 +39,15 @@ const ProductCard = ({image, name, price, id, category}) => {
           Some kind of description about this particular product 
           and all that other relevant information that customers might be interested in.
         </Description>
+        
+        <Price>${price}</Price>
 
         <FlexContainer>
           <Icon onClick={handleAddToCart} >
-            <CartAdd size='30px'/>
+            <CartAdd size='2rem'/>
           </Icon>
 
-          <Price>${price}</Price>
+          <span className="wishlist">Add To WishList</span>
         </FlexContainer>
       </Wrapper>
     </If>
@@ -55,29 +57,26 @@ const ProductCard = ({image, name, price, id, category}) => {
 export default ProductCard;
 
 const Wrapper = styled.div`
-  min-width: 250px;
+  min-width: 18em;
   border-radius: 5px;
   background-color:  white;
   padding: 1em 2em;
   font-family: 'Sora', 'Noto Sans Vai', sans-serif;
   display: flex;
   flex-flow: column;
-  
-
-  :hover{
-    cursor:pointer;
-  }
+  justify-content: space-between;
 `
 
 const Image = styled.img`
   width: 70%;
-  height: 50%;
+  height: auto;
   margin: 0 auto;
   object-fit: contain;
 `
 
 const Price = styled.p`
   font-weight: bold;
+  margin-top: 1em;
 `
 
 const Description = styled.p`
@@ -85,34 +84,43 @@ const Description = styled.p`
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3; 
+  -webkit-line-clamp: 4;
+  line-clamp: 4; 
   font-size: 0.9rem;
+  padding: 0.5em 0;
 `
 
 const FlexContainer = styled.div`
- display:flex;
- justify-content: space-between;
- align-items:center;
- padding: 1em 0;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 1em 0;
 
- .product-name{
-    text-align: center;
-    text-transform: capitalize;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
- }
+  .product-name{
+      text-align: center;
+      text-transform: capitalize;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+  }
 
- svg{
+  svg{
+      :hover{
+        cursor:pointer;
+        color: var(--primary-color);
+      }
+  }
+
+
+ .wishlist{
+    text-decoration: underline;
     :hover{
       cursor:pointer;
-      color: var(--primary-color);
     }
- }
+  }
 `
 
 const Icon = styled.span`
@@ -132,4 +140,5 @@ const Icon = styled.span`
       color: var(--primary-color);
     }
   }
+
 `

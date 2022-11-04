@@ -52,16 +52,18 @@ const Wrapper = styled.div`
 `
 
 const MainBody = styled.div`
-  grid-area: main;
-  display: grid;
-  max-width: 100vw;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1em;
   padding: 1em 0.6em;
-  
+
+  @media only screen and (min-width: 480px)  {
+    display:grid;
+    gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media only screen and (min-width: 640px)  {
     grid-template-columns: repeat(3, 1fr);
   }
+  
 
   @media only screen and (min-width: 1000px)  {
     grid-template-columns: repeat(4, 1fr);

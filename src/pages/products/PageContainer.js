@@ -33,12 +33,11 @@ const PageWrapper = styled.div`
 
 const Wrapper = styled.div`
   padding: 1em 0;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   @media only screen and (min-width: 640px)  {
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
     padding: 0 0.6em;
   }
 `

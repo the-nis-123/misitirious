@@ -42,9 +42,10 @@ const Wrapper = styled.div`
   padding: 1em;
   background-color:#f8f8f8;
 
-  @media only screen and (min-width: 1000px)  {
+  @media only screen and (min-width: 640px)  {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    min-width: 40em;
   }
 
   p{

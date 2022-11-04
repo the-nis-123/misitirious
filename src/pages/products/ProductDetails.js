@@ -51,14 +51,15 @@ const SimilarProducts = styled.div`
   gap: 1em;
   padding: 1em 0;
 
-
-  @media only screen and (min-width: 700px)  {
-    display: grid;
+  @media only screen and (min-width: 480px)  {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  @media only screen and (min-width: 800px)  {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   @media only screen and (min-width: 1000px)  {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 `

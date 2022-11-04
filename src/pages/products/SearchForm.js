@@ -15,13 +15,16 @@ export default SearchForm;
 
 const Wrapper = styled.div`
   border: 1px solid #cccccc;
-  width: 90%;
   margin: 1em auto 0 auto;
   display:flex;
   align-items:center;
   color:grey;
   p{
     padding: 0 1em;
+  }
+
+  @media only screen and (min-width: 640px)  {
+    min-width: 40em;
   }
 `
 const Search = styled.input`
