@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const AuthForm = ({children}) => {
+const AuthForm = ({children, ...props}) => {
   
   return (
-    <Wrapper>
+    <Wrapper {...props}>
       {children}
     </Wrapper>
   )
