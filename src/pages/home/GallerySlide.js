@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Carousel from '../../components/Carousel';
+import Carousel from '../../components/carousel';
 
 
 const GallerySlide = ({data}) => {
@@ -18,7 +18,6 @@ export default GallerySlide;
 const Wrapper = styled.div`
   padding: 0.6em 0;
   width: 100%;
-  height: 450px;
   overflow: hidden;
   
   h2{

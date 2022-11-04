@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ProductCard from '../../components/ProductCard';
-import Carousel from '../../components/Carousel';
+import Carousel from '../../components/carousel';
 import { useGetGalleryQuery } from '../../redux/misitiriousApi';
 
 const WholeStore = ({data}) => {

@@ -15,12 +15,12 @@ export default CategoryCard;
 
 const Wrapper = styled.div`
   width: 300px;
-  height: 400px;
+  height: 500px;
   display: inline-flex;
   flex-flow:column;
   justify-content: space-between;
   background-color: white;
-  padding: 0.5em 1em;
+  padding: 2em;
 
   a{
     text-decoration:none;

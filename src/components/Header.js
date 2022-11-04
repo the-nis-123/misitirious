@@ -1,15 +1,24 @@
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import logo from '../logo.png';
 import { ShoppingCart } from '@styled-icons/feather/ShoppingCart';
+import {AccountCircle} from '@styled-icons/remix-fill/AccountCircle';
 import { Search } from '@styled-icons/feather/Search';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import logo from '../logo.png';
 import IconWithStyles from './IconWithStyles';
 import { siteName } from '../other resources/site-identity';
-import {AccountCircle} from '@styled-icons/remix-fill/AccountCircle';
+import { showLoginForm } from '../redux/features/authModalSlice';
+
 
 const Header = () => {
-const {cart} = useSelector(state => state.cart);
+  const {cart} = useSelector(state => state.cart);
+  const dispatch = useDispatch();
+
+  const handleAuth = (e) => {
+    e.stopPropagation();
+    dispatch(showLoginForm());
+  }
 
   return (
     <Wrapper>
@@ -49,7 +58,7 @@ const {cart} = useSelector(state => state.cart);
           </Link>
         </Section>
 
-        <Link to='/'> { IconWithStyles(AccountCircle) }  </Link>
+        <Link to='#' onClick={handleAuth}> { IconWithStyles(AccountCircle) }  </Link>
       </Section>
     </Wrapper>
   )

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Carousel from '../../components/Carousel';
+import Carousel from '../../components/carousel';
 
 const AdvertsCarousel = ({data}) => {
   return (

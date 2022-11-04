@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import CategoryCard from "./CategoryCard";
 
 import { useGetAllCategoriesQuery } from '../../redux/misitiriousApi';
-import Carousel from '../../components/Carousel';
+import Carousel from '../../components/carousel';
 
 
 const ProductCategoriesBlock = () => {
