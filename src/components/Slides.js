@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const Slide = styled.div`
   height: 400px;
+  min-width: 300px;
 
   img{
     width: 100%;

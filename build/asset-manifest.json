@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/misitirious/static/js/main.3c47154a.js",
+    "main.js": "/misitirious/static/js/main.91e09e28.js",
     "static/js/787.845ad88c.chunk.js": "/misitirious/static/js/787.845ad88c.chunk.js",
     "static/media/6.png": "/misitirious/static/media/6.8604801ddd91a002d8e6.png",
     "static/media/logo.png": "/misitirious/static/media/logo.1cf82fa22873038539dd.png",
     "index.html": "/misitirious/index.html",
-    "main.3c47154a.js.map": "/misitirious/static/js/main.3c47154a.js.map",
+    "main.91e09e28.js.map": "/misitirious/static/js/main.91e09e28.js.map",
     "787.845ad88c.chunk.js.map": "/misitirious/static/js/787.845ad88c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3c47154a.js"
+    "static/js/main.91e09e28.js"
   ]
 }

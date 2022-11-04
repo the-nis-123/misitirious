@@ -7,8 +7,8 @@ import { useGetGalleryQuery } from '../../redux/misitiriousApi';
 
 const GallerySlide = () => {
 
-  const { data: gallery } = useGetGalleryQuery();
-  const trends = gallery?.trends;
+  const { data } = useGetGalleryQuery();
+  const trends = data?.trends;
 
   return (
     <Wrapper>

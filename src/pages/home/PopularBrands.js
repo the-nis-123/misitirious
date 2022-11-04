@@ -7,8 +7,9 @@ import { useGetGalleryQuery } from '../../redux/misitiriousApi';
 
 const AdvertsCarousel = () => {
 
-  const { data: gallery } = useGetGalleryQuery();
-  const brands = gallery?.brands;
+  const { data } = useGetGalleryQuery();
+  const brands = data?.brands;
+  console.log(data);
 
   return (
     <Wrapper >
