@@ -50,6 +50,7 @@ const SimilarProducts = styled.div`
   display: grid;
   gap: 1em;
   padding: 1em 0;
+  margin-bottom: 4em;
 
   @media only screen and (min-width: 480px)  {
     grid-template-columns: repeat(2, 1fr);

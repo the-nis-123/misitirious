@@ -34,7 +34,7 @@ const Slider = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 40vh;
+  height: 60vh;
 
   @media only screen and (min-width: 640px)  {
     display: flex;

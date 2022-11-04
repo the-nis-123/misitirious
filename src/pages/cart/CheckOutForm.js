@@ -5,7 +5,7 @@ const CheckOutForm = ({subtotal, vat }) => {
   let total = Number(vat) + Number(subtotal);
 
   return (
-    <section>
+    <section style={{marginBottom:'4em'}}>
       <h3>Payment details</h3>
       <p> Fill out the form below to complete your order </p>
 

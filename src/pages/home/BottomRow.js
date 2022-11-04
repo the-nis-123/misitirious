@@ -37,6 +37,7 @@ export default BottomRow;
 const Wrapper = styled.div`
   section{
     padding: 1em 0.6em;
+    margin-bottom: 4em;
 
     @media only screen and (min-width: 480px)  {
       display:grid;

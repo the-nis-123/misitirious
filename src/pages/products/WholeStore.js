@@ -63,7 +63,7 @@ const WholeStore = ({data}) => {
         </If>
       </Carousel>
 
-      <Section>
+      <Section style={{marginBottom:'4em'}}>
         <If condition={ store }>
           <For each='product' of={store.slice(25)}>
             <ProductCard 
