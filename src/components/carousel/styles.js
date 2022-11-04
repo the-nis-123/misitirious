@@ -33,6 +33,10 @@ const CarouselContainer = styled.div`
     border-radius: 24px;
     background-color: white;
     border: 1px solid #ddd;
+
+    :hover{
+      cursor: pointer;
+    }
   }
 
   .left-arrow {
@@ -54,7 +58,7 @@ const CarouselWrapper  = styled.div`
   display: flex;
   width: 100%;
   position: relative;
-
+  padding: 0 0.6em;
 `
 
 const CcarouselContentWrapper = styled.div`
@@ -65,10 +69,11 @@ const CcarouselContentWrapper = styled.div`
 
 const CarouselContent = styled.div`
   display: flex;
-  gap: 2em;
+  column-gap: 1em;
   transition: all 250ms linear;
-  -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
-  scrollbar-width: none;  /* hide scrollbar in Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  padding: 1em 0;
 `
 
 

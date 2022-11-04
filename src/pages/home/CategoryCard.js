@@ -15,7 +15,7 @@ export default CategoryCard;
 
 const Wrapper = styled.div`
   width: 300px;
-  height: 500px;
+  height: 460px;
   display: inline-flex;
   flex-flow:column;
   justify-content: space-between;
