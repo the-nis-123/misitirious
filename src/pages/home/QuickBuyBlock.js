@@ -37,11 +37,11 @@ const QuickBuy = styled.div`
   }
 
   section{
+    display:grid;
+    gap: 1em;
     padding: 0 0.6em;
 
     @media only screen and (min-width: 480px)  {
-      display:grid;
-      gap: 1em;
       grid-template-columns: repeat(2, 1fr);
     }
 
