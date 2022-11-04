@@ -23,7 +23,7 @@ function Cart() {
       <PopularBrands />
       <MainBody>
         <If condition={ store }>
-          <For each='product' of={store.slice(5, 20)}>
+          <For each='product' of={store.slice(5, 21)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 

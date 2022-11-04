@@ -12,7 +12,7 @@ const SideBar = () => {
 
       <section>
         <If condition={ store }>
-          <For each='product' of={store.slice(12)}>
+          <For each='product' of={store.slice(13)}>
             <ProductCard 
               image={product.image} 
               name={product.name} 
